@@ -76,19 +76,3 @@ def getValue(val):
     elif val == 'sum':
         val = 'add'
     return val
-'''
-def getValue(val):
-    if val == '+inf':
-        val = 'float(\'inf\')'
-    elif val == '-inf':
-        val = 'float(\'-inf\')'
-    elif val == 'n':
-        val = 'len(data)'
-    elif val == 'xi' :
-        val = 'data[i-1]'
-    elif val == 'delta_i_f_prime':
-        val = 'data[i]'
-    elif val == 'sum':
-        val = 'operator.add'
-    return val
-'''

@@ -16,16 +16,18 @@ func add(x float64, y float64) float64 { return (x+y) }
 type Tuple struct { a,b interface{} }
 
 func GetMax(x float64, y float64) float64 {
-     if x>=y { return x
-     } else { return y }
+    if x>=y { 
+        return x
+    } else { return y }
 }
 // Currently not using this method
 
 func GetMin(x float64, y float64) float64 {
-     if x>=y { return y
-     } else { return x }
-// Currently not using this method
+    if x>=y { 
+        return y
+    } else { return x }
 }
+// Currently not using this method
 
 
 func Max_one_bump_on_decreasing_sequence(data []float64) float64{
@@ -12449,9 +12451,9 @@ func Min_range_zigzag(data []float64) float64{
     return math.Min(R,C)    
 }
 func Sum_one_bump_on_decreasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 1.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -12508,9 +12510,9 @@ func Sum_one_bump_on_decreasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_one_decreasing(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 1.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -12537,9 +12539,9 @@ func Sum_one_decreasing(data []float64) float64{
     return add(R,C)    
 }
 func Sum_one_decreasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 1.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -12550,7 +12552,7 @@ func Sum_one_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 1.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -12578,9 +12580,9 @@ func Sum_one_decreasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_one_decreasing_terrace(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 1.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -12622,9 +12624,9 @@ func Sum_one_decreasing_terrace(data []float64) float64{
     return add(R,C)    
 }
 func Sum_one_dip_on_increasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 1.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -12681,9 +12683,9 @@ func Sum_one_dip_on_increasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_one_gorge(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 1.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -12712,7 +12714,7 @@ func Sum_one_gorge(data []float64) float64{
                     D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 1.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
@@ -12739,9 +12741,9 @@ func Sum_one_gorge(data []float64) float64{
     return add(R,C)    
 }
 func Sum_one_increasing(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 1.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -12768,9 +12770,9 @@ func Sum_one_increasing(data []float64) float64{
     return add(R,C)    
 }
 func Sum_one_increasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 1.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -12791,7 +12793,7 @@ func Sum_one_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 1.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -12809,9 +12811,9 @@ func Sum_one_increasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_one_increasing_terrace(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 1.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -12853,9 +12855,9 @@ func Sum_one_increasing_terrace(data []float64) float64{
     return add(R,C)    
 }
 func Sum_one_inflexion(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 1.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -12900,9 +12902,9 @@ func Sum_one_inflexion(data []float64) float64{
     return add(R,C)    
 }
 func Sum_one_peak(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 1.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -12916,7 +12918,7 @@ func Sum_one_peak(data []float64) float64{
                     D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 1.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
@@ -12949,9 +12951,9 @@ func Sum_one_peak(data []float64) float64{
     return add(R,C)    
 }
 func Sum_one_plain(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 1.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -12995,9 +12997,9 @@ func Sum_one_plain(data []float64) float64{
     return add(R,C)    
 }
 func Sum_one_plateau(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 1.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -13041,9 +13043,9 @@ func Sum_one_plateau(data []float64) float64{
     return add(R,C)    
 }
 func Sum_one_proper_plain(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 1.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -13085,9 +13087,9 @@ func Sum_one_proper_plain(data []float64) float64{
     return add(R,C)    
 }
 func Sum_one_proper_plateau(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 1.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -13129,9 +13131,9 @@ func Sum_one_proper_plateau(data []float64) float64{
     return add(R,C)    
 }
 func Sum_one_steady(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 1.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -13158,9 +13160,9 @@ func Sum_one_steady(data []float64) float64{
     return add(R,C)    
 }
 func Sum_one_steady_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 1.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -13171,7 +13173,7 @@ func Sum_one_steady_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 1.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -13180,7 +13182,7 @@ func Sum_one_steady_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 1.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -13201,9 +13203,9 @@ func Sum_one_steady_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_one_strictly_decreasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 1.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -13214,7 +13216,7 @@ func Sum_one_strictly_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 1.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -13233,7 +13235,7 @@ func Sum_one_strictly_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 1.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -13244,9 +13246,9 @@ func Sum_one_strictly_decreasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_one_strictly_increasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 1.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -13267,7 +13269,7 @@ func Sum_one_strictly_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 1.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -13276,7 +13278,7 @@ func Sum_one_strictly_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 1.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -13287,9 +13289,9 @@ func Sum_one_strictly_increasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_one_summit(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 1.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -13305,7 +13307,7 @@ func Sum_one_summit(data []float64) float64{
                     D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 1.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
@@ -13347,9 +13349,9 @@ func Sum_one_summit(data []float64) float64{
     return add(R,C)    
 }
 func Sum_one_valley(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 1.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -13375,7 +13377,7 @@ func Sum_one_valley(data []float64) float64{
                     D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 1.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
@@ -13396,9 +13398,9 @@ func Sum_one_valley(data []float64) float64{
     return add(R,C)    
 }
 func Sum_one_zigzag(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 1.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -13415,7 +13417,7 @@ func Sum_one_zigzag(data []float64) float64{
                     D = 1.0                    
                     currentState = 'c'                    
                 } else if currentState == 'c' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 1.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'a'                    
@@ -13449,7 +13451,7 @@ func Sum_one_zigzag(data []float64) float64{
                     D = 1.0                    
                     currentState = 'f'                    
                 } else if currentState == 'f' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 1.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'd'                    
@@ -13463,7 +13465,7 @@ func Sum_one_zigzag(data []float64) float64{
                     D = 1.0                    
                     currentState = 's'                    
                 } else if currentState == 'c' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 1.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -13473,7 +13475,7 @@ func Sum_one_zigzag(data []float64) float64{
                     D = 1.0                    
                     currentState = 's'                    
                 } else if currentState == 'f' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 1.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -13484,9 +13486,9 @@ func Sum_one_zigzag(data []float64) float64{
     return add(R,C)    
 }
 func Sum_width_bump_on_decreasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -13543,9 +13545,9 @@ func Sum_width_bump_on_decreasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_width_decreasing(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -13572,9 +13574,9 @@ func Sum_width_decreasing(data []float64) float64{
     return add(R,C)    
 }
 func Sum_width_decreasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -13585,7 +13587,7 @@ func Sum_width_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -13613,9 +13615,9 @@ func Sum_width_decreasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_width_decreasing_terrace(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -13657,9 +13659,9 @@ func Sum_width_decreasing_terrace(data []float64) float64{
     return add(R,C)    
 }
 func Sum_width_dip_on_increasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -13716,9 +13718,9 @@ func Sum_width_dip_on_increasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_width_gorge(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -13747,7 +13749,7 @@ func Sum_width_gorge(data []float64) float64{
                     D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
@@ -13774,9 +13776,9 @@ func Sum_width_gorge(data []float64) float64{
     return add(R,C)    
 }
 func Sum_width_increasing(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -13803,9 +13805,9 @@ func Sum_width_increasing(data []float64) float64{
     return add(R,C)    
 }
 func Sum_width_increasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -13826,7 +13828,7 @@ func Sum_width_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -13844,9 +13846,9 @@ func Sum_width_increasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_width_increasing_terrace(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -13888,9 +13890,9 @@ func Sum_width_increasing_terrace(data []float64) float64{
     return add(R,C)    
 }
 func Sum_width_inflexion(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -13935,9 +13937,9 @@ func Sum_width_inflexion(data []float64) float64{
     return add(R,C)    
 }
 func Sum_width_peak(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -13951,7 +13953,7 @@ func Sum_width_peak(data []float64) float64{
                     D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
@@ -13984,9 +13986,9 @@ func Sum_width_peak(data []float64) float64{
     return add(R,C)    
 }
 func Sum_width_plain(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -14030,9 +14032,9 @@ func Sum_width_plain(data []float64) float64{
     return add(R,C)    
 }
 func Sum_width_plateau(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -14076,9 +14078,9 @@ func Sum_width_plateau(data []float64) float64{
     return add(R,C)    
 }
 func Sum_width_proper_plain(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -14120,9 +14122,9 @@ func Sum_width_proper_plain(data []float64) float64{
     return add(R,C)    
 }
 func Sum_width_proper_plateau(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -14164,9 +14166,9 @@ func Sum_width_proper_plateau(data []float64) float64{
     return add(R,C)    
 }
 func Sum_width_steady(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -14193,9 +14195,9 @@ func Sum_width_steady(data []float64) float64{
     return add(R,C)    
 }
 func Sum_width_steady_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -14206,7 +14208,7 @@ func Sum_width_steady_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -14215,7 +14217,7 @@ func Sum_width_steady_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -14236,9 +14238,9 @@ func Sum_width_steady_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_width_strictly_decreasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -14249,7 +14251,7 @@ func Sum_width_strictly_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -14268,7 +14270,7 @@ func Sum_width_strictly_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -14279,9 +14281,9 @@ func Sum_width_strictly_decreasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_width_strictly_increasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -14302,7 +14304,7 @@ func Sum_width_strictly_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -14311,7 +14313,7 @@ func Sum_width_strictly_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -14322,9 +14324,9 @@ func Sum_width_strictly_increasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_width_summit(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -14340,7 +14342,7 @@ func Sum_width_summit(data []float64) float64{
                     D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
@@ -14382,9 +14384,9 @@ func Sum_width_summit(data []float64) float64{
     return add(R,C)    
 }
 func Sum_width_valley(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -14410,7 +14412,7 @@ func Sum_width_valley(data []float64) float64{
                     D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
@@ -14431,9 +14433,9 @@ func Sum_width_valley(data []float64) float64{
     return add(R,C)    
 }
 func Sum_width_zigzag(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -14450,7 +14452,7 @@ func Sum_width_zigzag(data []float64) float64{
                     D = 0.0                    
                     currentState = 'c'                    
                 } else if currentState == 'c' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'a'                    
@@ -14484,7 +14486,7 @@ func Sum_width_zigzag(data []float64) float64{
                     D = 0.0                    
                     currentState = 'f'                    
                 } else if currentState == 'f' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'd'                    
@@ -14498,7 +14500,7 @@ func Sum_width_zigzag(data []float64) float64{
                     D = 0.0                    
                     currentState = 's'                    
                 } else if currentState == 'c' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -14508,7 +14510,7 @@ func Sum_width_zigzag(data []float64) float64{
                     D = 0.0                    
                     currentState = 's'                    
                 } else if currentState == 'f' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -14519,9 +14521,9 @@ func Sum_width_zigzag(data []float64) float64{
     return add(R,C)    
 }
 func Sum_surface_bump_on_decreasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -14578,9 +14580,9 @@ func Sum_surface_bump_on_decreasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_surface_decreasing(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -14607,9 +14609,9 @@ func Sum_surface_decreasing(data []float64) float64{
     return add(R,C)    
 }
 func Sum_surface_decreasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -14620,7 +14622,7 @@ func Sum_surface_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -14648,9 +14650,9 @@ func Sum_surface_decreasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_surface_decreasing_terrace(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -14692,9 +14694,9 @@ func Sum_surface_decreasing_terrace(data []float64) float64{
     return add(R,C)    
 }
 func Sum_surface_dip_on_increasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -14751,9 +14753,9 @@ func Sum_surface_dip_on_increasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_surface_gorge(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -14782,7 +14784,7 @@ func Sum_surface_gorge(data []float64) float64{
                     D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
@@ -14809,9 +14811,9 @@ func Sum_surface_gorge(data []float64) float64{
     return add(R,C)    
 }
 func Sum_surface_increasing(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -14838,9 +14840,9 @@ func Sum_surface_increasing(data []float64) float64{
     return add(R,C)    
 }
 func Sum_surface_increasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -14861,7 +14863,7 @@ func Sum_surface_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -14879,9 +14881,9 @@ func Sum_surface_increasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_surface_increasing_terrace(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -14923,9 +14925,9 @@ func Sum_surface_increasing_terrace(data []float64) float64{
     return add(R,C)    
 }
 func Sum_surface_inflexion(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -14970,9 +14972,9 @@ func Sum_surface_inflexion(data []float64) float64{
     return add(R,C)    
 }
 func Sum_surface_peak(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -14986,7 +14988,7 @@ func Sum_surface_peak(data []float64) float64{
                     D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
@@ -15019,9 +15021,9 @@ func Sum_surface_peak(data []float64) float64{
     return add(R,C)    
 }
 func Sum_surface_plain(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -15065,9 +15067,9 @@ func Sum_surface_plain(data []float64) float64{
     return add(R,C)    
 }
 func Sum_surface_plateau(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -15111,9 +15113,9 @@ func Sum_surface_plateau(data []float64) float64{
     return add(R,C)    
 }
 func Sum_surface_proper_plain(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -15155,9 +15157,9 @@ func Sum_surface_proper_plain(data []float64) float64{
     return add(R,C)    
 }
 func Sum_surface_proper_plateau(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -15199,9 +15201,9 @@ func Sum_surface_proper_plateau(data []float64) float64{
     return add(R,C)    
 }
 func Sum_surface_steady(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -15228,9 +15230,9 @@ func Sum_surface_steady(data []float64) float64{
     return add(R,C)    
 }
 func Sum_surface_steady_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -15241,7 +15243,7 @@ func Sum_surface_steady_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -15250,7 +15252,7 @@ func Sum_surface_steady_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -15271,9 +15273,9 @@ func Sum_surface_steady_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_surface_strictly_decreasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -15284,7 +15286,7 @@ func Sum_surface_strictly_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -15303,7 +15305,7 @@ func Sum_surface_strictly_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -15314,9 +15316,9 @@ func Sum_surface_strictly_decreasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_surface_strictly_increasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -15337,7 +15339,7 @@ func Sum_surface_strictly_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -15346,7 +15348,7 @@ func Sum_surface_strictly_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -15357,9 +15359,9 @@ func Sum_surface_strictly_increasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_surface_summit(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -15375,7 +15377,7 @@ func Sum_surface_summit(data []float64) float64{
                     D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
@@ -15417,9 +15419,9 @@ func Sum_surface_summit(data []float64) float64{
     return add(R,C)    
 }
 func Sum_surface_valley(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -15445,7 +15447,7 @@ func Sum_surface_valley(data []float64) float64{
                     D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
@@ -15466,9 +15468,9 @@ func Sum_surface_valley(data []float64) float64{
     return add(R,C)    
 }
 func Sum_surface_zigzag(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -15485,7 +15487,7 @@ func Sum_surface_zigzag(data []float64) float64{
                     D = 0.0                    
                     currentState = 'c'                    
                 } else if currentState == 'c' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'a'                    
@@ -15519,7 +15521,7 @@ func Sum_surface_zigzag(data []float64) float64{
                     D = 0.0                    
                     currentState = 'f'                    
                 } else if currentState == 'f' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'd'                    
@@ -15533,7 +15535,7 @@ func Sum_surface_zigzag(data []float64) float64{
                     D = 0.0                    
                     currentState = 's'                    
                 } else if currentState == 'c' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -15543,7 +15545,7 @@ func Sum_surface_zigzag(data []float64) float64{
                     D = 0.0                    
                     currentState = 's'                    
                 } else if currentState == 'f' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -15554,9 +15556,9 @@ func Sum_surface_zigzag(data []float64) float64{
     return add(R,C)    
 }
 func Sum_max_bump_on_decreasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(-1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -15613,9 +15615,9 @@ func Sum_max_bump_on_decreasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_max_decreasing(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(-1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -15642,9 +15644,9 @@ func Sum_max_decreasing(data []float64) float64{
     return add(R,C)    
 }
 func Sum_max_decreasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(-1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -15655,7 +15657,7 @@ func Sum_max_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(-1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -15683,9 +15685,9 @@ func Sum_max_decreasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_max_decreasing_terrace(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(-1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -15727,9 +15729,9 @@ func Sum_max_decreasing_terrace(data []float64) float64{
     return add(R,C)    
 }
 func Sum_max_dip_on_increasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(-1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -15786,9 +15788,9 @@ func Sum_max_dip_on_increasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_max_gorge(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(-1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -15817,7 +15819,7 @@ func Sum_max_gorge(data []float64) float64{
                     D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(-1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
@@ -15844,9 +15846,9 @@ func Sum_max_gorge(data []float64) float64{
     return add(R,C)    
 }
 func Sum_max_increasing(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(-1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -15873,9 +15875,9 @@ func Sum_max_increasing(data []float64) float64{
     return add(R,C)    
 }
 func Sum_max_increasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(-1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -15896,7 +15898,7 @@ func Sum_max_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(-1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -15914,9 +15916,9 @@ func Sum_max_increasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_max_increasing_terrace(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(-1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -15958,9 +15960,9 @@ func Sum_max_increasing_terrace(data []float64) float64{
     return add(R,C)    
 }
 func Sum_max_inflexion(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(-1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -16005,9 +16007,9 @@ func Sum_max_inflexion(data []float64) float64{
     return add(R,C)    
 }
 func Sum_max_peak(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(-1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -16021,7 +16023,7 @@ func Sum_max_peak(data []float64) float64{
                     D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(-1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
@@ -16054,9 +16056,9 @@ func Sum_max_peak(data []float64) float64{
     return add(R,C)    
 }
 func Sum_max_plain(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(-1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -16100,9 +16102,9 @@ func Sum_max_plain(data []float64) float64{
     return add(R,C)    
 }
 func Sum_max_plateau(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(-1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -16146,9 +16148,9 @@ func Sum_max_plateau(data []float64) float64{
     return add(R,C)    
 }
 func Sum_max_proper_plain(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(-1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -16190,9 +16192,9 @@ func Sum_max_proper_plain(data []float64) float64{
     return add(R,C)    
 }
 func Sum_max_proper_plateau(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(-1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -16234,9 +16236,9 @@ func Sum_max_proper_plateau(data []float64) float64{
     return add(R,C)    
 }
 func Sum_max_steady(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(-1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -16263,9 +16265,9 @@ func Sum_max_steady(data []float64) float64{
     return add(R,C)    
 }
 func Sum_max_steady_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(-1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -16276,7 +16278,7 @@ func Sum_max_steady_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(-1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -16285,7 +16287,7 @@ func Sum_max_steady_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(-1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -16306,9 +16308,9 @@ func Sum_max_steady_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_max_strictly_decreasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(-1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -16319,7 +16321,7 @@ func Sum_max_strictly_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(-1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -16338,7 +16340,7 @@ func Sum_max_strictly_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(-1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -16349,9 +16351,9 @@ func Sum_max_strictly_decreasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_max_strictly_increasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(-1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -16372,7 +16374,7 @@ func Sum_max_strictly_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(-1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -16381,7 +16383,7 @@ func Sum_max_strictly_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(-1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -16392,9 +16394,9 @@ func Sum_max_strictly_increasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_max_summit(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(-1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -16410,7 +16412,7 @@ func Sum_max_summit(data []float64) float64{
                     D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(-1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
@@ -16452,9 +16454,9 @@ func Sum_max_summit(data []float64) float64{
     return add(R,C)    
 }
 func Sum_max_valley(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(-1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -16480,7 +16482,7 @@ func Sum_max_valley(data []float64) float64{
                     D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(-1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
@@ -16501,9 +16503,9 @@ func Sum_max_valley(data []float64) float64{
     return add(R,C)    
 }
 func Sum_max_zigzag(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(-1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -16520,7 +16522,7 @@ func Sum_max_zigzag(data []float64) float64{
                     D = math.Inf(-1)                    
                     currentState = 'c'                    
                 } else if currentState == 'c' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(-1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'a'                    
@@ -16554,7 +16556,7 @@ func Sum_max_zigzag(data []float64) float64{
                     D = math.Inf(-1)                    
                     currentState = 'f'                    
                 } else if currentState == 'f' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(-1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'd'                    
@@ -16568,7 +16570,7 @@ func Sum_max_zigzag(data []float64) float64{
                     D = math.Inf(-1)                    
                     currentState = 's'                    
                 } else if currentState == 'c' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(-1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -16578,7 +16580,7 @@ func Sum_max_zigzag(data []float64) float64{
                     D = math.Inf(-1)                    
                     currentState = 's'                    
                 } else if currentState == 'f' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(-1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -16589,9 +16591,9 @@ func Sum_max_zigzag(data []float64) float64{
     return add(R,C)    
 }
 func Sum_min_bump_on_decreasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -16648,9 +16650,9 @@ func Sum_min_bump_on_decreasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_min_decreasing(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -16677,9 +16679,9 @@ func Sum_min_decreasing(data []float64) float64{
     return add(R,C)    
 }
 func Sum_min_decreasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -16690,7 +16692,7 @@ func Sum_min_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -16718,9 +16720,9 @@ func Sum_min_decreasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_min_decreasing_terrace(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -16762,9 +16764,9 @@ func Sum_min_decreasing_terrace(data []float64) float64{
     return add(R,C)    
 }
 func Sum_min_dip_on_increasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -16821,9 +16823,9 @@ func Sum_min_dip_on_increasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_min_gorge(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -16852,7 +16854,7 @@ func Sum_min_gorge(data []float64) float64{
                     D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
@@ -16879,9 +16881,9 @@ func Sum_min_gorge(data []float64) float64{
     return add(R,C)    
 }
 func Sum_min_increasing(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -16908,9 +16910,9 @@ func Sum_min_increasing(data []float64) float64{
     return add(R,C)    
 }
 func Sum_min_increasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -16931,7 +16933,7 @@ func Sum_min_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -16949,9 +16951,9 @@ func Sum_min_increasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_min_increasing_terrace(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -16993,9 +16995,9 @@ func Sum_min_increasing_terrace(data []float64) float64{
     return add(R,C)    
 }
 func Sum_min_inflexion(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -17040,9 +17042,9 @@ func Sum_min_inflexion(data []float64) float64{
     return add(R,C)    
 }
 func Sum_min_peak(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -17056,7 +17058,7 @@ func Sum_min_peak(data []float64) float64{
                     D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
@@ -17089,9 +17091,9 @@ func Sum_min_peak(data []float64) float64{
     return add(R,C)    
 }
 func Sum_min_plain(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -17135,9 +17137,9 @@ func Sum_min_plain(data []float64) float64{
     return add(R,C)    
 }
 func Sum_min_plateau(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -17181,9 +17183,9 @@ func Sum_min_plateau(data []float64) float64{
     return add(R,C)    
 }
 func Sum_min_proper_plain(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -17225,9 +17227,9 @@ func Sum_min_proper_plain(data []float64) float64{
     return add(R,C)    
 }
 func Sum_min_proper_plateau(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -17269,9 +17271,9 @@ func Sum_min_proper_plateau(data []float64) float64{
     return add(R,C)    
 }
 func Sum_min_steady(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -17298,9 +17300,9 @@ func Sum_min_steady(data []float64) float64{
     return add(R,C)    
 }
 func Sum_min_steady_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -17311,7 +17313,7 @@ func Sum_min_steady_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -17320,7 +17322,7 @@ func Sum_min_steady_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -17341,9 +17343,9 @@ func Sum_min_steady_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_min_strictly_decreasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -17354,7 +17356,7 @@ func Sum_min_strictly_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -17373,7 +17375,7 @@ func Sum_min_strictly_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -17384,9 +17386,9 @@ func Sum_min_strictly_decreasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_min_strictly_increasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -17407,7 +17409,7 @@ func Sum_min_strictly_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -17416,7 +17418,7 @@ func Sum_min_strictly_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -17427,9 +17429,9 @@ func Sum_min_strictly_increasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_min_summit(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -17445,7 +17447,7 @@ func Sum_min_summit(data []float64) float64{
                     D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
@@ -17487,9 +17489,9 @@ func Sum_min_summit(data []float64) float64{
     return add(R,C)    
 }
 func Sum_min_valley(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -17515,7 +17517,7 @@ func Sum_min_valley(data []float64) float64{
                     D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
@@ -17536,9 +17538,9 @@ func Sum_min_valley(data []float64) float64{
     return add(R,C)    
 }
 func Sum_min_zigzag(data []float64) float64{
-    C := 0
+    C := 0.0
     D := math.Inf(1)
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -17555,7 +17557,7 @@ func Sum_min_zigzag(data []float64) float64{
                     D = math.Inf(1)                    
                     currentState = 'c'                    
                 } else if currentState == 'c' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'a'                    
@@ -17589,7 +17591,7 @@ func Sum_min_zigzag(data []float64) float64{
                     D = math.Inf(1)                    
                     currentState = 'f'                    
                 } else if currentState == 'f' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'd'                    
@@ -17603,7 +17605,7 @@ func Sum_min_zigzag(data []float64) float64{
                     D = math.Inf(1)                    
                     currentState = 's'                    
                 } else if currentState == 'c' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -17613,7 +17615,7 @@ func Sum_min_zigzag(data []float64) float64{
                     D = math.Inf(1)                    
                     currentState = 's'                    
                 } else if currentState == 'f' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = math.Inf(1)                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -17624,9 +17626,9 @@ func Sum_min_zigzag(data []float64) float64{
     return add(R,C)    
 }
 func Sum_range_bump_on_decreasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -17683,9 +17685,9 @@ func Sum_range_bump_on_decreasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_range_decreasing(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -17712,9 +17714,9 @@ func Sum_range_decreasing(data []float64) float64{
     return add(R,C)    
 }
 func Sum_range_decreasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -17725,7 +17727,7 @@ func Sum_range_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -17753,9 +17755,9 @@ func Sum_range_decreasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_range_decreasing_terrace(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -17797,9 +17799,9 @@ func Sum_range_decreasing_terrace(data []float64) float64{
     return add(R,C)    
 }
 func Sum_range_dip_on_increasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -17856,9 +17858,9 @@ func Sum_range_dip_on_increasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_range_gorge(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -17887,7 +17889,7 @@ func Sum_range_gorge(data []float64) float64{
                     D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
@@ -17914,9 +17916,9 @@ func Sum_range_gorge(data []float64) float64{
     return add(R,C)    
 }
 func Sum_range_increasing(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -17943,9 +17945,9 @@ func Sum_range_increasing(data []float64) float64{
     return add(R,C)    
 }
 func Sum_range_increasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -17966,7 +17968,7 @@ func Sum_range_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -17984,9 +17986,9 @@ func Sum_range_increasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_range_increasing_terrace(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -18028,9 +18030,9 @@ func Sum_range_increasing_terrace(data []float64) float64{
     return add(R,C)    
 }
 func Sum_range_inflexion(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -18075,9 +18077,9 @@ func Sum_range_inflexion(data []float64) float64{
     return add(R,C)    
 }
 func Sum_range_peak(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -18091,7 +18093,7 @@ func Sum_range_peak(data []float64) float64{
                     D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
@@ -18124,9 +18126,9 @@ func Sum_range_peak(data []float64) float64{
     return add(R,C)    
 }
 func Sum_range_plain(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -18170,9 +18172,9 @@ func Sum_range_plain(data []float64) float64{
     return add(R,C)    
 }
 func Sum_range_plateau(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -18216,9 +18218,9 @@ func Sum_range_plateau(data []float64) float64{
     return add(R,C)    
 }
 func Sum_range_proper_plain(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -18260,9 +18262,9 @@ func Sum_range_proper_plain(data []float64) float64{
     return add(R,C)    
 }
 func Sum_range_proper_plateau(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -18304,9 +18306,9 @@ func Sum_range_proper_plateau(data []float64) float64{
     return add(R,C)    
 }
 func Sum_range_steady(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -18333,9 +18335,9 @@ func Sum_range_steady(data []float64) float64{
     return add(R,C)    
 }
 func Sum_range_steady_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -18346,7 +18348,7 @@ func Sum_range_steady_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -18355,7 +18357,7 @@ func Sum_range_steady_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -18376,9 +18378,9 @@ func Sum_range_steady_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_range_strictly_decreasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -18389,7 +18391,7 @@ func Sum_range_strictly_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -18408,7 +18410,7 @@ func Sum_range_strictly_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -18419,9 +18421,9 @@ func Sum_range_strictly_decreasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_range_strictly_increasing_sequence(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -18442,7 +18444,7 @@ func Sum_range_strictly_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -18451,7 +18453,7 @@ func Sum_range_strictly_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -18462,9 +18464,9 @@ func Sum_range_strictly_increasing_sequence(data []float64) float64{
     return add(R,C)    
 }
 func Sum_range_summit(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -18480,7 +18482,7 @@ func Sum_range_summit(data []float64) float64{
                     D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
@@ -18522,9 +18524,9 @@ func Sum_range_summit(data []float64) float64{
     return add(R,C)    
 }
 func Sum_range_valley(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -18550,7 +18552,7 @@ func Sum_range_valley(data []float64) float64{
                     D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
@@ -18571,9 +18573,9 @@ func Sum_range_valley(data []float64) float64{
     return add(R,C)    
 }
 func Sum_range_zigzag(data []float64) float64{
-    C := 0
+    C := 0.0
     D := 0.0
-    R := 0
+    R := 0.0
     currentState := 's'
     for i := 1; i < len(data); i++ {    
         if i<len(data) {        
@@ -18590,7 +18592,7 @@ func Sum_range_zigzag(data []float64) float64{
                     D = 0.0                    
                     currentState = 'c'                    
                 } else if currentState == 'c' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'a'                    
@@ -18624,7 +18626,7 @@ func Sum_range_zigzag(data []float64) float64{
                     D = 0.0                    
                     currentState = 'f'                    
                 } else if currentState == 'f' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 'd'                    
@@ -18638,7 +18640,7 @@ func Sum_range_zigzag(data []float64) float64{
                     D = 0.0                    
                     currentState = 's'                    
                 } else if currentState == 'c' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
@@ -18648,7 +18650,7 @@ func Sum_range_zigzag(data []float64) float64{
                     D = 0.0                    
                     currentState = 's'                    
                 } else if currentState == 'f' {                
-                    C = 0                    
+                    C = 0.0                    
                     D = 0.0                    
                     R = add(R_temp,C_temp)                    
                     currentState = 's'                    
