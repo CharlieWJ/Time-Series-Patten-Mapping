@@ -1,0 +1,9 @@
+.vscode/*
+.DS_Store
+*.pyc
+*.py[cod]
+TimeSeriesPatternMapping/src/test.py
+TimeSeriesPatternMapping/src/generated/generated.py
+TimeSeriesPatternMapping/src/generated/__init__.py
+TimeSeriesPatternMapping/src/generation/__init__.py
+
