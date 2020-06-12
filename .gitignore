@@ -2,6 +2,6 @@
 .DS_Store
 *.pyc
 *.py[cod]
-/generated
+generated/
 test.py
 
