@@ -44,7 +44,7 @@ func Max_one_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = 1.0                    
@@ -61,7 +61,7 @@ func Max_one_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = 1.0                    
@@ -149,7 +149,7 @@ func Max_one_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MaxL(D_temp,data[i])                    
+                    D = math.Max(D_temp,data[i])                    
                     currentState = 't'                    
                 }                
             }            
@@ -190,10 +190,10 @@ func Max_one_decreasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -219,7 +219,7 @@ func Max_one_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = 1.0                    
@@ -232,7 +232,7 @@ func Max_one_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = 1.0                    
@@ -289,7 +289,7 @@ func Max_one_gorge(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 1.0                    
@@ -297,20 +297,20 @@ func Max_one_gorge(data []float64) float64{
                     R = math.Max(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = math.MaxM(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'u'                    
                 }                
             }            
@@ -380,7 +380,7 @@ func Max_one_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MaxL(D_temp,data[i])                    
+                    D = math.Max(D_temp,data[i])                    
                     currentState = 't'                    
                 }                
             }            
@@ -421,10 +421,10 @@ func Max_one_increasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -446,7 +446,7 @@ func Max_one_inflexion(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     D = 1.0                    
@@ -461,17 +461,17 @@ func Max_one_inflexion(data []float64) float64{
                     R = math.Max(R_temp,math.Max(D_temp,0.0))                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -493,7 +493,7 @@ func Max_one_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 1.0                    
@@ -517,10 +517,10 @@ func Max_one_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = math.MaxM(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -563,10 +563,10 @@ func Max_one_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -609,10 +609,10 @@ func Max_one_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -653,10 +653,10 @@ func Max_one_proper_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -697,10 +697,10 @@ func Max_one_proper_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -882,7 +882,7 @@ func Max_one_summit(data []float64) float64{
                     D = 1.0                    
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 1.0                    
@@ -890,7 +890,7 @@ func Max_one_summit(data []float64) float64{
                     R = math.Max(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 }                
             } else if data[i] < data[i-1] {            
@@ -912,13 +912,13 @@ func Max_one_summit(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = math.MaxM(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'u'                    
                 }                
             }            
@@ -952,7 +952,7 @@ func Max_one_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 1.0                    
@@ -964,10 +964,10 @@ func Max_one_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = math.MaxM(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -1000,7 +1000,7 @@ func Max_one_zigzag(data []float64) float64{
                     R = math.Max(R_temp,C_temp)                    
                     currentState = 'a'                    
                 } else if currentState == 'd' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'e'                    
                 } else if currentState == 'e' {                
                     D = 1.0                    
@@ -1014,7 +1014,7 @@ func Max_one_zigzag(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'd'                    
                 } else if currentState == 'a' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'b'                    
                 } else if currentState == 'b' {                
                     currentState = 'd'                    
@@ -1079,7 +1079,7 @@ func Max_width_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = 0.0                    
@@ -1096,7 +1096,7 @@ func Max_width_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = 0.0                    
@@ -1184,7 +1184,7 @@ func Max_width_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = addL(D_temp,1)                    
+                    D = add(D_temp,1)                    
                     currentState = 't'                    
                 }                
             }            
@@ -1225,10 +1225,10 @@ func Max_width_decreasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -1254,7 +1254,7 @@ func Max_width_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = 0.0                    
@@ -1267,7 +1267,7 @@ func Max_width_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = 0.0                    
@@ -1324,7 +1324,7 @@ func Max_width_gorge(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0.0                    
@@ -1332,20 +1332,20 @@ func Max_width_gorge(data []float64) float64{
                     R = math.Max(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = addM(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'u'                    
                 }                
             }            
@@ -1415,7 +1415,7 @@ func Max_width_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = addL(D_temp,1)                    
+                    D = add(D_temp,1)                    
                     currentState = 't'                    
                 }                
             }            
@@ -1456,10 +1456,10 @@ func Max_width_increasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -1481,7 +1481,7 @@ func Max_width_inflexion(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     D = 0.0                    
@@ -1496,17 +1496,17 @@ func Max_width_inflexion(data []float64) float64{
                     R = math.Max(R_temp,add(D_temp,1.0))                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -1528,7 +1528,7 @@ func Max_width_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0.0                    
@@ -1552,10 +1552,10 @@ func Max_width_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = addM(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -1598,10 +1598,10 @@ func Max_width_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -1644,10 +1644,10 @@ func Max_width_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -1688,10 +1688,10 @@ func Max_width_proper_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -1732,10 +1732,10 @@ func Max_width_proper_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -1917,7 +1917,7 @@ func Max_width_summit(data []float64) float64{
                     D = 0.0                    
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0.0                    
@@ -1925,7 +1925,7 @@ func Max_width_summit(data []float64) float64{
                     R = math.Max(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 }                
             } else if data[i] < data[i-1] {            
@@ -1947,13 +1947,13 @@ func Max_width_summit(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = addM(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'u'                    
                 }                
             }            
@@ -1987,7 +1987,7 @@ func Max_width_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0.0                    
@@ -1999,10 +1999,10 @@ func Max_width_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = addM(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -2035,7 +2035,7 @@ func Max_width_zigzag(data []float64) float64{
                     R = math.Max(R_temp,C_temp)                    
                     currentState = 'a'                    
                 } else if currentState == 'd' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'e'                    
                 } else if currentState == 'e' {                
                     D = 0.0                    
@@ -2049,7 +2049,7 @@ func Max_width_zigzag(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'd'                    
                 } else if currentState == 'a' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'b'                    
                 } else if currentState == 'b' {                
                     currentState = 'd'                    
@@ -2114,7 +2114,7 @@ func Max_surface_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = 0.0                    
@@ -2131,7 +2131,7 @@ func Max_surface_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = 0.0                    
@@ -2219,7 +2219,7 @@ func Max_surface_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = addL(D_temp,data[i])                    
+                    D = add(D_temp,data[i])                    
                     currentState = 't'                    
                 }                
             }            
@@ -2260,10 +2260,10 @@ func Max_surface_decreasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -2289,7 +2289,7 @@ func Max_surface_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = 0.0                    
@@ -2302,7 +2302,7 @@ func Max_surface_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = 0.0                    
@@ -2359,7 +2359,7 @@ func Max_surface_gorge(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = math.Inf(-1)                    
@@ -2367,20 +2367,20 @@ func Max_surface_gorge(data []float64) float64{
                     R = math.Max(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = addM(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 }                
             }            
@@ -2450,7 +2450,7 @@ func Max_surface_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = addL(D_temp,data[i])                    
+                    D = add(D_temp,data[i])                    
                     currentState = 't'                    
                 }                
             }            
@@ -2491,10 +2491,10 @@ func Max_surface_increasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -2516,7 +2516,7 @@ func Max_surface_inflexion(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     D = 0.0                    
@@ -2531,17 +2531,17 @@ func Max_surface_inflexion(data []float64) float64{
                     R = math.Max(R_temp,add(D_temp,data[i-1]))                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -2563,7 +2563,7 @@ func Max_surface_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = math.Inf(-1)                    
@@ -2587,10 +2587,10 @@ func Max_surface_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = addM(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -2633,10 +2633,10 @@ func Max_surface_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -2679,10 +2679,10 @@ func Max_surface_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -2723,10 +2723,10 @@ func Max_surface_proper_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -2767,10 +2767,10 @@ func Max_surface_proper_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -2952,7 +2952,7 @@ func Max_surface_summit(data []float64) float64{
                     D = 0.0                    
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = math.Inf(-1)                    
@@ -2960,7 +2960,7 @@ func Max_surface_summit(data []float64) float64{
                     R = math.Max(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 }                
             } else if data[i] < data[i-1] {            
@@ -2982,13 +2982,13 @@ func Max_surface_summit(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = addM(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 }                
             }            
@@ -3022,7 +3022,7 @@ func Max_surface_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = math.Inf(-1)                    
@@ -3034,10 +3034,10 @@ func Max_surface_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = addM(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -3070,7 +3070,7 @@ func Max_surface_zigzag(data []float64) float64{
                     R = math.Max(R_temp,C_temp)                    
                     currentState = 'a'                    
                 } else if currentState == 'd' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'e'                    
                 } else if currentState == 'e' {                
                     D = 0.0                    
@@ -3084,7 +3084,7 @@ func Max_surface_zigzag(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'd'                    
                 } else if currentState == 'a' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'b'                    
                 } else if currentState == 'b' {                
                     currentState = 'd'                    
@@ -3149,7 +3149,7 @@ func Max_max_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = math.Inf(-1)                    
@@ -3166,7 +3166,7 @@ func Max_max_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = math.Inf(-1)                    
@@ -3254,7 +3254,7 @@ func Max_max_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MaxL(D_temp,data[i])                    
+                    D = math.Max(D_temp,data[i])                    
                     currentState = 't'                    
                 }                
             }            
@@ -3295,10 +3295,10 @@ func Max_max_decreasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -3324,7 +3324,7 @@ func Max_max_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = math.Inf(-1)                    
@@ -3337,7 +3337,7 @@ func Max_max_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = math.Inf(-1)                    
@@ -3394,7 +3394,7 @@ func Max_max_gorge(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = math.Inf(-1)                    
@@ -3402,20 +3402,20 @@ func Max_max_gorge(data []float64) float64{
                     R = math.Max(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = math.MaxM(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 }                
             }            
@@ -3485,7 +3485,7 @@ func Max_max_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MaxL(D_temp,data[i])                    
+                    D = math.Max(D_temp,data[i])                    
                     currentState = 't'                    
                 }                
             }            
@@ -3526,10 +3526,10 @@ func Max_max_increasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -3551,7 +3551,7 @@ func Max_max_inflexion(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     D = math.Inf(-1)                    
@@ -3566,17 +3566,17 @@ func Max_max_inflexion(data []float64) float64{
                     R = math.Max(R_temp,math.Max(D_temp,data[i-1]))                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -3598,7 +3598,7 @@ func Max_max_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = math.Inf(-1)                    
@@ -3622,10 +3622,10 @@ func Max_max_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = math.MaxM(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -3668,10 +3668,10 @@ func Max_max_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -3714,10 +3714,10 @@ func Max_max_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -3758,10 +3758,10 @@ func Max_max_proper_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -3802,10 +3802,10 @@ func Max_max_proper_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -3987,7 +3987,7 @@ func Max_max_summit(data []float64) float64{
                     D = math.Inf(-1)                    
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = math.Inf(-1)                    
@@ -3995,7 +3995,7 @@ func Max_max_summit(data []float64) float64{
                     R = math.Max(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 }                
             } else if data[i] < data[i-1] {            
@@ -4017,13 +4017,13 @@ func Max_max_summit(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = math.MaxM(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 }                
             }            
@@ -4057,7 +4057,7 @@ func Max_max_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = math.Inf(-1)                    
@@ -4069,10 +4069,10 @@ func Max_max_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = math.MaxM(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -4105,7 +4105,7 @@ func Max_max_zigzag(data []float64) float64{
                     R = math.Max(R_temp,C_temp)                    
                     currentState = 'a'                    
                 } else if currentState == 'd' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'e'                    
                 } else if currentState == 'e' {                
                     D = math.Inf(-1)                    
@@ -4119,7 +4119,7 @@ func Max_max_zigzag(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'd'                    
                 } else if currentState == 'a' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'b'                    
                 } else if currentState == 'b' {                
                     currentState = 'd'                    
@@ -4184,7 +4184,7 @@ func Max_min_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = math.Inf(1)                    
@@ -4201,7 +4201,7 @@ func Max_min_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = math.Inf(1)                    
@@ -4289,7 +4289,7 @@ func Max_min_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MinL(D_temp,data[i])                    
+                    D = math.Min(D_temp,data[i])                    
                     currentState = 't'                    
                 }                
             }            
@@ -4330,10 +4330,10 @@ func Max_min_decreasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -4359,7 +4359,7 @@ func Max_min_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = math.Inf(1)                    
@@ -4372,7 +4372,7 @@ func Max_min_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = math.Inf(1)                    
@@ -4429,7 +4429,7 @@ func Max_min_gorge(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = math.Inf(-1)                    
@@ -4437,20 +4437,20 @@ func Max_min_gorge(data []float64) float64{
                     R = math.Max(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = math.MinM(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 }                
             }            
@@ -4520,7 +4520,7 @@ func Max_min_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MinL(D_temp,data[i])                    
+                    D = math.Min(D_temp,data[i])                    
                     currentState = 't'                    
                 }                
             }            
@@ -4561,10 +4561,10 @@ func Max_min_increasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -4586,7 +4586,7 @@ func Max_min_inflexion(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     D = math.Inf(1)                    
@@ -4601,17 +4601,17 @@ func Max_min_inflexion(data []float64) float64{
                     R = math.Max(R_temp,math.Min(D_temp,data[i-1]))                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -4633,7 +4633,7 @@ func Max_min_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = math.Inf(-1)                    
@@ -4657,10 +4657,10 @@ func Max_min_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = math.MinM(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -4703,10 +4703,10 @@ func Max_min_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -4749,10 +4749,10 @@ func Max_min_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -4793,10 +4793,10 @@ func Max_min_proper_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -4837,10 +4837,10 @@ func Max_min_proper_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -5022,7 +5022,7 @@ func Max_min_summit(data []float64) float64{
                     D = math.Inf(1)                    
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = math.Inf(-1)                    
@@ -5030,7 +5030,7 @@ func Max_min_summit(data []float64) float64{
                     R = math.Max(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 }                
             } else if data[i] < data[i-1] {            
@@ -5052,13 +5052,13 @@ func Max_min_summit(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = math.MinM(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 }                
             }            
@@ -5092,7 +5092,7 @@ func Max_min_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = math.Inf(-1)                    
@@ -5104,10 +5104,10 @@ func Max_min_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = math.MinM(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -5140,7 +5140,7 @@ func Max_min_zigzag(data []float64) float64{
                     R = math.Max(R_temp,C_temp)                    
                     currentState = 'a'                    
                 } else if currentState == 'd' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'e'                    
                 } else if currentState == 'e' {                
                     D = math.Inf(1)                    
@@ -5154,7 +5154,7 @@ func Max_min_zigzag(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'd'                    
                 } else if currentState == 'a' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'b'                    
                 } else if currentState == 'b' {                
                     currentState = 'd'                    
@@ -5219,7 +5219,7 @@ func Max_range_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = 0.0                    
@@ -5236,7 +5236,7 @@ func Max_range_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = 0.0                    
@@ -5324,7 +5324,7 @@ func Max_range_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = L(D_temp,data[i])                    
+                    D = (D_temp,data[i])                    
                     currentState = 't'                    
                 }                
             }            
@@ -5365,10 +5365,10 @@ func Max_range_decreasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -5394,7 +5394,7 @@ func Max_range_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = 0.0                    
@@ -5407,7 +5407,7 @@ func Max_range_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = 0.0                    
@@ -5464,7 +5464,7 @@ func Max_range_gorge(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0.0                    
@@ -5472,20 +5472,20 @@ func Max_range_gorge(data []float64) float64{
                     R = math.Max(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = M(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'u'                    
                 }                
             }            
@@ -5555,7 +5555,7 @@ func Max_range_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = L(D_temp,data[i])                    
+                    D = (D_temp,data[i])                    
                     currentState = 't'                    
                 }                
             }            
@@ -5596,10 +5596,10 @@ func Max_range_increasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -5621,7 +5621,7 @@ func Max_range_inflexion(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     D = 0.0                    
@@ -5636,17 +5636,17 @@ func Max_range_inflexion(data []float64) float64{
                     R = math.Max(R_temp,(D_temp,data[i-1]))                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -5668,7 +5668,7 @@ func Max_range_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0.0                    
@@ -5692,10 +5692,10 @@ func Max_range_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = M(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -5738,10 +5738,10 @@ func Max_range_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -5784,10 +5784,10 @@ func Max_range_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -5828,10 +5828,10 @@ func Max_range_proper_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -5872,10 +5872,10 @@ func Max_range_proper_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -6057,7 +6057,7 @@ func Max_range_summit(data []float64) float64{
                     D = 0.0                    
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0.0                    
@@ -6065,7 +6065,7 @@ func Max_range_summit(data []float64) float64{
                     R = math.Max(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 }                
             } else if data[i] < data[i-1] {            
@@ -6087,13 +6087,13 @@ func Max_range_summit(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = M(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'u'                    
                 }                
             }            
@@ -6127,7 +6127,7 @@ func Max_range_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0.0                    
@@ -6139,10 +6139,10 @@ func Max_range_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = M(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -6175,7 +6175,7 @@ func Max_range_zigzag(data []float64) float64{
                     R = math.Max(R_temp,C_temp)                    
                     currentState = 'a'                    
                 } else if currentState == 'd' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'e'                    
                 } else if currentState == 'e' {                
                     D = 0.0                    
@@ -6189,7 +6189,7 @@ func Max_range_zigzag(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'd'                    
                 } else if currentState == 'a' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'b'                    
                 } else if currentState == 'b' {                
                     currentState = 'd'                    
@@ -6254,7 +6254,7 @@ func Min_one_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = 1.0                    
@@ -6271,7 +6271,7 @@ func Min_one_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = 1.0                    
@@ -6359,7 +6359,7 @@ func Min_one_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MaxL(D_temp,data[i])                    
+                    D = math.Max(D_temp,data[i])                    
                     currentState = 't'                    
                 }                
             }            
@@ -6400,10 +6400,10 @@ func Min_one_decreasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -6429,7 +6429,7 @@ func Min_one_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = 1.0                    
@@ -6442,7 +6442,7 @@ func Min_one_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = 1.0                    
@@ -6499,7 +6499,7 @@ func Min_one_gorge(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 1.0                    
@@ -6507,20 +6507,20 @@ func Min_one_gorge(data []float64) float64{
                     R = math.Min(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = math.MaxM(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'u'                    
                 }                
             }            
@@ -6590,7 +6590,7 @@ func Min_one_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MaxL(D_temp,data[i])                    
+                    D = math.Max(D_temp,data[i])                    
                     currentState = 't'                    
                 }                
             }            
@@ -6631,10 +6631,10 @@ func Min_one_increasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -6656,7 +6656,7 @@ func Min_one_inflexion(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     D = 1.0                    
@@ -6671,17 +6671,17 @@ func Min_one_inflexion(data []float64) float64{
                     R = math.Min(R_temp,math.Max(D_temp,0.0))                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -6703,7 +6703,7 @@ func Min_one_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 1.0                    
@@ -6727,10 +6727,10 @@ func Min_one_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = math.MaxM(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -6773,10 +6773,10 @@ func Min_one_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -6819,10 +6819,10 @@ func Min_one_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -6863,10 +6863,10 @@ func Min_one_proper_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -6907,10 +6907,10 @@ func Min_one_proper_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -7092,7 +7092,7 @@ func Min_one_summit(data []float64) float64{
                     D = 1.0                    
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 1.0                    
@@ -7100,7 +7100,7 @@ func Min_one_summit(data []float64) float64{
                     R = math.Min(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 }                
             } else if data[i] < data[i-1] {            
@@ -7122,13 +7122,13 @@ func Min_one_summit(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = math.MaxM(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'u'                    
                 }                
             }            
@@ -7162,7 +7162,7 @@ func Min_one_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 1.0                    
@@ -7174,10 +7174,10 @@ func Min_one_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = math.MaxM(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -7210,7 +7210,7 @@ func Min_one_zigzag(data []float64) float64{
                     R = math.Min(R_temp,C_temp)                    
                     currentState = 'a'                    
                 } else if currentState == 'd' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'e'                    
                 } else if currentState == 'e' {                
                     D = 1.0                    
@@ -7224,7 +7224,7 @@ func Min_one_zigzag(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'd'                    
                 } else if currentState == 'a' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'b'                    
                 } else if currentState == 'b' {                
                     currentState = 'd'                    
@@ -7289,7 +7289,7 @@ func Min_width_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = 0.0                    
@@ -7306,7 +7306,7 @@ func Min_width_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = 0.0                    
@@ -7394,7 +7394,7 @@ func Min_width_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = addL(D_temp,1)                    
+                    D = add(D_temp,1)                    
                     currentState = 't'                    
                 }                
             }            
@@ -7435,10 +7435,10 @@ func Min_width_decreasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -7464,7 +7464,7 @@ func Min_width_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = 0.0                    
@@ -7477,7 +7477,7 @@ func Min_width_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = 0.0                    
@@ -7534,7 +7534,7 @@ func Min_width_gorge(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = len(data)                    
@@ -7542,20 +7542,20 @@ func Min_width_gorge(data []float64) float64{
                     R = math.Min(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = addM(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'u'                    
                 }                
             }            
@@ -7625,7 +7625,7 @@ func Min_width_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = addL(D_temp,1)                    
+                    D = add(D_temp,1)                    
                     currentState = 't'                    
                 }                
             }            
@@ -7666,10 +7666,10 @@ func Min_width_increasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -7691,7 +7691,7 @@ func Min_width_inflexion(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     D = 0.0                    
@@ -7706,17 +7706,17 @@ func Min_width_inflexion(data []float64) float64{
                     R = math.Min(R_temp,add(D_temp,1.0))                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -7738,7 +7738,7 @@ func Min_width_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = len(data)                    
@@ -7762,10 +7762,10 @@ func Min_width_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = addM(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -7808,10 +7808,10 @@ func Min_width_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -7854,10 +7854,10 @@ func Min_width_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -7898,10 +7898,10 @@ func Min_width_proper_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -7942,10 +7942,10 @@ func Min_width_proper_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -8127,7 +8127,7 @@ func Min_width_summit(data []float64) float64{
                     D = 0.0                    
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = len(data)                    
@@ -8135,7 +8135,7 @@ func Min_width_summit(data []float64) float64{
                     R = math.Min(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 }                
             } else if data[i] < data[i-1] {            
@@ -8157,13 +8157,13 @@ func Min_width_summit(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = addM(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'u'                    
                 }                
             }            
@@ -8197,7 +8197,7 @@ func Min_width_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = len(data)                    
@@ -8209,10 +8209,10 @@ func Min_width_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = addM(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -8245,7 +8245,7 @@ func Min_width_zigzag(data []float64) float64{
                     R = math.Min(R_temp,C_temp)                    
                     currentState = 'a'                    
                 } else if currentState == 'd' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'e'                    
                 } else if currentState == 'e' {                
                     D = 0.0                    
@@ -8259,7 +8259,7 @@ func Min_width_zigzag(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'd'                    
                 } else if currentState == 'a' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'b'                    
                 } else if currentState == 'b' {                
                     currentState = 'd'                    
@@ -8324,7 +8324,7 @@ func Min_surface_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = 0.0                    
@@ -8341,7 +8341,7 @@ func Min_surface_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = 0.0                    
@@ -8429,7 +8429,7 @@ func Min_surface_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = addL(D_temp,data[i])                    
+                    D = add(D_temp,data[i])                    
                     currentState = 't'                    
                 }                
             }            
@@ -8470,10 +8470,10 @@ func Min_surface_decreasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -8499,7 +8499,7 @@ func Min_surface_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = 0.0                    
@@ -8512,7 +8512,7 @@ func Min_surface_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = 0.0                    
@@ -8569,7 +8569,7 @@ func Min_surface_gorge(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = math.Inf(1)                    
@@ -8577,20 +8577,20 @@ func Min_surface_gorge(data []float64) float64{
                     R = math.Min(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = addM(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 }                
             }            
@@ -8660,7 +8660,7 @@ func Min_surface_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = addL(D_temp,data[i])                    
+                    D = add(D_temp,data[i])                    
                     currentState = 't'                    
                 }                
             }            
@@ -8701,10 +8701,10 @@ func Min_surface_increasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -8726,7 +8726,7 @@ func Min_surface_inflexion(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     D = 0.0                    
@@ -8741,17 +8741,17 @@ func Min_surface_inflexion(data []float64) float64{
                     R = math.Min(R_temp,add(D_temp,data[i-1]))                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -8773,7 +8773,7 @@ func Min_surface_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = math.Inf(1)                    
@@ -8797,10 +8797,10 @@ func Min_surface_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = addM(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -8843,10 +8843,10 @@ func Min_surface_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -8889,10 +8889,10 @@ func Min_surface_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -8933,10 +8933,10 @@ func Min_surface_proper_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -8977,10 +8977,10 @@ func Min_surface_proper_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -9162,7 +9162,7 @@ func Min_surface_summit(data []float64) float64{
                     D = 0.0                    
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = math.Inf(1)                    
@@ -9170,7 +9170,7 @@ func Min_surface_summit(data []float64) float64{
                     R = math.Min(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 }                
             } else if data[i] < data[i-1] {            
@@ -9192,13 +9192,13 @@ func Min_surface_summit(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = addM(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 }                
             }            
@@ -9232,7 +9232,7 @@ func Min_surface_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = math.Inf(1)                    
@@ -9244,10 +9244,10 @@ func Min_surface_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = addM(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -9280,7 +9280,7 @@ func Min_surface_zigzag(data []float64) float64{
                     R = math.Min(R_temp,C_temp)                    
                     currentState = 'a'                    
                 } else if currentState == 'd' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'e'                    
                 } else if currentState == 'e' {                
                     D = 0.0                    
@@ -9294,7 +9294,7 @@ func Min_surface_zigzag(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'd'                    
                 } else if currentState == 'a' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'b'                    
                 } else if currentState == 'b' {                
                     currentState = 'd'                    
@@ -9359,7 +9359,7 @@ func Min_max_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = math.Inf(-1)                    
@@ -9376,7 +9376,7 @@ func Min_max_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = math.Inf(-1)                    
@@ -9464,7 +9464,7 @@ func Min_max_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MaxL(D_temp,data[i])                    
+                    D = math.Max(D_temp,data[i])                    
                     currentState = 't'                    
                 }                
             }            
@@ -9505,10 +9505,10 @@ func Min_max_decreasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -9534,7 +9534,7 @@ func Min_max_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = math.Inf(-1)                    
@@ -9547,7 +9547,7 @@ func Min_max_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = math.Inf(-1)                    
@@ -9604,7 +9604,7 @@ func Min_max_gorge(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = math.Inf(1)                    
@@ -9612,20 +9612,20 @@ func Min_max_gorge(data []float64) float64{
                     R = math.Min(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = math.MaxM(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 }                
             }            
@@ -9695,7 +9695,7 @@ func Min_max_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MaxL(D_temp,data[i])                    
+                    D = math.Max(D_temp,data[i])                    
                     currentState = 't'                    
                 }                
             }            
@@ -9736,10 +9736,10 @@ func Min_max_increasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -9761,7 +9761,7 @@ func Min_max_inflexion(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     D = math.Inf(-1)                    
@@ -9776,17 +9776,17 @@ func Min_max_inflexion(data []float64) float64{
                     R = math.Min(R_temp,math.Max(D_temp,data[i-1]))                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -9808,7 +9808,7 @@ func Min_max_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = math.Inf(1)                    
@@ -9832,10 +9832,10 @@ func Min_max_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = math.MaxM(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -9878,10 +9878,10 @@ func Min_max_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -9924,10 +9924,10 @@ func Min_max_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -9968,10 +9968,10 @@ func Min_max_proper_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -10012,10 +10012,10 @@ func Min_max_proper_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -10197,7 +10197,7 @@ func Min_max_summit(data []float64) float64{
                     D = math.Inf(-1)                    
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = math.Inf(1)                    
@@ -10205,7 +10205,7 @@ func Min_max_summit(data []float64) float64{
                     R = math.Min(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 }                
             } else if data[i] < data[i-1] {            
@@ -10227,13 +10227,13 @@ func Min_max_summit(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = math.MaxM(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 }                
             }            
@@ -10267,7 +10267,7 @@ func Min_max_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = math.Inf(1)                    
@@ -10279,10 +10279,10 @@ func Min_max_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = math.MaxM(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -10315,7 +10315,7 @@ func Min_max_zigzag(data []float64) float64{
                     R = math.Min(R_temp,C_temp)                    
                     currentState = 'a'                    
                 } else if currentState == 'd' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'e'                    
                 } else if currentState == 'e' {                
                     D = math.Inf(-1)                    
@@ -10329,7 +10329,7 @@ func Min_max_zigzag(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'd'                    
                 } else if currentState == 'a' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'b'                    
                 } else if currentState == 'b' {                
                     currentState = 'd'                    
@@ -10394,7 +10394,7 @@ func Min_min_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = math.Inf(1)                    
@@ -10411,7 +10411,7 @@ func Min_min_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = math.Inf(1)                    
@@ -10499,7 +10499,7 @@ func Min_min_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MinL(D_temp,data[i])                    
+                    D = math.Min(D_temp,data[i])                    
                     currentState = 't'                    
                 }                
             }            
@@ -10540,10 +10540,10 @@ func Min_min_decreasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -10569,7 +10569,7 @@ func Min_min_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = math.Inf(1)                    
@@ -10582,7 +10582,7 @@ func Min_min_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = math.Inf(1)                    
@@ -10639,7 +10639,7 @@ func Min_min_gorge(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = math.Inf(1)                    
@@ -10647,20 +10647,20 @@ func Min_min_gorge(data []float64) float64{
                     R = math.Min(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = math.MinM(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 }                
             }            
@@ -10730,7 +10730,7 @@ func Min_min_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MinL(D_temp,data[i])                    
+                    D = math.Min(D_temp,data[i])                    
                     currentState = 't'                    
                 }                
             }            
@@ -10771,10 +10771,10 @@ func Min_min_increasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -10796,7 +10796,7 @@ func Min_min_inflexion(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     D = math.Inf(1)                    
@@ -10811,17 +10811,17 @@ func Min_min_inflexion(data []float64) float64{
                     R = math.Min(R_temp,math.Min(D_temp,data[i-1]))                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -10843,7 +10843,7 @@ func Min_min_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = math.Inf(1)                    
@@ -10867,10 +10867,10 @@ func Min_min_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = math.MinM(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -10913,10 +10913,10 @@ func Min_min_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -10959,10 +10959,10 @@ func Min_min_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -11003,10 +11003,10 @@ func Min_min_proper_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -11047,10 +11047,10 @@ func Min_min_proper_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -11232,7 +11232,7 @@ func Min_min_summit(data []float64) float64{
                     D = math.Inf(1)                    
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = math.Inf(1)                    
@@ -11240,7 +11240,7 @@ func Min_min_summit(data []float64) float64{
                     R = math.Min(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 }                
             } else if data[i] < data[i-1] {            
@@ -11262,13 +11262,13 @@ func Min_min_summit(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = math.MinM(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 }                
             }            
@@ -11302,7 +11302,7 @@ func Min_min_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = math.Inf(1)                    
@@ -11314,10 +11314,10 @@ func Min_min_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = math.MinM(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -11350,7 +11350,7 @@ func Min_min_zigzag(data []float64) float64{
                     R = math.Min(R_temp,C_temp)                    
                     currentState = 'a'                    
                 } else if currentState == 'd' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'e'                    
                 } else if currentState == 'e' {                
                     D = math.Inf(1)                    
@@ -11364,7 +11364,7 @@ func Min_min_zigzag(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'd'                    
                 } else if currentState == 'a' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'b'                    
                 } else if currentState == 'b' {                
                     currentState = 'd'                    
@@ -11429,7 +11429,7 @@ func Min_range_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = 0.0                    
@@ -11446,7 +11446,7 @@ func Min_range_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = 0.0                    
@@ -11534,7 +11534,7 @@ func Min_range_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = L(D_temp,data[i])                    
+                    D = (D_temp,data[i])                    
                     currentState = 't'                    
                 }                
             }            
@@ -11575,10 +11575,10 @@ func Min_range_decreasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -11604,7 +11604,7 @@ func Min_range_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = 0.0                    
@@ -11617,7 +11617,7 @@ func Min_range_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = 0.0                    
@@ -11674,7 +11674,7 @@ func Min_range_gorge(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = math.Inf(1)                    
@@ -11682,20 +11682,20 @@ func Min_range_gorge(data []float64) float64{
                     R = math.Min(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = M(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'u'                    
                 }                
             }            
@@ -11765,7 +11765,7 @@ func Min_range_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = L(D_temp,data[i])                    
+                    D = (D_temp,data[i])                    
                     currentState = 't'                    
                 }                
             }            
@@ -11806,10 +11806,10 @@ func Min_range_increasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -11831,7 +11831,7 @@ func Min_range_inflexion(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     D = 0.0                    
@@ -11846,17 +11846,17 @@ func Min_range_inflexion(data []float64) float64{
                     R = math.Min(R_temp,(D_temp,data[i-1]))                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -11878,7 +11878,7 @@ func Min_range_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = math.Inf(1)                    
@@ -11902,10 +11902,10 @@ func Min_range_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = M(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -11948,10 +11948,10 @@ func Min_range_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -11994,10 +11994,10 @@ func Min_range_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -12038,10 +12038,10 @@ func Min_range_proper_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -12082,10 +12082,10 @@ func Min_range_proper_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -12267,7 +12267,7 @@ func Min_range_summit(data []float64) float64{
                     D = 0.0                    
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = math.Inf(1)                    
@@ -12275,7 +12275,7 @@ func Min_range_summit(data []float64) float64{
                     R = math.Min(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 }                
             } else if data[i] < data[i-1] {            
@@ -12297,13 +12297,13 @@ func Min_range_summit(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = M(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'u'                    
                 }                
             }            
@@ -12337,7 +12337,7 @@ func Min_range_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = math.Inf(1)                    
@@ -12349,10 +12349,10 @@ func Min_range_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = M(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -12385,7 +12385,7 @@ func Min_range_zigzag(data []float64) float64{
                     R = math.Min(R_temp,C_temp)                    
                     currentState = 'a'                    
                 } else if currentState == 'd' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'e'                    
                 } else if currentState == 'e' {                
                     D = 0.0                    
@@ -12399,7 +12399,7 @@ func Min_range_zigzag(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'd'                    
                 } else if currentState == 'a' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'b'                    
                 } else if currentState == 'b' {                
                     currentState = 'd'                    
@@ -12464,7 +12464,7 @@ func Sum_one_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = 1.0                    
@@ -12481,7 +12481,7 @@ func Sum_one_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = 1.0                    
@@ -12569,7 +12569,7 @@ func Sum_one_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MaxL(D_temp,data[i])                    
+                    D = math.Max(D_temp,data[i])                    
                     currentState = 't'                    
                 }                
             }            
@@ -12610,10 +12610,10 @@ func Sum_one_decreasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -12639,7 +12639,7 @@ func Sum_one_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = 1.0                    
@@ -12652,7 +12652,7 @@ func Sum_one_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = 1.0                    
@@ -12709,7 +12709,7 @@ func Sum_one_gorge(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0                    
@@ -12717,20 +12717,20 @@ func Sum_one_gorge(data []float64) float64{
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = math.MaxM(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'u'                    
                 }                
             }            
@@ -12800,7 +12800,7 @@ func Sum_one_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MaxL(D_temp,data[i])                    
+                    D = math.Max(D_temp,data[i])                    
                     currentState = 't'                    
                 }                
             }            
@@ -12841,10 +12841,10 @@ func Sum_one_increasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -12866,7 +12866,7 @@ func Sum_one_inflexion(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     D = 1.0                    
@@ -12881,17 +12881,17 @@ func Sum_one_inflexion(data []float64) float64{
                     R = add(R_temp,math.Max(D_temp,0.0))                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -12913,7 +12913,7 @@ func Sum_one_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0                    
@@ -12937,10 +12937,10 @@ func Sum_one_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = math.MaxM(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -12983,10 +12983,10 @@ func Sum_one_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -13029,10 +13029,10 @@ func Sum_one_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -13073,10 +13073,10 @@ func Sum_one_proper_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -13117,10 +13117,10 @@ func Sum_one_proper_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -13302,7 +13302,7 @@ func Sum_one_summit(data []float64) float64{
                     D = 1.0                    
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0                    
@@ -13310,7 +13310,7 @@ func Sum_one_summit(data []float64) float64{
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 }                
             } else if data[i] < data[i-1] {            
@@ -13332,13 +13332,13 @@ func Sum_one_summit(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = math.MaxM(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'u'                    
                 }                
             }            
@@ -13372,7 +13372,7 @@ func Sum_one_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0                    
@@ -13384,10 +13384,10 @@ func Sum_one_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = math.MaxM(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -13420,7 +13420,7 @@ func Sum_one_zigzag(data []float64) float64{
                     R = add(R_temp,C_temp)                    
                     currentState = 'a'                    
                 } else if currentState == 'd' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'e'                    
                 } else if currentState == 'e' {                
                     D = 1.0                    
@@ -13434,7 +13434,7 @@ func Sum_one_zigzag(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'd'                    
                 } else if currentState == 'a' {                
-                    D = math.MaxX(D_temp,0.0)                    
+                    D = math.Max(D_temp,0.0)                    
                     currentState = 'b'                    
                 } else if currentState == 'b' {                
                     currentState = 'd'                    
@@ -13499,7 +13499,7 @@ func Sum_width_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = 0.0                    
@@ -13516,7 +13516,7 @@ func Sum_width_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = 0.0                    
@@ -13604,7 +13604,7 @@ func Sum_width_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = addL(D_temp,1)                    
+                    D = add(D_temp,1)                    
                     currentState = 't'                    
                 }                
             }            
@@ -13645,10 +13645,10 @@ func Sum_width_decreasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -13674,7 +13674,7 @@ func Sum_width_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = 0.0                    
@@ -13687,7 +13687,7 @@ func Sum_width_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = 0.0                    
@@ -13744,7 +13744,7 @@ func Sum_width_gorge(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0                    
@@ -13752,20 +13752,20 @@ func Sum_width_gorge(data []float64) float64{
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = addM(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'u'                    
                 }                
             }            
@@ -13835,7 +13835,7 @@ func Sum_width_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = addL(D_temp,1)                    
+                    D = add(D_temp,1)                    
                     currentState = 't'                    
                 }                
             }            
@@ -13876,10 +13876,10 @@ func Sum_width_increasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -13901,7 +13901,7 @@ func Sum_width_inflexion(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     D = 0.0                    
@@ -13916,17 +13916,17 @@ func Sum_width_inflexion(data []float64) float64{
                     R = add(R_temp,add(D_temp,1.0))                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -13948,7 +13948,7 @@ func Sum_width_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0                    
@@ -13972,10 +13972,10 @@ func Sum_width_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = addM(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -14018,10 +14018,10 @@ func Sum_width_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -14064,10 +14064,10 @@ func Sum_width_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -14108,10 +14108,10 @@ func Sum_width_proper_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -14152,10 +14152,10 @@ func Sum_width_proper_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -14337,7 +14337,7 @@ func Sum_width_summit(data []float64) float64{
                     D = 0.0                    
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0                    
@@ -14345,7 +14345,7 @@ func Sum_width_summit(data []float64) float64{
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 }                
             } else if data[i] < data[i-1] {            
@@ -14367,13 +14367,13 @@ func Sum_width_summit(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = addM(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'u'                    
                 }                
             }            
@@ -14407,7 +14407,7 @@ func Sum_width_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0                    
@@ -14419,10 +14419,10 @@ func Sum_width_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = addM(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 't'                    
                 }                
             }            
@@ -14455,7 +14455,7 @@ func Sum_width_zigzag(data []float64) float64{
                     R = add(R_temp,C_temp)                    
                     currentState = 'a'                    
                 } else if currentState == 'd' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'e'                    
                 } else if currentState == 'e' {                
                     D = 0.0                    
@@ -14469,7 +14469,7 @@ func Sum_width_zigzag(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'd'                    
                 } else if currentState == 'a' {                
-                    D = addX(D_temp,1.0)                    
+                    D = add(D_temp,1.0)                    
                     currentState = 'b'                    
                 } else if currentState == 'b' {                
                     currentState = 'd'                    
@@ -14534,7 +14534,7 @@ func Sum_surface_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = 0.0                    
@@ -14551,7 +14551,7 @@ func Sum_surface_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = 0.0                    
@@ -14639,7 +14639,7 @@ func Sum_surface_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = addL(D_temp,data[i])                    
+                    D = add(D_temp,data[i])                    
                     currentState = 't'                    
                 }                
             }            
@@ -14680,10 +14680,10 @@ func Sum_surface_decreasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -14709,7 +14709,7 @@ func Sum_surface_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = 0.0                    
@@ -14722,7 +14722,7 @@ func Sum_surface_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = 0.0                    
@@ -14779,7 +14779,7 @@ func Sum_surface_gorge(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0                    
@@ -14787,20 +14787,20 @@ func Sum_surface_gorge(data []float64) float64{
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = addM(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 }                
             }            
@@ -14870,7 +14870,7 @@ func Sum_surface_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = addL(D_temp,data[i])                    
+                    D = add(D_temp,data[i])                    
                     currentState = 't'                    
                 }                
             }            
@@ -14911,10 +14911,10 @@ func Sum_surface_increasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -14936,7 +14936,7 @@ func Sum_surface_inflexion(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     D = 0.0                    
@@ -14951,17 +14951,17 @@ func Sum_surface_inflexion(data []float64) float64{
                     R = add(R_temp,add(D_temp,data[i-1]))                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -14983,7 +14983,7 @@ func Sum_surface_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0                    
@@ -15007,10 +15007,10 @@ func Sum_surface_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = addM(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -15053,10 +15053,10 @@ func Sum_surface_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -15099,10 +15099,10 @@ func Sum_surface_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -15143,10 +15143,10 @@ func Sum_surface_proper_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -15187,10 +15187,10 @@ func Sum_surface_proper_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -15372,7 +15372,7 @@ func Sum_surface_summit(data []float64) float64{
                     D = 0.0                    
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0                    
@@ -15380,7 +15380,7 @@ func Sum_surface_summit(data []float64) float64{
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 }                
             } else if data[i] < data[i-1] {            
@@ -15402,13 +15402,13 @@ func Sum_surface_summit(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = addM(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 }                
             }            
@@ -15442,7 +15442,7 @@ func Sum_surface_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0                    
@@ -15454,10 +15454,10 @@ func Sum_surface_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = addM(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -15490,7 +15490,7 @@ func Sum_surface_zigzag(data []float64) float64{
                     R = add(R_temp,C_temp)                    
                     currentState = 'a'                    
                 } else if currentState == 'd' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'e'                    
                 } else if currentState == 'e' {                
                     D = 0.0                    
@@ -15504,7 +15504,7 @@ func Sum_surface_zigzag(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'd'                    
                 } else if currentState == 'a' {                
-                    D = addX(D_temp,data[i-1])                    
+                    D = add(D_temp,data[i-1])                    
                     currentState = 'b'                    
                 } else if currentState == 'b' {                
                     currentState = 'd'                    
@@ -15569,7 +15569,7 @@ func Sum_max_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = math.Inf(-1)                    
@@ -15586,7 +15586,7 @@ func Sum_max_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = math.Inf(-1)                    
@@ -15674,7 +15674,7 @@ func Sum_max_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MaxL(D_temp,data[i])                    
+                    D = math.Max(D_temp,data[i])                    
                     currentState = 't'                    
                 }                
             }            
@@ -15715,10 +15715,10 @@ func Sum_max_decreasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -15744,7 +15744,7 @@ func Sum_max_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = math.Inf(-1)                    
@@ -15757,7 +15757,7 @@ func Sum_max_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = math.Inf(-1)                    
@@ -15814,7 +15814,7 @@ func Sum_max_gorge(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0                    
@@ -15822,20 +15822,20 @@ func Sum_max_gorge(data []float64) float64{
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = math.MaxM(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 }                
             }            
@@ -15905,7 +15905,7 @@ func Sum_max_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MaxL(D_temp,data[i])                    
+                    D = math.Max(D_temp,data[i])                    
                     currentState = 't'                    
                 }                
             }            
@@ -15946,10 +15946,10 @@ func Sum_max_increasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -15971,7 +15971,7 @@ func Sum_max_inflexion(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     D = math.Inf(-1)                    
@@ -15986,17 +15986,17 @@ func Sum_max_inflexion(data []float64) float64{
                     R = add(R_temp,math.Max(D_temp,data[i-1]))                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -16018,7 +16018,7 @@ func Sum_max_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0                    
@@ -16042,10 +16042,10 @@ func Sum_max_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = math.MaxM(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -16088,10 +16088,10 @@ func Sum_max_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -16134,10 +16134,10 @@ func Sum_max_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -16178,10 +16178,10 @@ func Sum_max_proper_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -16222,10 +16222,10 @@ func Sum_max_proper_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -16407,7 +16407,7 @@ func Sum_max_summit(data []float64) float64{
                     D = math.Inf(-1)                    
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0                    
@@ -16415,7 +16415,7 @@ func Sum_max_summit(data []float64) float64{
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 }                
             } else if data[i] < data[i-1] {            
@@ -16437,13 +16437,13 @@ func Sum_max_summit(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = math.MaxM(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 }                
             }            
@@ -16477,7 +16477,7 @@ func Sum_max_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0                    
@@ -16489,10 +16489,10 @@ func Sum_max_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = math.MaxM(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -16525,7 +16525,7 @@ func Sum_max_zigzag(data []float64) float64{
                     R = add(R_temp,C_temp)                    
                     currentState = 'a'                    
                 } else if currentState == 'd' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'e'                    
                 } else if currentState == 'e' {                
                     D = math.Inf(-1)                    
@@ -16539,7 +16539,7 @@ func Sum_max_zigzag(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'd'                    
                 } else if currentState == 'a' {                
-                    D = math.MaxX(D_temp,data[i-1])                    
+                    D = math.Max(D_temp,data[i-1])                    
                     currentState = 'b'                    
                 } else if currentState == 'b' {                
                     currentState = 'd'                    
@@ -16604,7 +16604,7 @@ func Sum_min_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = math.Inf(1)                    
@@ -16621,7 +16621,7 @@ func Sum_min_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = math.Inf(1)                    
@@ -16709,7 +16709,7 @@ func Sum_min_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MinL(D_temp,data[i])                    
+                    D = math.Min(D_temp,data[i])                    
                     currentState = 't'                    
                 }                
             }            
@@ -16750,10 +16750,10 @@ func Sum_min_decreasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -16779,7 +16779,7 @@ func Sum_min_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = math.Inf(1)                    
@@ -16792,7 +16792,7 @@ func Sum_min_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = math.Inf(1)                    
@@ -16849,7 +16849,7 @@ func Sum_min_gorge(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0                    
@@ -16857,20 +16857,20 @@ func Sum_min_gorge(data []float64) float64{
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = math.MinM(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 }                
             }            
@@ -16940,7 +16940,7 @@ func Sum_min_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = math.MinL(D_temp,data[i])                    
+                    D = math.Min(D_temp,data[i])                    
                     currentState = 't'                    
                 }                
             }            
@@ -16981,10 +16981,10 @@ func Sum_min_increasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -17006,7 +17006,7 @@ func Sum_min_inflexion(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     D = math.Inf(1)                    
@@ -17021,17 +17021,17 @@ func Sum_min_inflexion(data []float64) float64{
                     R = add(R_temp,math.Min(D_temp,data[i-1]))                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -17053,7 +17053,7 @@ func Sum_min_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0                    
@@ -17077,10 +17077,10 @@ func Sum_min_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = math.MinM(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -17123,10 +17123,10 @@ func Sum_min_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -17169,10 +17169,10 @@ func Sum_min_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -17213,10 +17213,10 @@ func Sum_min_proper_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -17257,10 +17257,10 @@ func Sum_min_proper_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -17442,7 +17442,7 @@ func Sum_min_summit(data []float64) float64{
                     D = math.Inf(1)                    
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0                    
@@ -17450,7 +17450,7 @@ func Sum_min_summit(data []float64) float64{
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 }                
             } else if data[i] < data[i-1] {            
@@ -17472,13 +17472,13 @@ func Sum_min_summit(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = math.MinM(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'u'                    
                 }                
             }            
@@ -17512,7 +17512,7 @@ func Sum_min_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0                    
@@ -17524,10 +17524,10 @@ func Sum_min_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = math.MinM(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -17560,7 +17560,7 @@ func Sum_min_zigzag(data []float64) float64{
                     R = add(R_temp,C_temp)                    
                     currentState = 'a'                    
                 } else if currentState == 'd' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'e'                    
                 } else if currentState == 'e' {                
                     D = math.Inf(1)                    
@@ -17574,7 +17574,7 @@ func Sum_min_zigzag(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'd'                    
                 } else if currentState == 'a' {                
-                    D = math.MinX(D_temp,data[i-1])                    
+                    D = math.Min(D_temp,data[i-1])                    
                     currentState = 'b'                    
                 } else if currentState == 'b' {                
                     currentState = 'd'                    
@@ -17639,7 +17639,7 @@ func Sum_range_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = 0.0                    
@@ -17656,7 +17656,7 @@ func Sum_range_bump_on_decreasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = 0.0                    
@@ -17744,7 +17744,7 @@ func Sum_range_decreasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = L(D_temp,data[i])                    
+                    D = (D_temp,data[i])                    
                     currentState = 't'                    
                 }                
             }            
@@ -17785,10 +17785,10 @@ func Sum_range_decreasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -17814,7 +17814,7 @@ func Sum_range_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 't' {                
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'v'                    
                 } else if currentState == 'v' {                
                     D = 0.0                    
@@ -17827,7 +17827,7 @@ func Sum_range_dip_on_increasing_sequence(data []float64) float64{
                 } else if currentState == 'r' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 'u' {                
                     D = 0.0                    
@@ -17884,7 +17884,7 @@ func Sum_range_gorge(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0                    
@@ -17892,20 +17892,20 @@ func Sum_range_gorge(data []float64) float64{
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = M(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'u'                    
                 }                
             }            
@@ -17975,7 +17975,7 @@ func Sum_range_increasing_sequence(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 't' {                
-                    D = L(D_temp,data[i])                    
+                    D = (D_temp,data[i])                    
                     currentState = 't'                    
                 }                
             }            
@@ -18016,10 +18016,10 @@ func Sum_range_increasing_terrace(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -18041,7 +18041,7 @@ func Sum_range_inflexion(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     D = 0.0                    
@@ -18056,17 +18056,17 @@ func Sum_range_inflexion(data []float64) float64{
                     R = add(R_temp,(D_temp,data[i-1]))                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             } else if data[i] == data[i-1] {            
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -18088,7 +18088,7 @@ func Sum_range_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0                    
@@ -18112,10 +18112,10 @@ func Sum_range_peak(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = M(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -18158,10 +18158,10 @@ func Sum_range_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -18204,10 +18204,10 @@ func Sum_range_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -18248,10 +18248,10 @@ func Sum_range_proper_plain(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -18292,10 +18292,10 @@ func Sum_range_proper_plateau(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 't' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -18477,7 +18477,7 @@ func Sum_range_summit(data []float64) float64{
                     D = 0.0                    
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0                    
@@ -18485,7 +18485,7 @@ func Sum_range_summit(data []float64) float64{
                     R = add(R_temp,C_temp)                    
                     currentState = 'r'                    
                 } else if currentState == 'u' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 }                
             } else if data[i] < data[i-1] {            
@@ -18507,13 +18507,13 @@ func Sum_range_summit(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'u'                    
                 } else if currentState == 't' {                
-                    D = M(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 } else if currentState == 'u' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'u'                    
                 }                
             }            
@@ -18547,7 +18547,7 @@ func Sum_range_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'r'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
                     C = 0                    
@@ -18559,10 +18559,10 @@ func Sum_range_valley(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 's'                    
                 } else if currentState == 'r' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'r'                    
                 } else if currentState == 't' {                
-                    D = M(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 't'                    
                 }                
             }            
@@ -18595,7 +18595,7 @@ func Sum_range_zigzag(data []float64) float64{
                     R = add(R_temp,C_temp)                    
                     currentState = 'a'                    
                 } else if currentState == 'd' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'e'                    
                 } else if currentState == 'e' {                
                     D = 0.0                    
@@ -18609,7 +18609,7 @@ func Sum_range_zigzag(data []float64) float64{
                 if currentState == 's' {                
                     currentState = 'd'                    
                 } else if currentState == 'a' {                
-                    D = X(D_temp,data[i-1])                    
+                    D = (D_temp,data[i-1])                    
                     currentState = 'b'                    
                 } else if currentState == 'b' {                
                     currentState = 'd'                    
