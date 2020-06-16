@@ -4,4 +4,6 @@
 *.py[cod]
 generated/
 test.py
+temp.py
+todo.md
 
