@@ -33,7 +33,15 @@ features = {
         "max_f" : "math.Inf(1)",#Was originally "+inf"
         "phi_f" : "math.Min",#Was originally "min"
         "delta_i_f" : "xi"
-    }#,
+    },
+    "range" : {
+        "neutral_f" : "0.0",
+        "min_f" : "0.0",
+        "max_f" : "math.Inf(1)",#Was originally "+inf"
+        "phi_f" : "diff",
+        "delta_i_f" : "xi"
+    }
+ #,
  #   "range" : {
  #       "neutral_f" : "0.0",
  #       "min_f" : "0.0",

@@ -2,32 +2,103 @@ package main
 
 import (
 	"fmt"
-
-	generated "./generatedInGo"
+	"math"
 )
 
 func add(x float64, y float64) float64 {
 	return (x + y)
 }
+func diff(x float64, y float64) float64 { return (math.Abs(x - y)) }
 
-/*
-func TestMin() *tuple {
-	tup0 := tuple.NewTupleFromItems(1, 2, 3)
-	return tup0
+func Max_range_decreasing(data []float64) float64 {
+	C := 0.0
+	D := 0.0
+	R := 0.0
+	currentState := 's'
+	for i := 1; i < len(data); i++ {
+		if i < len(data) {
+			C_temp := float64(C)
+			D_temp := float64(D)
+			R_temp := float64(R)
+			if data[i] > data[i-1] {
+				if currentState == 's' {
+					currentState = 's'
+				}
+			} else if data[i] < data[i-1] {
+				if currentState == 's' {
+					D = 0.0
+					//fmt.Printf("R: %f  R_temp: %f   D_temp: %f   data[i]: %f  data[i-1]: %f\n", R, R_temp, D_temp, data[i], data[i-1])
+					R = math.Max(R_temp, diff(diff(D_temp, data[i-1]), data[i]))
+					//fmt.Printf("R: %f\n", R)
+					currentState = 's'
+				}
+			} else if data[i] == data[i-1] {
+				if currentState == 's' {
+					currentState = 's'
+				}
+			}
+			_ = C_temp
+			_ = D_temp
+			_ = R_temp
+		}
+	}
+	return math.Max(R, C)
 }
-*/
-/*func TestMax() float64 {
-	tup0 := tuple.NewTupleFromItems(1, 2, 3)
-	return tup0.max()
-}*/
+
+func Sum_range_strictly_decreasing_sequence(data []float64) float64 {
+	C := 0.0
+	D := 0.0
+	R := 0.0
+	currentState := 's'
+	for i := 1; i < len(data); i++ {
+		if i < len(data) {
+			C_temp := float64(C)
+			D_temp := float64(D)
+			R_temp := float64(R)
+			if data[i] > data[i-1] {
+				if currentState == 's' {
+					currentState = 's'
+				} else if currentState == 'r' {
+					C = 0.0
+					D = 0.0
+					R = add(R_temp, C_temp)
+					fmt.Println("R ", R)
+					currentState = 's'
+				}
+			} else if data[i] < data[i-1] {
+				if currentState == 's' {
+					C = diff(diff(D_temp, data[i-1]), data[i])
+					fmt.Println("C ", C)
+					D = 0.0
+					currentState = 'r'
+				} else if currentState == 'r' {
+					C = diff(C_temp, diff(D_temp, data[i]))
+					fmt.Println("C ", C)
+					D = 0.0
+					currentState = 'r'
+				}
+			} else if data[i] == data[i-1] {
+				if currentState == 's' {
+					currentState = 's'
+				} else if currentState == 'r' {
+					C = 0.0
+					D = 0.0
+					R = add(R_temp, C_temp)
+					fmt.Println("R ", R)
+					currentState = 's'
+				}
+			}
+			_ = C_temp
+			_ = D_temp
+			_ = R_temp
+		}
+	}
+	//fmt.Println("R ", R, "C ", C)
+	return add(R, C)
+}
 
 func main() {
-	data := []float64{4, 3, 5, 5, 2, 1, 1, 3, 3, 4, 6, 6, 3, 1, 3, 3}
-	d := []float64{3, 4, 2, 2, 5, 6, 6, 4, 4, 3, 1, 1, 4, 6, 4, 4}
-	name := generated.Max_max_bump_on_decreasing_sequence([]float64{7, 6, 5, 6, 5, 4, 1, 4, 7, 5, 4, 2, 5, 4, 3, 3})
-	fmt.Println(generated.Min_min_increasing_sequence(data))
-	fmt.Println(generated.Max_max_decreasing(d))
-	fmt.Println(name)
+	fmt.Println(Sum_range_strictly_decreasing_sequence([]float64{4, 4, 6, 4, 1, 1, 3, 4, 4, 6, 6, 5, 2, 2, 4, 3}))
 	//test.DoTesting()
 	//RunTest(tests)
 }

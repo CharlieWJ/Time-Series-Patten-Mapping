@@ -74,28 +74,19 @@ class CodeGeneratorBackend:
         for accumulator in ['C', 'D', 'R']:
             self.writeInitValue(accumulator, patternName, featureName, aggregatorName)
         self.writeEntryState(patternName)
-        #self.writeLine('for i in range(1,len(data)):') #'range' was originally 'xrange', was changed because Python 3 no longer supports xrange
         self.writeLine('for i := 1; i < len(data); i++ {')
         self.indent()
-        #self.writeLine('if(i < len(data)):')
         self.writeLine('if i<len(data) {')
         self.indent()
         for accumulator in ['C', 'D', 'R']:
-            #self.writeLine(accumulator + '_temp = ' + accumulator)
             self.writeLine(accumulator + '_temp := float64(' + accumulator+')')
-#            self.writeLine(accumulator + '_temp := ' + accumulator)
-#        self.writeLine('if data[i] > data[i-1]:')
         self.writeLine('if data[i] > data[i-1] {')
         self.writeCore(patternName, featureName, aggregatorName, '<')
         self.dedent()
         self.writeLine('} else if data[i] < data[i-1] {')##
-        #self.writeLine('elif data[i] < data[i-1]:')
-        #self.writeLine('else if data[i] < data[i-1] {')
         self.writeCore(patternName, featureName, aggregatorName, '>')
         self.dedent()
         self.writeLine('} else if data[i] == data[i-1] {')##
-        #self.writeLine('elif data[i] == data[i-1]:')
-        #self.writeLine('else if data[i] == data[i-1] {')
         self.writeCore(patternName, featureName, aggregatorName, '=')
         self.dedent()
         self.writeLine('}')##
@@ -108,7 +99,6 @@ class CodeGeneratorBackend:
         self.writeLine('}')##
         self.writeLine('return ' + core.getValue(aggregatorName) + '(R,C)')
         self.dedent()
-#        self.writeLine('')
         self.writeLine('}')
 
     def writeCore(self, patternName, featureName, aggregatorName, sign):
@@ -139,7 +129,7 @@ c.begin(tab="    ")
 
 c.writeComment('----------------------------------------------------------------------------')
 c.writeComment('This file was auto-generated on ' + datetime.now().strftime('%Y-%m-%d'))
-c.writeComment('By Charles W. Jeffries using an altered Python Script.')
+c.writeComment('By Charles W. Jeffries.')
 c.writeComment('The original script was provided by: Florine Cercle & Denis Allard')
 c.writeComment('Original Source Code : https://github.com/allarddenis/time-series-pattern-recognition')
 c.writeComment('----------------------------------------------------------------------------')
@@ -147,29 +137,30 @@ c.writeLine('')
 c.writeLine('package generatedingo')
 c.writeLine('')
 c.writeLine('import(')
-c.writeLine('//\t"fmt"')
+#c.writeLine('\t"fmt"')
 c.writeLine('\t"math"')
 c.writeLine(')')
 c.writeLine('')
 c.writeLine('func add(x float64, y float64) float64 { return (x+y) }')
-c.writeLine('/*')
-c.writeLine('type Tuple struct { a,b interface{} }')
-c.writeLine('')
-c.writeLine('func GetMax(x float64, y float64) float64 {')
-c.writeLine('    if x>=y { ')
-c.writeLine('        return x')
-c.writeLine('    } else { return y }')
-c.writeLine('}')
-c.writeComment('Currently not using this method')
-c.writeLine('') 
+c.writeLine('func diff(x float64, y float64) float64 { return (math.Abs(y-x)) }')
+#c.writeLine('/*')
+#c.writeLine('type Tuple struct { a,b interface{} }')
+#c.writeLine('')
+#c.writeLine('func GetMax(x float64, y float64) float64 {')
+#c.writeLine('    if x>=y { ')
+#c.writeLine('        return x')
+#c.writeLine('    } else { return y }')
+#c.writeLine('}')
+#c.writeComment('Currently not using this method')
+#c.writeLine('') 
 
-c.writeLine('func GetMin(x float64, y float64) float64 {') 
-c.writeLine('    if x>=y { ')
-c.writeLine('        return y')
-c.writeLine('    } else { return x }')
-c.writeLine('}')
-c.writeComment('Currently not using this method')
-c.writeLine('*/')
+#c.writeLine('func GetMin(x float64, y float64) float64 {') 
+#c.writeLine('    if x>=y { ')
+#c.writeLine('        return y')
+#c.writeLine('    } else { return x }')
+#c.writeLine('}')
+#c.writeComment('Currently not using this method')
+#c.writeLine('*/')
 c.writeLine('')
 
 nb_func = 0 #Number of functions
@@ -182,7 +173,6 @@ for agg, agg_name in zip(aggregators,aggregator_names):
             c.writeFunction(pattern, feature, agg, agg_name)
             nb_func = nb_func + 1
 
-#my_file = open("D:\\TimeSeriesPatternMapping\\src\\generated\\generated.py", "w") #Change the path depending on where it is located on your machine
 my_file = open("D:\\TimeSeriesPatternMapping\\src\\generatedInGo\\generatedInGo.go", "w")
 my_file.write(c.end())
 my_file.close()
@@ -195,5 +185,3 @@ print('status : success')
 print('functions generated : %d/%d' % (nb_func, nb_functions))
 print("exec time : %s seconds" % exec_time)
 print('-----')
-
-### TODO: have an interface, and have a get max/min function for that interface if possible.

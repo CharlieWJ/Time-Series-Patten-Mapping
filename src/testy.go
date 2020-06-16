@@ -6,31 +6,37 @@ import (
 	generated "./generatedInGo"
 )
 
+// T Struct : Currently holds 2 fields, 'name' runs the function and 'result' is the expected return value.
+// I might add another field that is of string type, where upon failure the name of the function tested will be provided.
 type T struct {
 	name   float64
 	result float64
 }
 
+// RunTest : Takes in a list of 'T' Structs and runs the tests.
 func RunTest(x []T) {
+	l := len(x)
 	fmt.Println("------\nRunning Test Script")
 	PassedTests, failed, numtested := 0, 0, 0
-	for i := 0; i < len(x); i++ {
-		holder := x[i].name
-		if holder == x[i].result {
+	for i := 0; i < l; i++ {
+		holder, expected := x[i].name, x[i].result
+		if holder == expected {
 			PassedTests++
 		} else {
 			failed++
-			fmt.Printf("%s failed.", holder)
+			fmt.Printf("--TEST FAILED at index: %d.\n", i)
+			fmt.Printf("--Expected: %f.\n", expected)
+			fmt.Printf("--Actual:   %f.\n", holder)
 		}
 		numtested++
 	}
-	fmt.Printf("Ran %d tests out of 123.\n", numtested)
-	fmt.Printf("Passed %d tests out of 123.\n", (PassedTests - failed))
+	fmt.Printf("Ran %d tests out of %d.\n", numtested, l)
+	fmt.Printf("Passed %d tests out of %d.\n", PassedTests, l)
 	fmt.Println("------")
 }
 
+// DoTesting : Runs all of the current tests.
 func DoTesting() {
-	//RunTest(Tests2)
 	RunTest(Tester)
 }
 
@@ -38,18 +44,18 @@ func main() {
 	DoTesting()
 }
 
+// Tester : Currently holds all of the tests.
 var Tester = []T{
 	{
 		name:   generated.Max_max_bump_on_decreasing_sequence([]float64{7, 6, 5, 6, 5, 4, 1, 4, 7, 5, 4, 2, 5, 4, 3, 3}),
 		result: 6,
-		//data : {7,6,5,6,5,4,1,4,7,5,4,2,5,4,3,3}
 	},
-	T{
+	{
 		name:   generated.Max_max_decreasing([]float64{3, 4, 2, 2, 5, 6, 6, 4, 4, 3, 1, 1, 4, 6, 4, 4}),
 		result: 6,
 		//data : []float64{3,4,2,2,5,6,6,4,4,3,1,1,4,6,4,4}
 	},
-	T{
+	{
 		name:   generated.Max_max_decreasing_sequence([]float64{3, 4, 2, 2, 5, 6, 6, 4, 4, 3, 1, 1, 4, 6, 4, 4}),
 		result: 6,
 		//data : []float64{3,4,2,2,5,6,6,4,4,3,1,1,4,6,4,4}
@@ -602,4 +608,64 @@ var Tester = []T{
 		name:   generated.Sum_width_zigzag([]float64{4, 1, 3, 1, 4, 6, 1, 5, 5, 2, 7, 2, 3, 1, 6, 1}),
 		result: 11,
 	},
+	///// RANGE FUNCTION TESTING STARTS HERE \\\\\
+	/// MAX_RANGE TESTING \\\
+	T{
+		name:   generated.Max_range_decreasing([]float64{3, 4, 2, 2, 5, 6, 6, 4, 4, 3, 1, 1, 4, 6, 4, 4}),
+		result: 2,
+	},
+	/*T{
+		name:   generated.Max_range_strictly_decreasing_sequence([]float64{4, 4, 6, 4, 1, 1, 3, 4, 4, 6, 6, 5, 2, 2, 4, 3}),
+		result: 5,
+	},*/
+	/*T{
+			name:   generated.Max_range_decreasing_sequence([]float64{3, 4, 2, 2, 5, 6, 6, 4, 4, 3, 1, 1, 4, 6, 4, 4}),
+			result: 5,
+	    },*/ //This function doesnt work
+	T{
+		name:   generated.Max_range_increasing([]float64{4, 3, 5, 5, 2, 1, 1, 3, 3, 4, 6, 6, 3, 1, 3, 3}),
+		result: 2,
+	},
+	/// MIN_RANGE TESTING \\\
+	T{
+		name:   generated.Min_range_decreasing([]float64{3, 4, 2, 2, 5, 6, 6, 4, 4, 3, 1, 1, 4, 6, 4, 4}),
+		result: 1,
+	},
+	/*T{
+			name:   generated.Min_range_decreasing_sequence([]float64{3, 4, 2, 2, 5, 6, 6, 4, 4, 3, 1, 1, 4, 6, 4, 4}),
+			result: 2,
+	    },*/ //Not Working
+	T{
+		name:   generated.Min_range_strictly_decreasing_sequence([]float64{4, 4, 6, 4, 1, 1, 3, 4, 4, 6, 6, 5, 2, 2, 4, 3}),
+		result: 1,
+	},
+	T{
+		name:   generated.Min_range_increasing([]float64{4, 3, 5, 5, 2, 1, 1, 3, 3, 4, 6, 6, 3, 1, 3, 3}),
+		result: 1,
+	},
+	/// SUM_RANGE TESTING \\\
+	T{
+		name:   generated.Sum_range_decreasing([]float64{3, 4, 2, 2, 5, 6, 6, 4, 4, 3, 1, 1, 4, 6, 4, 4}),
+		result: 9,
+	},
+	/*T{
+				name:   generated.Sum_range_decreasing_sequence(([]float64{3, 4, 2, 2, 5, 6, 6, 4, 4, 3, 1, 1, 4, 6, 4, 4})),
+				result: 9,
+	    },*/
+	/*T{
+		name:   generated.Sum_range_strictly_decreasing_sequence([]float64{4, 4, 6, 4, 1, 1, 3, 4, 4, 6, 6, 5, 2, 2, 4, 3}),
+		result: 10,
+	},*/ //Not Working
+	T{
+		name:   generated.Sum_range_increasing([]float64{4, 3, 5, 5, 2, 1, 1, 3, 3, 4, 6, 6, 3, 1, 3, 3}),
+		result: 9,
+	},
+	T{
+		name:   generated.Sum_range_increasing_sequence([]float64{4, 3, 5, 5, 2, 1, 1, 3, 3, 4, 6, 6, 3, 1, 3, 3}),
+		result: 9,
+	},
+	/*T{
+		name:   generated.Sum_range_strictly_increasing_sequence([]float64{4, 3, 5, 5, 2, 1, 1, 2, 3, 4, 6, 6, 3, 1, 2, 3}),
+		result: 9,
+	},*/ //Almost working, off by 1 for this test case
 }

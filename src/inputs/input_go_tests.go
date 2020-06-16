@@ -2,51 +2,51 @@
 var Tester = []T{
 	{
 		name:   generated.Max_max_bump_on_decreasing_sequence([]float64{7, 6, 5, 6, 5, 4, 1, 4, 7, 5, 4, 2, 5, 4, 3, 3}),
-		result: 6,
+		result : 6, //testcase: 0,
 		//data : {7,6,5,6,5,4,1,4,7,5,4,2,5,4,3,3}
 	},
 	T{
 		name:   generated.Max_max_decreasing([]float64{3, 4, 2, 2, 5, 6, 6, 4, 4, 3, 1, 1, 4, 6, 4, 4}),
-		result: 6,
+		result : 6, //testcase: 1,
 		//data : []float64{3,4,2,2,5,6,6,4,4,3,1,1,4,6,4,4}
 	},
 	T{
 		name:   generated.Max_max_decreasing_sequence([]float64{3, 4, 2, 2, 5, 6, 6, 4, 4, 3, 1, 1, 4, 6, 4, 4}),
-		result: 6,
+		result : 6, //testcase: 2,
 		//data : []float64{3,4,2,2,5,6,6,4,4,3,1,1,4,6,4,4}
 	},
 	T{
 		name:   generated.Max_max_dip_on_increasing_sequence([]float64{1, 2, 3, 2, 5, 6, 7, 4, 1, 3, 4, 6, 1, 2, 4, 4}),
-		result: 6,
+		result : 6, //testcase: 3,
     },
     T{
         name : generated.Max_max_increasing([]float64{4,3,5,5,2,1,1,3,3,4,6,6,3,1,3,3}),
-	      result : 6,
+	      result : 6, //testcase: 4,
 	      ///data : float64{4,3,5,5,2,1,1,3,3,4,6,6,3,1,3,3}
 	},
 	T{
           name : generated.Max_max_increasing_sequence([]float64{4,3,5,5,2,1,1,3,3,4,6,6,3,1,3,3}),
-	      result : 6,
+	      result : 6, //testcase: 5,
 	      //data : float64{4,3,5,5,2,1,1,3,3,4,6,6,3,1,3,3}
     },
     T{
         name : generated.Max_max_inflexion([]float64{1,2,6,6,4,4,3,5,2,5,1,5,3,3,4,4}),
-        result : 6,
+        result : 6, //testcase: 6,
          /// data : []float64{1,2,6,6,4,4,3,5,2,5,1,5,3,3,4,4}
       },
     T{
         name : generated.Max_max_peak([]float64{7,5,5,1,4,5,2,2,3,5,6,2,3,3,3,1}),
-	    result : 6,
+	    result : 6, //testcase: 7,
         //data : []float64{7,5,5,1,4,5,2,2,3,5,6,2,3,3,3,1}
       },
     T{
         name : generated.Max_max_strictly_decreasing_sequence([]float64{4,4,6,4,1,1,3,4,4,6,6,5,2,2,4,3}),
-        result : 6,
+        result : 6, //testcase: 8,
          //data : []float64{4,4,6,4,1,1,3,4,4,6,6,5,2,2,4,3}
       },
     T{
         name : generated.Max_max_strictly_increasing_sequence([]float64{4,3,5,5,2,1,1,2,3,4,6,6,3,1,2,3}),
-	    result : 6,
+	    result : 6, //testcase: 9,
       },
     T{
         name : generated.Max_max_summit([]float64{7,1,5,4,4,3,3,4,6,6,2,3,4,2,3,1}),

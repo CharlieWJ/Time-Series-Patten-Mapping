@@ -81,10 +81,24 @@ From **/src** execute the following command :
 python generator.py    
 ```
 
-This should generate **generatedInGo.go** file in **/src/generated**.
+This should generate **generatedInGo.go** file in **/src/generatedInGo**.
 
 ## How to test
+---
+## 1 ) Running all tests
+There are currently only 123 test cases provided. You can find them in one of two places: 
+- The first being inside of **/src/inputs/input_go_tests.go** 
+- and the other in **/src/testy.go**
 
+The test cases found in both *input_go_tests.go* and _testy.go_ are the same, but if you wish to add more cases they must be added to the _**Tester**_ struct in order to be included when running all cases. When adding new tests be sure to include "*generated.*" before the function name.
+
+To run all of the tests navigate to **/src** and execute the following command:
+```
+go run testy.go
+```
+
+
+## 2 ) Standalone testing
 From **/src** execute the following command :
 
 ```
@@ -94,6 +108,8 @@ go run main.go
 This should output test results in command window.
 
 **Note :** Currently, only 123 out of the 396 functions generated have tests.
+
+**EDIT :** Adding tests for certain range functions. Not all of them are currently working. Most of the '_range_sequence_' functions are not working.
 
 Some of those without tests include: 
 - all 'range' functions. 
@@ -108,7 +124,7 @@ Choose your desired function from **/src/generated/generatedInGo.go**.
 
 All generated functions are **standalone**; meaning you only need to copy-paste them to use it. Remember to **import: "fmt" & "math"** in your file as many of the functions utilize **math.Inf/Max/Min**. Also, be sure to include an 'add()' method as many of the functions require one :
 ```go
-func add(x int, y int) int{
+func add(x float64, y float64) float64{
     return (x+y)
 }
 ```
