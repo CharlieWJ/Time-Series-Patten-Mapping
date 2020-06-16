@@ -82,7 +82,8 @@ class CodeGeneratorBackend:
         self.indent()
         for accumulator in ['C', 'D', 'R']:
             #self.writeLine(accumulator + '_temp = ' + accumulator)
-            self.writeLine(accumulator + '_temp := ' + accumulator)
+            self.writeLine(accumulator + '_temp := float64(' + accumulator+')')
+#            self.writeLine(accumulator + '_temp := ' + accumulator)
 #        self.writeLine('if data[i] > data[i-1]:')
         self.writeLine('if data[i] > data[i-1] {')
         self.writeCore(patternName, featureName, aggregatorName, '<')
@@ -99,6 +100,9 @@ class CodeGeneratorBackend:
         self.dedent()
         self.writeLine('}')##
         self.dedent()
+        self.writeLine('_ = C_temp')## Temporary fix for un-used variables
+        self.writeLine('_ = D_temp')##
+        self.writeLine('_ = R_temp')##
         self.writeLine('}')##
         self.dedent()
         self.writeLine('}')##
@@ -140,14 +144,15 @@ c.writeComment('The original script was provided by: Florine Cercle & Denis Alla
 c.writeComment('Original Source Code : https://github.com/allarddenis/time-series-pattern-recognition')
 c.writeComment('----------------------------------------------------------------------------')
 c.writeLine('')
-c.writeLine('package generatedInGo')
+c.writeLine('package generatedingo')
 c.writeLine('')
 c.writeLine('import(')
-c.writeLine('\t"fmt"')
+c.writeLine('//\t"fmt"')
 c.writeLine('\t"math"')
 c.writeLine(')')
 c.writeLine('')
 c.writeLine('func add(x float64, y float64) float64 { return (x+y) }')
+c.writeLine('/*')
 c.writeLine('type Tuple struct { a,b interface{} }')
 c.writeLine('')
 c.writeLine('func GetMax(x float64, y float64) float64 {')
@@ -164,7 +169,7 @@ c.writeLine('        return y')
 c.writeLine('    } else { return x }')
 c.writeLine('}')
 c.writeComment('Currently not using this method')
-c.writeLine('')
+c.writeLine('*/')
 c.writeLine('')
 
 nb_func = 0 #Number of functions

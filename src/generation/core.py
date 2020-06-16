@@ -22,7 +22,7 @@ def getUpdate(accumulator, semantic, patternName, featureName, aggregatorName):
                 val = val + getValue(features[featureName]['delta_i_f'])
             elif element == 'delta_i_f_prime':
                 if featureName == 'width':
-                    val = val + '1'
+                    val = val + '1.0'
                 else:
                     val = val + 'data[i]'
             elif element == 'default_g_f':
@@ -68,7 +68,7 @@ def getValue(val):
     elif val == '-inf':
         val = 'math.Inf(-1)'
     elif val == 'n':
-        val = 'len(data)'
+        val = 'float64(len(data))'
     elif val == 'xi' :
         val = 'data[i-1]'
     elif val == 'delta_i_f_prime':
