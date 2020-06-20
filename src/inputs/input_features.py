@@ -24,7 +24,7 @@ features = {
         "neutral_f" : "math.Inf(-1)",#Was originally "-inf"
         "min_f" : "math.Inf(-1)",#Was originally "-inf"
         "max_f" : "math.Inf(1)",#Was originally "+inf"
-        "phi_f" : "math.Max",#Was originally "max" TODO Tuple Implementation
+        "phi_f" : "math.Max",#Was originally "max" 
         "delta_i_f" : "xi"
     },
     "min" : {
@@ -35,8 +35,8 @@ features = {
         "delta_i_f" : "xi"
     },
     "range" : {
-        "neutral_f" : "0.0",
-        "min_f" : "0.0",
+        "neutral_f" : "0.0",#This only alters D's values.
+        "min_f" : "0.0",#This alters C's & R's values.
         "max_f" : "math.Inf(1)",#Was originally "+inf"
         "phi_f" : "diff",
         "delta_i_f" : "xi"
