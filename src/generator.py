@@ -76,7 +76,7 @@ class CodeGeneratorBackend:
         self.writeEntryState(patternName)
         self.writeLine('for i := 1; i < len(data); i++ {')
         self.indent()
-        self.writeLine('if i<len(data) {')
+        self.writeLine('if i < len(data) {')
         self.indent()
         for accumulator in ['C', 'D', 'R']:
             self.writeLine(accumulator + '_temp := float64(' + accumulator+')')
@@ -97,7 +97,7 @@ class CodeGeneratorBackend:
         self.writeLine('}')##
         self.dedent()
         self.writeLine('}')##
-        self.writeLine('return ' + core.getValue(aggregatorName) + '(R,C)')
+        self.writeLine('return ' + core.getValue(aggregatorName) + '(R, C)')
         self.dedent()
         self.writeLine('}')
 

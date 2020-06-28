@@ -556,16 +556,20 @@ var TestCases = []TestCase{
 		result: 2, name: "Max_range_decreasing()",
 	},
 	/*TestCase{
-		method:   generated.Max_range_strictly_decreasing_sequence([]float64{4, 4, 6, 4, 1, 1, 3, 4, 4, 6, 6, 5, 2, 2, 4, 3}),
-		result: 5,
-	},*/
-	/*TestCase{
 			method:   generated.Max_range_decreasing_sequence([]float64{3, 4, 2, 2, 5, 6, 6, 4, 4, 3, 1, 1, 4, 6, 4, 4}),
-			result: 5,
+			result: 5, name: "Max_range_decreasing_sequence()",
 	    },*/ //This function doesnt work
+	/*TestCase{
+		method:   generated.Max_range_strictly_decreasing_sequence([]float64{4, 4, 6, 4, 1, 1, 3, 4, 4, 6, 6, 5, 2, 2, 4, 3}),
+		result: 5, name: "Max_range_strictly_decreasing_sequence([]float64)",
+	},*/
 	TestCase{
 		method: generated.Max_range_increasing([]float64{4, 3, 5, 5, 2, 1, 1, 3, 3, 4, 6, 6, 3, 1, 3, 3}),
 		result: 2, name: "Max_range_increasing()",
+	},
+	TestCase{
+		method: generated.Max_range_increasing_sequence([]float64{4, 3, 5, 5, 2, 1, 1, 3, 3, 4, 6, 6, 3, 1, 3, 3}),
+		result: 5, name: "Max_range_increasing_sequence()",
 	},
 	/// MIN_RANGE TESTING \\\
 	TestCase{
@@ -578,7 +582,12 @@ var TestCases = []TestCase{
 	    },*/ //Not Working
 	TestCase{
 		method: generated.Min_range_strictly_decreasing_sequence([]float64{4, 4, 6, 4, 1, 1, 3, 4, 4, 6, 6, 5, 2, 2, 4, 3}),
-		result: 1, name: "Min_range_strictly_decreasing_sequence()",
+		result: 1, name: "Min_range_strictly_decreasing_sequence (test case 1)",
+		//Provides correct answer for this test case but does not work properly
+	},
+	TestCase{
+		method: generated.Min_range_strictly_decreasing_sequence([]float64{6, 5, 2, 2, 4, 2}),
+		result: 2, name: "Min_range_strictly_decreasing_sequence (test case 2)",
 	},
 	TestCase{
 		method: generated.Min_range_increasing([]float64{4, 3, 5, 5, 2, 1, 1, 3, 3, 4, 6, 6, 3, 1, 3, 3}),
