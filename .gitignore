@@ -6,5 +6,4 @@ generated/
 test.py
 temp.py
 todo.md
-generatedInGo/generatedInGo_test.go
-
+src/generatedInGo/generatedInGo_test.go
