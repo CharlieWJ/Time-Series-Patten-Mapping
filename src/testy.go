@@ -555,14 +555,14 @@ var TestCases = []TestCase{
 		method: generated.Max_range_decreasing([]float64{3, 4, 2, 2, 5, 6, 6, 4, 4, 3, 1, 1, 4, 6, 4, 4}),
 		result: 2, name: "Max_range_decreasing()",
 	},
-	/*TestCase{
-			method:   generated.Max_range_decreasing_sequence([]float64{3, 4, 2, 2, 5, 6, 6, 4, 4, 3, 1, 1, 4, 6, 4, 4}),
-			result: 5, name: "Max_range_decreasing_sequence()",
-	    },*/ //This function doesnt work
-	/*TestCase{
-		method:   generated.Max_range_strictly_decreasing_sequence([]float64{4, 4, 6, 4, 1, 1, 3, 4, 4, 6, 6, 5, 2, 2, 4, 3}),
+	TestCase{
+		method: generated.Max_range_decreasing_sequence([]float64{3, 4, 2, 2, 5, 6, 6, 4, 4, 3, 1, 1, 4, 6, 4, 4}),
+		result: 5, name: "Max_range_decreasing_sequence()",
+	}, //This function doesnt work UPDATE: I think it is working
+	TestCase{
+		method: generated.Max_range_strictly_decreasing_sequence([]float64{4, 4, 6, 4, 1, 1, 3, 4, 4, 6, 6, 5, 2, 2, 4, 3}),
 		result: 5, name: "Max_range_strictly_decreasing_sequence([]float64)",
-	},*/
+	},
 	TestCase{
 		method: generated.Max_range_increasing([]float64{4, 3, 5, 5, 2, 1, 1, 3, 3, 4, 6, 6, 3, 1, 3, 3}),
 		result: 2, name: "Max_range_increasing()",
@@ -576,10 +576,10 @@ var TestCases = []TestCase{
 		method: generated.Min_range_decreasing([]float64{3, 4, 2, 2, 5, 6, 6, 4, 4, 3, 1, 1, 4, 6, 4, 4}),
 		result: 1, name: "Min_range_decreasing()",
 	},
-	/*TestCase{
-			method:   generated.Min_range_decreasing_sequence([]float64{3, 4, 2, 2, 5, 6, 6, 4, 4, 3, 1, 1, 4, 6, 4, 4}),
-			result: 2,
-	    },*/ //Not Working
+	TestCase{
+		method: generated.Min_range_decreasing_sequence([]float64{3, 4, 2, 2, 5, 6, 6, 4, 4, 3, 1, 1, 4, 6, 4, 4}),
+		result: 2, name: "Min_range_decreasing_sequence([]float64)",
+	}, //Not Working
 	TestCase{
 		method: generated.Min_range_strictly_decreasing_sequence([]float64{4, 4, 6, 4, 1, 1, 3, 4, 4, 6, 6, 5, 2, 2, 4, 3}),
 		result: 1, name: "Min_range_strictly_decreasing_sequence (test case 1)",
@@ -588,6 +588,7 @@ var TestCases = []TestCase{
 	TestCase{
 		method: generated.Min_range_strictly_decreasing_sequence([]float64{6, 5, 2, 2, 4, 2}),
 		result: 2, name: "Min_range_strictly_decreasing_sequence (test case 2)",
+		//Not 100% sure if this is working correctly or not
 	},
 	TestCase{
 		method: generated.Min_range_increasing([]float64{4, 3, 5, 5, 2, 1, 1, 3, 3, 4, 6, 6, 3, 1, 3, 3}),
@@ -598,14 +599,14 @@ var TestCases = []TestCase{
 		method: generated.Sum_range_decreasing([]float64{3, 4, 2, 2, 5, 6, 6, 4, 4, 3, 1, 1, 4, 6, 4, 4}),
 		result: 9, name: "Sum_range_decreasing()",
 	},
-	/*TestCase{
-				method:   generated.Sum_range_decreasing_sequence(([]float64{3, 4, 2, 2, 5, 6, 6, 4, 4, 3, 1, 1, 4, 6, 4, 4})),
-				result: 9,
-	    },*/
-	/*TestCase{
-		method:   generated.Sum_range_strictly_decreasing_sequence([]float64{4, 4, 6, 4, 1, 1, 3, 4, 4, 6, 6, 5, 2, 2, 4, 3}),
-		result: 10,
-	},*/ //Not Working
+	TestCase{
+		method: generated.Sum_range_decreasing_sequence([]float64{3, 4, 2, 2, 5, 6, 6, 4, 4, 3, 1, 1, 4, 6, 4, 4}),
+		result: 9, name: "Sum_range_decreasing_sequence([]float64)",
+	}, //Not working UPDATE: I think its working
+	TestCase{
+		method: generated.Sum_range_strictly_decreasing_sequence([]float64{4, 4, 6, 4, 1, 1, 3, 4, 4, 6, 6, 5, 2, 2, 4, 3}),
+		result: 10, name: "Sum_range_strictly_decreasing_sequence([]float64)",
+	}, //Not Working UPDATE: I think its working
 	TestCase{
 		method: generated.Sum_range_increasing([]float64{4, 3, 5, 5, 2, 1, 1, 3, 3, 4, 6, 6, 3, 1, 3, 3}),
 		result: 9, name: "Sum_range_increasing([]float64)",
@@ -615,7 +616,7 @@ var TestCases = []TestCase{
 		result: 9, name: "Sum_range_increasing_sequence()",
 	},
 	/*TestCase{
-		method:   generated.Sum_range_strictly_increasing_sequence([]float64{4, 3, 5, 5, 2, 1, 1, 2, 3, 4, 6, 6, 3, 1, 2, 3}),
-		result: 9,
+		method: generated.Sum_range_strictly_increasing_sequence([]float64{4, 3, 5, 5, 2, 1, 1, 2, 3, 4, 6, 6, 3, 1, 2, 3}),
+		result: 9, name: "Sum_range_strictly_increasing_sequence([]float64)",
 	},*/ //Almost working, off by 1 for this test case
 }

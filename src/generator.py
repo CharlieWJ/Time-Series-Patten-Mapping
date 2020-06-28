@@ -70,30 +70,61 @@ class CodeGeneratorBackend:
         self.write(res)
 
     def writeFunction(self, patternName, featureName, aggregatorName, x):
+        self.writeComment(x+'_'+featureName+'_'+patternName+' : Exported Function')
         self.writeHeader(patternName, featureName, x)#, aggregatorName)
         for accumulator in ['C', 'D', 'R']:
             self.writeInitValue(accumulator, patternName, featureName, aggregatorName)
+        
+        isRangeSeq=False                #Currently only Decreasing
+        isRangeStrict=False             #Detect if func is range_strictly_decreasing_sequence
+        if (featureName == 'range' and (patternName == 'decreasing_sequence')):# or patternName == 'increasing_sequence')):
+            isRangeSeq=True
+            self.writeLine("H := 0.0")
+        
+        if (featureName == 'range' and (patternName == 'strictly_decreasing_sequence')):# or patternName == 'strictly_increasing_sequence')):
+            isRangeStrict=True
+            self.writeLine("H := 0.0")
+        
         self.writeEntryState(patternName)
         self.writeLine('for i := 1; i < len(data); i++ {')
         self.indent()
         self.writeLine('if i < len(data) {')
         self.indent()
         for accumulator in ['C', 'D', 'R']:
-            self.writeLine(accumulator + '_temp := float64(' + accumulator+')')
+            self.writeLine(accumulator + 'temp := float64(' + accumulator+')')
+        if (isRangeSeq or isRangeStrict):
+            self.writeLine('Htemp := float64(H)')
+        
         self.writeLine('if data[i] > data[i-1] {')
-        self.writeCore(patternName, featureName, aggregatorName, '<')
+        if (isRangeSeq or isRangeStrict):
+            self.indent()
+            self.writeLine('H = 0.0')
+            self.dedent()
+        self.writeCore(patternName, featureName, aggregatorName, '<', isRangeSeq, isRangeStrict)
         self.dedent()
+
         self.writeLine('} else if data[i] < data[i-1] {')##
-        self.writeCore(patternName, featureName, aggregatorName, '>')
+        if (isRangeSeq or isRangeStrict):
+            self.indent()
+            self.writeLine('H = data[i-1]')
+            self.writeLine('H = math.Max(H, Htemp) // Holding onto the largest value for sequence')
+            self.dedent()
+        self.writeCore(patternName, featureName, aggregatorName, '>', isRangeSeq, isRangeStrict)
         self.dedent()
+
         self.writeLine('} else if data[i] == data[i-1] {')##
-        self.writeCore(patternName, featureName, aggregatorName, '=')
+        if (isRangeStrict):
+            self.indent()
+            self.writeLine('H = 0.0')
+            self.dedent()
+        self.writeCore(patternName, featureName, aggregatorName, '=', isRangeSeq, isRangeStrict)
         self.dedent()
+
         self.writeLine('}')##
         self.dedent()
-        self.writeLine('_ = C_temp')## Temporary fix for un-used variables
-        self.writeLine('_ = D_temp')##
-        self.writeLine('_ = R_temp')##
+        self.writeLine('_ = Ctemp')## Temporary fix for un-used variables
+        self.writeLine('_ = Dtemp')##
+        self.writeLine('_ = Rtemp')##
         self.writeLine('}')##
         self.dedent()
         self.writeLine('}')##
@@ -101,7 +132,7 @@ class CodeGeneratorBackend:
         self.dedent()
         self.writeLine('}')
 
-    def writeCore(self, patternName, featureName, aggregatorName, sign):
+    def writeCore(self, patternName, featureName, aggregatorName, sign, isRangeSeq, isRangeStrict):
         self.indent()
         c = True
         for state in core.getPatternStates(patternName):
@@ -112,10 +143,18 @@ class CodeGeneratorBackend:
                 self.writeLine('} else if currentState == \'' + state + '\' {')
             self.indent()
             semantic = core.getNextSemantic(patternName, state, sign)
-            for accumulator in ['C', 'D', 'R']:
-                update = core.getUpdate(accumulator, semantic, patternName, featureName, aggregatorName)
-                if len(update) > 0:
-                    self.writeLine(update)
+
+            if(isRangeSeq or isRangeStrict):#Added
+                for accumulator in ['C', 'D', 'H', 'R']:
+                    update = core.getRangeUpdate(accumulator, semantic, patternName, featureName, aggregatorName)
+                    if len(update) > 0:
+                        self.writeLine(update)
+            
+            else:
+                for accumulator in ['C', 'D', 'R']:
+                    update = core.getUpdate(accumulator, semantic, patternName, featureName, aggregatorName)
+                    if len(update) > 0:
+                        self.writeLine(update)
             self.writeLine('currentState = \'' + core.getNextState(patternName, state, sign) + '\'')
             self.dedent()
         self.writeLine('}')
@@ -137,30 +176,11 @@ c.writeLine('')
 c.writeLine('package generatedingo')
 c.writeLine('')
 c.writeLine('import(')
-#c.writeLine('\t"fmt"')
 c.writeLine('\t"math"')
 c.writeLine(')')
 c.writeLine('')
 c.writeLine('func add(x float64, y float64) float64 { return (x+y) }')
 c.writeLine('func diff(x float64, y float64) float64 { return (math.Abs(y-x)) }')
-#c.writeLine('/*')
-#c.writeLine('type Tuple struct { a,b interface{} }')
-#c.writeLine('')
-#c.writeLine('func GetMax(x float64, y float64) float64 {')
-#c.writeLine('    if x>=y { ')
-#c.writeLine('        return x')
-#c.writeLine('    } else { return y }')
-#c.writeLine('}')
-#c.writeComment('Currently not using this method')
-#c.writeLine('') 
-
-#c.writeLine('func GetMin(x float64, y float64) float64 {') 
-#c.writeLine('    if x>=y { ')
-#c.writeLine('        return y')
-#c.writeLine('    } else { return x }')
-#c.writeLine('}')
-#c.writeComment('Currently not using this method')
-#c.writeLine('*/')
 c.writeLine('')
 
 nb_func = 0 #Number of functions

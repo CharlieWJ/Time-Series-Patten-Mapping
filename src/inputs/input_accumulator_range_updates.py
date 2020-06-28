@@ -1,4 +1,4 @@
-accumulator_updates = {
+accumulator_range_updates = {
     'C' : {
         'out_a' : {
             'a0' : ['default_g_f'],
@@ -9,7 +9,7 @@ accumulator_updates = {
             'a1' : ['phi_f', '(', 'D', ',', 'delta_i_f', ') // C, found a1']
         },
         'in' : {
-            'a0' : ['phi_f', '(', 'C', ',', 'phi_f', '(', 'D', ',', 'delta_i_f_prime', ')', ') // C, in a0'],
+            'a0' : ['phi_f', '(', 'H', ',', 'delta_i_f_prime', ') // C, in a0'],
             'a1' : ['phi_f', '(', 'C', ',', 'phi_f', '(', 'D', ',', 'delta_i_f', ')', ') // C, in a1']
         }
     },
@@ -42,6 +42,13 @@ accumulator_updates = {
             'a0' : ['neutral_f'],
             'a1' : ['neutral_f']
         }
+    },
+    # NOTE: Added H
+    'H' : {
+        #'out_a' : {
+        #    'a0' : ['default_g_f'],
+        #    'a1' : ['default_g_f']
+        #}
     },
     'R' : {
         'out_a' : {

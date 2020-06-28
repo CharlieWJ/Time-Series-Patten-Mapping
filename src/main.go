@@ -11,6 +11,7 @@ func add(x float64, y float64) float64 {
 }
 func diff(x float64, y float64) float64 { return (math.Abs(x - y)) }
 
+// Sum_range_decreasing_sequence : Comment for export
 func Sum_range_decreasing_sequence(data []float64) float64 { //D is essentially a useless variable
 	C := 0.0
 	D := 0.0
@@ -145,12 +146,13 @@ func Max_range_strictly_decreasing_sequence(data []float64) float64 {
 			//fmt.Println("----------")
 			//fmt.Printf("C_temp: %f | D_temp: %f | R_temp: %f |\n\n", C_temp, D_temp, R_temp)
 			if data[i] > data[i-1] {
+				H = 0.0
 				if currentState == 's' {
 					currentState = 's'
 				} else if currentState == 'r' {
 					C = 0.0
 					D = 0.0
-					H = 0.0
+					//H = 0.0
 					R = math.Max(R_temp, C_temp)
 					currentState = 's'
 				}
