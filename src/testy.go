@@ -213,6 +213,32 @@ var TestCases = []TestCase{
 		method: generated.Max_width_zigzag([]float64{4, 1, 3, 1, 4, 6, 1, 5, 5, 2, 7, 2, 3, 1, 6, 1}),
 		result: 6, name: "Max_width_zigzag()",
 	},
+	//MAX SURFACE TESTING\\
+	{
+		method: generated.Max_surface_bump_on_decreasing_sequence([]float64{7, 6, 5, 6, 5, 4, 1, 4, 7, 5, 4, 2, 5, 4, 3, 3}),
+		result: 16, name: "Max_surface_bump_on_decreasing_sequence(data []float64)",
+	},
+	{
+		method: generated.Max_surface_decreasing([]float64{3, 4, 2, 2, 5, 6, 6, 4, 4, 3, 1, 1, 4, 6, 4, 4}),
+		result: 10, name: "Max_surface_decreasing()",
+	},
+	{
+		method: generated.Max_surface_decreasing_sequence([]float64{3, 4, 2, 2, 5, 6, 6, 4, 4, 3, 1, 1, 4, 6, 4, 4}),
+		result: 18, name: "Max_surface_decreasing_sequence()",
+	},
+	{
+		method: generated.Max_surface_decreasing_terrace([]float64{6, 4, 4, 4, 5, 2, 2, 1, 3, 3, 5, 4, 4, 3, 3, 3}),
+		result: 8, name: "Max_surface_decreasing_terrace",
+	},
+	{
+		method: generated.Max_surface_dip_on_increasing_sequence([]float64{1, 2, 3, 2, 5, 6, 7, 4, 1, 3, 4, 6, 1, 2, 4, 4}),
+		result: 10, name: "Max_surface_dip_on_increasing_sequence",
+	},
+	{
+		method: generated.Max_surface_gorge([]float64{1, 7, 3, 4, 4, 5, 5, 4, 2, 2, 6, 5, 4, 6, 5, 7}),
+		result: 11, name: "Max_surface_gorge(data []float64)",
+	},
+	//MIN FUNCTION TESTING STARTS HERE\\
 	TestCase{
 		method: generated.Min_max_bump_on_decreasing_sequence([]float64{7, 6, 5, 6, 5, 4, 1, 4, 7, 5, 4, 2, 5, 4, 3, 3}),
 		result: 5, name: "Min_max_bump_on_decreasing_sequence()",
@@ -571,6 +597,10 @@ var TestCases = []TestCase{
 		method: generated.Max_range_increasing_sequence([]float64{4, 3, 5, 5, 2, 1, 1, 3, 3, 4, 6, 6, 3, 1, 3, 3}),
 		result: 5, name: "Max_range_increasing_sequence()",
 	},
+	TestCase{
+		method: generated.Max_range_strictly_increasing_sequence([]float64{4, 3, 5, 5, 2, 1, 1, 2, 3, 4, 6, 6, 3, 1, 2, 3}),
+		result: 5, name: "Max_range_strictly_increasing_sequence()",
+	},
 	/// MIN_RANGE TESTING \\\
 	TestCase{
 		method: generated.Min_range_decreasing([]float64{3, 4, 2, 2, 5, 6, 6, 4, 4, 3, 1, 1, 4, 6, 4, 4}),
@@ -594,6 +624,14 @@ var TestCases = []TestCase{
 		method: generated.Min_range_increasing([]float64{4, 3, 5, 5, 2, 1, 1, 3, 3, 4, 6, 6, 3, 1, 3, 3}),
 		result: 1, name: "Min_range_increasing([]float64)",
 	},
+	TestCase{
+		method: generated.Min_range_increasing_sequence([]float64{4, 3, 5, 5, 2, 1, 1, 3, 3, 4, 6, 6, 3, 1, 3, 3}),
+		result: 2, name: "Min_range_increasing_sequence([]float64)",
+	},
+	TestCase{
+		method: generated.Min_range_strictly_increasing_sequence([]float64{4, 3, 5, 5, 2, 1, 1, 2, 3, 4, 6, 6, 3, 1, 2, 3}),
+		result: 2, name: "Min_range_strictly_increasing_sequence()",
+	},
 	/// SUM_RANGE TESTING \\\
 	TestCase{
 		method: generated.Sum_range_decreasing([]float64{3, 4, 2, 2, 5, 6, 6, 4, 4, 3, 1, 1, 4, 6, 4, 4}),
@@ -615,8 +653,8 @@ var TestCases = []TestCase{
 		method: generated.Sum_range_increasing_sequence([]float64{4, 3, 5, 5, 2, 1, 1, 3, 3, 4, 6, 6, 3, 1, 3, 3}),
 		result: 9, name: "Sum_range_increasing_sequence()",
 	},
-	/*TestCase{
+	TestCase{
 		method: generated.Sum_range_strictly_increasing_sequence([]float64{4, 3, 5, 5, 2, 1, 1, 2, 3, 4, 6, 6, 3, 1, 2, 3}),
 		result: 9, name: "Sum_range_strictly_increasing_sequence([]float64)",
-	},*/ //Almost working, off by 1 for this test case
+	}, //I think is working correctly
 }

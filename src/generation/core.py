@@ -56,7 +56,6 @@ def getRangeUpdate(accumulator, semantic, patternName, featureName, aggregatorNa
                 fun = features[featureName]['phi_f']
                 if fun == '+':
                     val += 'add'
-                    #val = val + 'operator.add'
                 else:
                     val = val + fun
             elif element == 'delta_i_f':

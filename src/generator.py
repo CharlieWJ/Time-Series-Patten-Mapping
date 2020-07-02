@@ -72,52 +72,66 @@ class CodeGeneratorBackend:
     def writeFunction(self, patternName, featureName, aggregatorName, x):
         self.writeComment(x+'_'+featureName+'_'+patternName+' : Exported Function')
         self.writeHeader(patternName, featureName, x)#, aggregatorName)
-        for accumulator in ['C', 'D', 'R']:
-            self.writeInitValue(accumulator, patternName, featureName, aggregatorName)
-        
-        isRangeSeq=False                #Currently only Decreasing
-        isRangeStrict=False             #Detect if func is range_strictly_decreasing_sequence
-        if (featureName == 'range' and (patternName == 'decreasing_sequence')):# or patternName == 'increasing_sequence')):
-            isRangeSeq=True
-            self.writeLine("H := 0.0")
-        
-        if (featureName == 'range' and (patternName == 'strictly_decreasing_sequence')):# or patternName == 'strictly_increasing_sequence')):
-            isRangeStrict=True
-            self.writeLine("H := 0.0")
-        
+        #for accumulator in ['C', 'D', 'R']:
+        #    self.writeInitValue(accumulator, patternName, featureName, aggregatorName)        
+        #isRangeDecSeq=False                #Currently only Decreasing
+        #isRangeStrict=False             #Detect if func is range_strictly_decreasing_sequence
+
+        isRange=True if featureName == 'range' else False
+        isDec=True if patternName == 'decreasing_sequence' or patternName == 'strictly_decreasing_sequence' else False
+        isInc=True if patternName == 'increasing_sequence' or patternName == 'strictly_increasing_sequence' else False
+        isStrict=True if patternName == 'strictly_increasing_sequence' or patternName == 'strictly_decreasing_sequence' else False
+        letters=['C', 'D', 'R', 'H'] if isRange and (isDec or isInc or isStrict) else ['C', 'D', 'R']
+        for accumulator in letters:
+            self.writeInitValue(accumulator, patternName, featureName, aggregatorName) 
+
         self.writeEntryState(patternName)
-        self.writeLine('for i := 1; i < len(data); i++ {')
+        self.writeLine('DataLen := len(data)')
+        self.writeLine('for i := 1; i < DataLen; i++ {')
         self.indent()
-        self.writeLine('if i < len(data) {')
+        self.writeLine('if i < DataLen {')
         self.indent()
-        for accumulator in ['C', 'D', 'R']:
+        for accumulator in letters:
             self.writeLine(accumulator + 'temp := float64(' + accumulator+')')
-        if (isRangeSeq or isRangeStrict):
-            self.writeLine('Htemp := float64(H)')
+        #if (isRangeDecSeq or isRangeStrict):
+        #    self.writeLine('Htemp := float64(H)')
         
         self.writeLine('if data[i] > data[i-1] {')
-        if (isRangeSeq or isRangeStrict):
+        if (isRange and isDec):
             self.indent()
             self.writeLine('H = 0.0')
             self.dedent()
-        self.writeCore(patternName, featureName, aggregatorName, '<', isRangeSeq, isRangeStrict)
+        elif (isRange and isInc):
+            self.indent()
+            self.writeLine('H = data[i-1]')
+            self.writeLine('H = math.Min(H, Htemp)')
+            self.dedent()
+        self.writeCore(patternName, featureName, aggregatorName, '<', isRange, isInc, isDec, isStrict)## Only for decreasing funcs rn
         self.dedent()
 
         self.writeLine('} else if data[i] < data[i-1] {')##
-        if (isRangeSeq or isRangeStrict):
+        if (isRange and isDec):
             self.indent()
             self.writeLine('H = data[i-1]')
             self.writeLine('H = math.Max(H, Htemp) // Holding onto the largest value for sequence')
             self.dedent()
-        self.writeCore(patternName, featureName, aggregatorName, '>', isRangeSeq, isRangeStrict)
+        elif (isRange and isInc):
+            self.indent()
+            self.writeLine("H = math.Inf(1)")
+            self.dedent()
+        self.writeCore(patternName, featureName, aggregatorName, '>', isRange, isInc, isDec, isStrict)## Only for decreasing funcs rn
         self.dedent()
 
         self.writeLine('} else if data[i] == data[i-1] {')##
-        if (isRangeStrict):
+        if (isRange and isDec and isStrict):
             self.indent()
             self.writeLine('H = 0.0')
             self.dedent()
-        self.writeCore(patternName, featureName, aggregatorName, '=', isRangeSeq, isRangeStrict)
+        elif (isRange and isInc and isStrict):
+            self.indent()
+            self.writeLine("H = math.Inf(1)")
+            self.dedent()
+        self.writeCore(patternName, featureName, aggregatorName, '=', isRange, isInc, isDec, isStrict)## Only for decreasing funcs rn
         self.dedent()
 
         self.writeLine('}')##
@@ -132,7 +146,7 @@ class CodeGeneratorBackend:
         self.dedent()
         self.writeLine('}')
 
-    def writeCore(self, patternName, featureName, aggregatorName, sign, isRangeSeq, isRangeStrict):
+    def writeCore(self, patternName, featureName, aggregatorName, sign, isRange, isInc, isDec, isStrict):
         self.indent()
         c = True
         for state in core.getPatternStates(patternName):
@@ -144,7 +158,7 @@ class CodeGeneratorBackend:
             self.indent()
             semantic = core.getNextSemantic(patternName, state, sign)
 
-            if(isRangeSeq or isRangeStrict):#Added
+            if(isRange and (isInc or isDec or isStrict)):#Added
                 for accumulator in ['C', 'D', 'H', 'R']:
                     update = core.getRangeUpdate(accumulator, semantic, patternName, featureName, aggregatorName)
                     if len(update) > 0:
@@ -169,8 +183,7 @@ c.begin(tab="    ")
 c.writeComment('----------------------------------------------------------------------------')
 c.writeComment('This file was auto-generated on ' + datetime.now().strftime('%Y-%m-%d'))
 c.writeComment('By Charles W. Jeffries.')
-c.writeComment('The original script was provided by: Florine Cercle & Denis Allard')
-c.writeComment('Original Source Code : https://github.com/allarddenis/time-series-pattern-recognition')
+c.writeComment('Source Code : https://github.com/CharlieWJ/Time-Series-Patten-Mapping')
 c.writeComment('----------------------------------------------------------------------------')
 c.writeLine('')
 c.writeLine('package generatedingo')
