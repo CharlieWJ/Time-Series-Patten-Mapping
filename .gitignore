@@ -9,4 +9,3 @@ todo.md
 src/generatedInGo/generatedInGo_test.go
 src/tcpServer.go
 mcsim_win/
-src/makeCSV.py
