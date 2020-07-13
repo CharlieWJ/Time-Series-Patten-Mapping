@@ -1,5 +1,5 @@
 // ----------------------------------------------------------------------------
-// This file was auto-generated on 2020-07-02
+// This file was auto-generated on 2020-07-12
 // By Charles W. Jeffries.
 // Source Code : https://github.com/CharlieWJ/Time-Series-Patten-Mapping
 // ----------------------------------------------------------------------------
@@ -10,8 +10,8 @@ import(
 	"math"
 )
 
-func add(x float64, y float64) float64 { return (x+y) }
-func diff(x float64, y float64) float64 { return (math.Abs(y-x)) }
+func add(x float64, y float64) float64 { return ( x + y ) }
+func diff(x float64, y float64) float64 { return math.Abs( x - y ) } // The absolute difference
 
 // Max_one_bump_on_decreasing_sequence : Exported Function
 func Max_one_bump_on_decreasing_sequence(data []float64) float64{
@@ -70,9 +70,9 @@ func Max_one_bump_on_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -104,9 +104,9 @@ func Max_one_decreasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -150,9 +150,9 @@ func Max_one_decreasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -199,9 +199,9 @@ func Max_one_decreasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -263,9 +263,9 @@ func Max_one_dip_on_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -326,9 +326,9 @@ func Max_one_gorge(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -360,9 +360,9 @@ func Max_one_increasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -406,9 +406,9 @@ func Max_one_increasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -455,9 +455,9 @@ func Max_one_increasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -507,9 +507,9 @@ func Max_one_inflexion(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -561,9 +561,9 @@ func Max_one_peak(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -612,9 +612,9 @@ func Max_one_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -663,9 +663,9 @@ func Max_one_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -712,9 +712,9 @@ func Max_one_proper_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -761,9 +761,9 @@ func Max_one_proper_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -795,9 +795,9 @@ func Max_one_steady(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -843,9 +843,9 @@ func Max_one_steady_sequence(data []float64) float64{
                     currentState = 'r'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -891,9 +891,9 @@ func Max_one_strictly_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -939,9 +939,9 @@ func Max_one_strictly_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -1004,9 +1004,9 @@ func Max_one_summit(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -1058,9 +1058,9 @@ func Max_one_valley(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -1151,9 +1151,9 @@ func Max_one_zigzag(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -1215,9 +1215,9 @@ func Max_width_bump_on_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -1249,9 +1249,9 @@ func Max_width_decreasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -1295,9 +1295,9 @@ func Max_width_decreasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -1344,9 +1344,9 @@ func Max_width_decreasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -1408,9 +1408,9 @@ func Max_width_dip_on_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -1471,9 +1471,9 @@ func Max_width_gorge(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -1505,9 +1505,9 @@ func Max_width_increasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -1551,9 +1551,9 @@ func Max_width_increasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -1600,9 +1600,9 @@ func Max_width_increasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -1652,9 +1652,9 @@ func Max_width_inflexion(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -1706,9 +1706,9 @@ func Max_width_peak(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -1757,9 +1757,9 @@ func Max_width_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -1808,9 +1808,9 @@ func Max_width_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -1857,9 +1857,9 @@ func Max_width_proper_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -1906,9 +1906,9 @@ func Max_width_proper_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -1940,9 +1940,9 @@ func Max_width_steady(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -1988,9 +1988,9 @@ func Max_width_steady_sequence(data []float64) float64{
                     currentState = 'r'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -2036,9 +2036,9 @@ func Max_width_strictly_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -2084,9 +2084,9 @@ func Max_width_strictly_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -2149,9 +2149,9 @@ func Max_width_summit(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -2203,9 +2203,9 @@ func Max_width_valley(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -2296,9 +2296,9 @@ func Max_width_zigzag(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -2360,9 +2360,9 @@ func Max_surface_bump_on_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -2394,9 +2394,9 @@ func Max_surface_decreasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -2440,9 +2440,9 @@ func Max_surface_decreasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -2489,9 +2489,9 @@ func Max_surface_decreasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -2553,9 +2553,9 @@ func Max_surface_dip_on_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -2616,9 +2616,9 @@ func Max_surface_gorge(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -2650,9 +2650,9 @@ func Max_surface_increasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -2696,9 +2696,9 @@ func Max_surface_increasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -2745,9 +2745,9 @@ func Max_surface_increasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -2797,9 +2797,9 @@ func Max_surface_inflexion(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -2851,9 +2851,9 @@ func Max_surface_peak(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -2902,9 +2902,9 @@ func Max_surface_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -2953,9 +2953,9 @@ func Max_surface_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -3002,9 +3002,9 @@ func Max_surface_proper_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -3051,9 +3051,9 @@ func Max_surface_proper_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -3085,9 +3085,9 @@ func Max_surface_steady(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -3133,9 +3133,9 @@ func Max_surface_steady_sequence(data []float64) float64{
                     currentState = 'r'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -3181,9 +3181,9 @@ func Max_surface_strictly_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -3229,9 +3229,9 @@ func Max_surface_strictly_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -3294,9 +3294,9 @@ func Max_surface_summit(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -3348,9 +3348,9 @@ func Max_surface_valley(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -3441,9 +3441,9 @@ func Max_surface_zigzag(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -3505,9 +3505,9 @@ func Max_max_bump_on_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -3539,9 +3539,9 @@ func Max_max_decreasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -3585,9 +3585,9 @@ func Max_max_decreasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -3634,9 +3634,9 @@ func Max_max_decreasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -3698,9 +3698,9 @@ func Max_max_dip_on_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -3761,9 +3761,9 @@ func Max_max_gorge(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -3795,9 +3795,9 @@ func Max_max_increasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -3841,9 +3841,9 @@ func Max_max_increasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -3890,9 +3890,9 @@ func Max_max_increasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -3942,9 +3942,9 @@ func Max_max_inflexion(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -3996,9 +3996,9 @@ func Max_max_peak(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -4047,9 +4047,9 @@ func Max_max_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -4098,9 +4098,9 @@ func Max_max_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -4147,9 +4147,9 @@ func Max_max_proper_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -4196,9 +4196,9 @@ func Max_max_proper_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -4230,9 +4230,9 @@ func Max_max_steady(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -4278,9 +4278,9 @@ func Max_max_steady_sequence(data []float64) float64{
                     currentState = 'r'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -4326,9 +4326,9 @@ func Max_max_strictly_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -4374,9 +4374,9 @@ func Max_max_strictly_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -4439,9 +4439,9 @@ func Max_max_summit(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -4493,9 +4493,9 @@ func Max_max_valley(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -4586,9 +4586,9 @@ func Max_max_zigzag(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -4650,9 +4650,9 @@ func Max_min_bump_on_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -4684,9 +4684,9 @@ func Max_min_decreasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -4730,9 +4730,9 @@ func Max_min_decreasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -4779,9 +4779,9 @@ func Max_min_decreasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -4843,9 +4843,9 @@ func Max_min_dip_on_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -4906,9 +4906,9 @@ func Max_min_gorge(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -4940,9 +4940,9 @@ func Max_min_increasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -4986,9 +4986,9 @@ func Max_min_increasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -5035,9 +5035,9 @@ func Max_min_increasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -5087,9 +5087,9 @@ func Max_min_inflexion(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -5141,9 +5141,9 @@ func Max_min_peak(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -5192,9 +5192,9 @@ func Max_min_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -5243,9 +5243,9 @@ func Max_min_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -5292,9 +5292,9 @@ func Max_min_proper_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -5341,9 +5341,9 @@ func Max_min_proper_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -5375,9 +5375,9 @@ func Max_min_steady(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -5423,9 +5423,9 @@ func Max_min_steady_sequence(data []float64) float64{
                     currentState = 'r'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -5471,9 +5471,9 @@ func Max_min_strictly_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -5519,9 +5519,9 @@ func Max_min_strictly_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -5584,9 +5584,9 @@ func Max_min_summit(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -5638,9 +5638,9 @@ func Max_min_valley(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -5731,9 +5731,9 @@ func Max_min_zigzag(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -5795,9 +5795,9 @@ func Max_range_bump_on_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -5829,9 +5829,9 @@ func Max_range_decreasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -5880,9 +5880,9 @@ func Max_range_decreasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -5929,9 +5929,9 @@ func Max_range_decreasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -5993,9 +5993,9 @@ func Max_range_dip_on_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -6056,9 +6056,9 @@ func Max_range_gorge(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -6090,9 +6090,9 @@ func Max_range_increasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -6141,9 +6141,9 @@ func Max_range_increasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -6190,9 +6190,9 @@ func Max_range_increasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -6242,9 +6242,9 @@ func Max_range_inflexion(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -6296,9 +6296,9 @@ func Max_range_peak(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -6347,9 +6347,9 @@ func Max_range_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -6398,9 +6398,9 @@ func Max_range_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -6447,9 +6447,9 @@ func Max_range_proper_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -6496,9 +6496,9 @@ func Max_range_proper_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -6530,9 +6530,9 @@ func Max_range_steady(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -6578,9 +6578,9 @@ func Max_range_steady_sequence(data []float64) float64{
                     currentState = 'r'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -6632,9 +6632,9 @@ func Max_range_strictly_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -6686,9 +6686,9 @@ func Max_range_strictly_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -6751,9 +6751,9 @@ func Max_range_summit(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -6805,9 +6805,9 @@ func Max_range_valley(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -6898,9 +6898,9 @@ func Max_range_zigzag(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Max(R, C)    
@@ -6962,9 +6962,9 @@ func Min_one_bump_on_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -6996,9 +6996,9 @@ func Min_one_decreasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -7042,9 +7042,9 @@ func Min_one_decreasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -7091,9 +7091,9 @@ func Min_one_decreasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -7155,9 +7155,9 @@ func Min_one_dip_on_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -7218,9 +7218,9 @@ func Min_one_gorge(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -7252,9 +7252,9 @@ func Min_one_increasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -7298,9 +7298,9 @@ func Min_one_increasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -7347,9 +7347,9 @@ func Min_one_increasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -7399,9 +7399,9 @@ func Min_one_inflexion(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -7453,9 +7453,9 @@ func Min_one_peak(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -7504,9 +7504,9 @@ func Min_one_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -7555,9 +7555,9 @@ func Min_one_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -7604,9 +7604,9 @@ func Min_one_proper_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -7653,9 +7653,9 @@ func Min_one_proper_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -7687,9 +7687,9 @@ func Min_one_steady(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -7735,9 +7735,9 @@ func Min_one_steady_sequence(data []float64) float64{
                     currentState = 'r'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -7783,9 +7783,9 @@ func Min_one_strictly_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -7831,9 +7831,9 @@ func Min_one_strictly_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -7896,9 +7896,9 @@ func Min_one_summit(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -7950,9 +7950,9 @@ func Min_one_valley(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -8043,9 +8043,9 @@ func Min_one_zigzag(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -8107,9 +8107,9 @@ func Min_width_bump_on_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -8141,9 +8141,9 @@ func Min_width_decreasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -8187,9 +8187,9 @@ func Min_width_decreasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -8236,9 +8236,9 @@ func Min_width_decreasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -8300,9 +8300,9 @@ func Min_width_dip_on_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -8363,9 +8363,9 @@ func Min_width_gorge(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -8397,9 +8397,9 @@ func Min_width_increasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -8443,9 +8443,9 @@ func Min_width_increasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -8492,9 +8492,9 @@ func Min_width_increasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -8544,9 +8544,9 @@ func Min_width_inflexion(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -8598,9 +8598,9 @@ func Min_width_peak(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -8649,9 +8649,9 @@ func Min_width_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -8700,9 +8700,9 @@ func Min_width_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -8749,9 +8749,9 @@ func Min_width_proper_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -8798,9 +8798,9 @@ func Min_width_proper_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -8832,9 +8832,9 @@ func Min_width_steady(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -8880,9 +8880,9 @@ func Min_width_steady_sequence(data []float64) float64{
                     currentState = 'r'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -8928,9 +8928,9 @@ func Min_width_strictly_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -8976,9 +8976,9 @@ func Min_width_strictly_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -9041,9 +9041,9 @@ func Min_width_summit(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -9095,9 +9095,9 @@ func Min_width_valley(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -9188,9 +9188,9 @@ func Min_width_zigzag(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -9252,9 +9252,9 @@ func Min_surface_bump_on_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -9286,9 +9286,9 @@ func Min_surface_decreasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -9332,9 +9332,9 @@ func Min_surface_decreasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -9381,9 +9381,9 @@ func Min_surface_decreasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -9445,9 +9445,9 @@ func Min_surface_dip_on_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -9508,9 +9508,9 @@ func Min_surface_gorge(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -9542,9 +9542,9 @@ func Min_surface_increasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -9588,9 +9588,9 @@ func Min_surface_increasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -9637,9 +9637,9 @@ func Min_surface_increasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -9689,9 +9689,9 @@ func Min_surface_inflexion(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -9743,9 +9743,9 @@ func Min_surface_peak(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -9794,9 +9794,9 @@ func Min_surface_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -9845,9 +9845,9 @@ func Min_surface_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -9894,9 +9894,9 @@ func Min_surface_proper_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -9943,9 +9943,9 @@ func Min_surface_proper_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -9977,9 +9977,9 @@ func Min_surface_steady(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -10025,9 +10025,9 @@ func Min_surface_steady_sequence(data []float64) float64{
                     currentState = 'r'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -10073,9 +10073,9 @@ func Min_surface_strictly_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -10121,9 +10121,9 @@ func Min_surface_strictly_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -10186,9 +10186,9 @@ func Min_surface_summit(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -10240,9 +10240,9 @@ func Min_surface_valley(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -10333,9 +10333,9 @@ func Min_surface_zigzag(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -10397,9 +10397,9 @@ func Min_max_bump_on_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -10431,9 +10431,9 @@ func Min_max_decreasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -10477,9 +10477,9 @@ func Min_max_decreasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -10526,9 +10526,9 @@ func Min_max_decreasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -10590,9 +10590,9 @@ func Min_max_dip_on_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -10653,9 +10653,9 @@ func Min_max_gorge(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -10687,9 +10687,9 @@ func Min_max_increasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -10733,9 +10733,9 @@ func Min_max_increasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -10782,9 +10782,9 @@ func Min_max_increasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -10834,9 +10834,9 @@ func Min_max_inflexion(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -10888,9 +10888,9 @@ func Min_max_peak(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -10939,9 +10939,9 @@ func Min_max_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -10990,9 +10990,9 @@ func Min_max_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -11039,9 +11039,9 @@ func Min_max_proper_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -11088,9 +11088,9 @@ func Min_max_proper_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -11122,9 +11122,9 @@ func Min_max_steady(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -11170,9 +11170,9 @@ func Min_max_steady_sequence(data []float64) float64{
                     currentState = 'r'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -11218,9 +11218,9 @@ func Min_max_strictly_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -11266,9 +11266,9 @@ func Min_max_strictly_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -11331,9 +11331,9 @@ func Min_max_summit(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -11385,9 +11385,9 @@ func Min_max_valley(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -11478,9 +11478,9 @@ func Min_max_zigzag(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -11542,9 +11542,9 @@ func Min_min_bump_on_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -11576,9 +11576,9 @@ func Min_min_decreasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -11622,9 +11622,9 @@ func Min_min_decreasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -11671,9 +11671,9 @@ func Min_min_decreasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -11735,9 +11735,9 @@ func Min_min_dip_on_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -11798,9 +11798,9 @@ func Min_min_gorge(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -11832,9 +11832,9 @@ func Min_min_increasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -11878,9 +11878,9 @@ func Min_min_increasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -11927,9 +11927,9 @@ func Min_min_increasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -11979,9 +11979,9 @@ func Min_min_inflexion(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -12033,9 +12033,9 @@ func Min_min_peak(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -12084,9 +12084,9 @@ func Min_min_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -12135,9 +12135,9 @@ func Min_min_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -12184,9 +12184,9 @@ func Min_min_proper_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -12233,9 +12233,9 @@ func Min_min_proper_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -12267,9 +12267,9 @@ func Min_min_steady(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -12315,9 +12315,9 @@ func Min_min_steady_sequence(data []float64) float64{
                     currentState = 'r'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -12363,9 +12363,9 @@ func Min_min_strictly_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -12411,9 +12411,9 @@ func Min_min_strictly_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -12476,9 +12476,9 @@ func Min_min_summit(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -12530,9 +12530,9 @@ func Min_min_valley(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -12623,9 +12623,9 @@ func Min_min_zigzag(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -12687,9 +12687,9 @@ func Min_range_bump_on_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -12721,9 +12721,9 @@ func Min_range_decreasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -12772,9 +12772,9 @@ func Min_range_decreasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -12821,9 +12821,9 @@ func Min_range_decreasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -12885,9 +12885,9 @@ func Min_range_dip_on_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -12948,9 +12948,9 @@ func Min_range_gorge(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -12982,9 +12982,9 @@ func Min_range_increasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -13033,9 +13033,9 @@ func Min_range_increasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -13082,9 +13082,9 @@ func Min_range_increasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -13134,9 +13134,9 @@ func Min_range_inflexion(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -13188,9 +13188,9 @@ func Min_range_peak(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -13239,9 +13239,9 @@ func Min_range_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -13290,9 +13290,9 @@ func Min_range_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -13339,9 +13339,9 @@ func Min_range_proper_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -13388,9 +13388,9 @@ func Min_range_proper_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -13422,9 +13422,9 @@ func Min_range_steady(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -13470,9 +13470,9 @@ func Min_range_steady_sequence(data []float64) float64{
                     currentState = 'r'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -13524,9 +13524,9 @@ func Min_range_strictly_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -13578,9 +13578,9 @@ func Min_range_strictly_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -13643,9 +13643,9 @@ func Min_range_summit(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -13697,9 +13697,9 @@ func Min_range_valley(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -13790,9 +13790,9 @@ func Min_range_zigzag(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return math.Min(R, C)    
@@ -13854,9 +13854,9 @@ func Sum_one_bump_on_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -13888,9 +13888,9 @@ func Sum_one_decreasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -13934,9 +13934,9 @@ func Sum_one_decreasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -13983,9 +13983,9 @@ func Sum_one_decreasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -14047,9 +14047,9 @@ func Sum_one_dip_on_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -14110,9 +14110,9 @@ func Sum_one_gorge(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -14144,9 +14144,9 @@ func Sum_one_increasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -14190,9 +14190,9 @@ func Sum_one_increasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -14239,9 +14239,9 @@ func Sum_one_increasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -14291,9 +14291,9 @@ func Sum_one_inflexion(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -14345,9 +14345,9 @@ func Sum_one_peak(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -14396,9 +14396,9 @@ func Sum_one_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -14447,9 +14447,9 @@ func Sum_one_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -14496,9 +14496,9 @@ func Sum_one_proper_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -14545,9 +14545,9 @@ func Sum_one_proper_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -14579,9 +14579,9 @@ func Sum_one_steady(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -14627,9 +14627,9 @@ func Sum_one_steady_sequence(data []float64) float64{
                     currentState = 'r'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -14675,9 +14675,9 @@ func Sum_one_strictly_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -14723,9 +14723,9 @@ func Sum_one_strictly_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -14788,9 +14788,9 @@ func Sum_one_summit(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -14842,9 +14842,9 @@ func Sum_one_valley(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -14935,9 +14935,9 @@ func Sum_one_zigzag(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -14999,9 +14999,9 @@ func Sum_width_bump_on_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -15033,9 +15033,9 @@ func Sum_width_decreasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -15079,9 +15079,9 @@ func Sum_width_decreasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -15128,9 +15128,9 @@ func Sum_width_decreasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -15192,9 +15192,9 @@ func Sum_width_dip_on_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -15255,9 +15255,9 @@ func Sum_width_gorge(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -15289,9 +15289,9 @@ func Sum_width_increasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -15335,9 +15335,9 @@ func Sum_width_increasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -15384,9 +15384,9 @@ func Sum_width_increasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -15436,9 +15436,9 @@ func Sum_width_inflexion(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -15490,9 +15490,9 @@ func Sum_width_peak(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -15541,9 +15541,9 @@ func Sum_width_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -15592,9 +15592,9 @@ func Sum_width_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -15641,9 +15641,9 @@ func Sum_width_proper_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -15690,9 +15690,9 @@ func Sum_width_proper_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -15724,9 +15724,9 @@ func Sum_width_steady(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -15772,9 +15772,9 @@ func Sum_width_steady_sequence(data []float64) float64{
                     currentState = 'r'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -15820,9 +15820,9 @@ func Sum_width_strictly_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -15868,9 +15868,9 @@ func Sum_width_strictly_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -15933,9 +15933,9 @@ func Sum_width_summit(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -15987,9 +15987,9 @@ func Sum_width_valley(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -16080,9 +16080,9 @@ func Sum_width_zigzag(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -16144,9 +16144,9 @@ func Sum_surface_bump_on_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -16178,9 +16178,9 @@ func Sum_surface_decreasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -16224,9 +16224,9 @@ func Sum_surface_decreasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -16273,9 +16273,9 @@ func Sum_surface_decreasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -16337,9 +16337,9 @@ func Sum_surface_dip_on_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -16400,9 +16400,9 @@ func Sum_surface_gorge(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -16434,9 +16434,9 @@ func Sum_surface_increasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -16480,9 +16480,9 @@ func Sum_surface_increasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -16529,9 +16529,9 @@ func Sum_surface_increasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -16581,9 +16581,9 @@ func Sum_surface_inflexion(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -16635,9 +16635,9 @@ func Sum_surface_peak(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -16686,9 +16686,9 @@ func Sum_surface_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -16737,9 +16737,9 @@ func Sum_surface_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -16786,9 +16786,9 @@ func Sum_surface_proper_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -16835,9 +16835,9 @@ func Sum_surface_proper_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -16869,9 +16869,9 @@ func Sum_surface_steady(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -16917,9 +16917,9 @@ func Sum_surface_steady_sequence(data []float64) float64{
                     currentState = 'r'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -16965,9 +16965,9 @@ func Sum_surface_strictly_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -17013,9 +17013,9 @@ func Sum_surface_strictly_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -17078,9 +17078,9 @@ func Sum_surface_summit(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -17132,9 +17132,9 @@ func Sum_surface_valley(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -17225,9 +17225,9 @@ func Sum_surface_zigzag(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -17289,9 +17289,9 @@ func Sum_max_bump_on_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -17323,9 +17323,9 @@ func Sum_max_decreasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -17369,9 +17369,9 @@ func Sum_max_decreasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -17418,9 +17418,9 @@ func Sum_max_decreasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -17482,9 +17482,9 @@ func Sum_max_dip_on_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -17545,9 +17545,9 @@ func Sum_max_gorge(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -17579,9 +17579,9 @@ func Sum_max_increasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -17625,9 +17625,9 @@ func Sum_max_increasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -17674,9 +17674,9 @@ func Sum_max_increasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -17726,9 +17726,9 @@ func Sum_max_inflexion(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -17780,9 +17780,9 @@ func Sum_max_peak(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -17831,9 +17831,9 @@ func Sum_max_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -17882,9 +17882,9 @@ func Sum_max_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -17931,9 +17931,9 @@ func Sum_max_proper_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -17980,9 +17980,9 @@ func Sum_max_proper_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -18014,9 +18014,9 @@ func Sum_max_steady(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -18062,9 +18062,9 @@ func Sum_max_steady_sequence(data []float64) float64{
                     currentState = 'r'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -18110,9 +18110,9 @@ func Sum_max_strictly_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -18158,9 +18158,9 @@ func Sum_max_strictly_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -18223,9 +18223,9 @@ func Sum_max_summit(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -18277,9 +18277,9 @@ func Sum_max_valley(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -18370,9 +18370,9 @@ func Sum_max_zigzag(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -18434,9 +18434,9 @@ func Sum_min_bump_on_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -18468,9 +18468,9 @@ func Sum_min_decreasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -18514,9 +18514,9 @@ func Sum_min_decreasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -18563,9 +18563,9 @@ func Sum_min_decreasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -18627,9 +18627,9 @@ func Sum_min_dip_on_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -18690,9 +18690,9 @@ func Sum_min_gorge(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -18724,9 +18724,9 @@ func Sum_min_increasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -18770,9 +18770,9 @@ func Sum_min_increasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -18819,9 +18819,9 @@ func Sum_min_increasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -18871,9 +18871,9 @@ func Sum_min_inflexion(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -18925,9 +18925,9 @@ func Sum_min_peak(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -18976,9 +18976,9 @@ func Sum_min_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -19027,9 +19027,9 @@ func Sum_min_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -19076,9 +19076,9 @@ func Sum_min_proper_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -19125,9 +19125,9 @@ func Sum_min_proper_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -19159,9 +19159,9 @@ func Sum_min_steady(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -19207,9 +19207,9 @@ func Sum_min_steady_sequence(data []float64) float64{
                     currentState = 'r'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -19255,9 +19255,9 @@ func Sum_min_strictly_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -19303,9 +19303,9 @@ func Sum_min_strictly_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -19368,9 +19368,9 @@ func Sum_min_summit(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -19422,9 +19422,9 @@ func Sum_min_valley(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -19515,9 +19515,9 @@ func Sum_min_zigzag(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -19579,9 +19579,9 @@ func Sum_range_bump_on_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -19613,9 +19613,9 @@ func Sum_range_decreasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -19664,9 +19664,9 @@ func Sum_range_decreasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -19713,9 +19713,9 @@ func Sum_range_decreasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -19777,9 +19777,9 @@ func Sum_range_dip_on_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -19840,9 +19840,9 @@ func Sum_range_gorge(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -19874,9 +19874,9 @@ func Sum_range_increasing(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -19925,9 +19925,9 @@ func Sum_range_increasing_sequence(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -19974,9 +19974,9 @@ func Sum_range_increasing_terrace(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -20026,9 +20026,9 @@ func Sum_range_inflexion(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -20080,9 +20080,9 @@ func Sum_range_peak(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -20131,9 +20131,9 @@ func Sum_range_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -20182,9 +20182,9 @@ func Sum_range_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -20231,9 +20231,9 @@ func Sum_range_proper_plain(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -20280,9 +20280,9 @@ func Sum_range_proper_plateau(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -20314,9 +20314,9 @@ func Sum_range_steady(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -20362,9 +20362,9 @@ func Sum_range_steady_sequence(data []float64) float64{
                     currentState = 'r'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -20416,9 +20416,9 @@ func Sum_range_strictly_decreasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -20470,9 +20470,9 @@ func Sum_range_strictly_increasing_sequence(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -20535,9 +20535,9 @@ func Sum_range_summit(data []float64) float64{
                     currentState = 'u'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -20589,9 +20589,9 @@ func Sum_range_valley(data []float64) float64{
                     currentState = 't'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    
@@ -20682,9 +20682,9 @@ func Sum_range_zigzag(data []float64) float64{
                     currentState = 's'                    
                 }                
             }            
-        _ = Ctemp        
-        _ = Dtemp        
-        _ = Rtemp        
+        _ = Ctemp // Temporary fix        
+        _ = Dtemp // Temporary fix        
+        _ = Rtemp // Temporary fix        
         }        
     }    
     return add(R, C)    

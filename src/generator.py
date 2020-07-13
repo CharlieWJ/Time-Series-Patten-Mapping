@@ -136,9 +136,9 @@ class CodeGeneratorBackend:
 
         self.writeLine('}')##
         self.dedent()
-        self.writeLine('_ = Ctemp')## Temporary fix for un-used variables
-        self.writeLine('_ = Dtemp')##
-        self.writeLine('_ = Rtemp')##
+        self.writeLine('_ = Ctemp // Temporary fix')## Temporary fix for un-used variables
+        self.writeLine('_ = Dtemp // Temporary fix')##
+        self.writeLine('_ = Rtemp // Temporary fix')##
         self.writeLine('}')##
         self.dedent()
         self.writeLine('}')##
@@ -192,8 +192,8 @@ c.writeLine('import(')
 c.writeLine('\t"math"')
 c.writeLine(')')
 c.writeLine('')
-c.writeLine('func add(x float64, y float64) float64 { return (x+y) }')
-c.writeLine('func diff(x float64, y float64) float64 { return (math.Abs(y-x)) }')
+c.writeLine('func add(x float64, y float64) float64 { return ( x + y ) }')
+c.writeLine('func diff(x float64, y float64) float64 { return math.Abs( x - y ) } // The absolute difference')
 c.writeLine('')
 
 nb_func = 0 #Number of functions
