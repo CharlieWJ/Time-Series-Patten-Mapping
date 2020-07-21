@@ -9,37 +9,17 @@ import (
 )
 
 const (
-	ConnHost = "localhost"
-	ConnPort = "7100"
-	ConnType = "tcp"
+	connHost = "localhost"
+	connPort = "7100"
+	connType = "tcp"
 )
 
-func add(x float64, y float64) float64 {
-	return (x + y)
-}
-func diff(x float64, y float64) float64 { return (math.Abs(x - y)) }
+func add(x float64, y float64) float64  { return (x + y) }
+func diff(x float64, y float64) float64 { return (math.Abs(math.Abs(x) - math.Abs(y))) }
 
-/*
-// Handles incoming requests.
-func handleRequest(conn net.Conn) {
-	// Make a buffer to hold incoming data.
-	buf := make([]byte, 1024)
-	// Read the incoming connection into the buffer.
-	for {
-		reqLen, err := conn.Read(buf)
-		_ = reqLen // Unused variable
-		if err != nil {
-			fmt.Println("Error Reading:", err.Error())
-			os.Exit(1)
-		}
-		fmt.Println(string(buf))
-	}
-	// Close the connection when you're done with it.
-	// conn.Close()
-}
-*/
 func main() {
 	tcp.RunServer()
-	//fmt.Println(generated.Max_range_decreasing_sequence([]float64{5, 3, 2, 5}))
+	//fmt.Println(Max_range_decreasing([]float64{14, 13, 11, 9, 5, 4, 2, 1, 0, -1, -3, -5, -8, 25, 24, 20, 18, 16, 14, 13, 11}))
+	//fmt.Println(Max_range_increasing_sequence([]float64{24, 26, 28, 29, 30, 34, 37, 20, 24, 26, 28, 29, 30, 34, 37, 20, 24, 26, 28, 29, 30, 34, 37, 20, 24, 26, 28, 29, 30, 34, 37}))
 	fmt.Println("=====Simulation has Concluded=====")
 }

@@ -11,34 +11,21 @@ import (
 	gen "../generatedInGo" //golint sometimes tells me there is an error but i don't recieve one when running, not sure why
 )
 
+//ASK ABOUT PACKAGING ISSUES
 const (
-	// ConnHost : Connection host operated on
-	ConnHost = "localhost"
-	// ConnPort : Port where connection is established
-	ConnPort = "7100"
-	// ConnType : Connection Type
-	ConnType = "tcp"
+	connHost = "localhost"
+	connPort = "7100"
+	connType = "tcp"
 )
 
 var datalength = 0
 
-// Sens1Prop1 : Sensor 1 Property 1
-var Sens1Prop1 = []float64{}
-
-// Sens1Prop2 : Sensor 1 Property 2
-var Sens1Prop2 = []float64{}
-
-// Sens1Prop3 : Sensor 1 Property 3
-var Sens1Prop3 = []float64{}
-
-// Sens1Prop4 : Sensor 1 Property 4
-var Sens1Prop4 = []float64{}
-
-// Sens1Prop5 : Sensor 1 Property 5
-var Sens1Prop5 = []float64{}
-
-// Sens1Prop6 : Sensor 1 Property 6
-var Sens1Prop6 = []float64{}
+var sens1Prop1 = []float64{}
+var sens1Prop2 = []float64{}
+var sens1Prop3 = []float64{}
+var sens1Prop4 = []float64{}
+var sens1Prop5 = []float64{}
+var sens1Prop6 = []float64{}
 
 var datasens2 = []float64{}
 var datasens3 = []float64{}
@@ -75,14 +62,17 @@ func HandleRequest(conn net.Conn) {
 		}
 		_ = reqLen // Unused variable
 		fmt.Println(string(buf))
-		//fmt.Println(buf)
 		HandleData(buf)
 		fmt.Println("")
-		if datalength+10 == len(Sens1Prop1) {
+		if datalength+10 == len(sens1Prop1) {
 			fmt.Println("=====FUNCTION TESTING=====")
-			fmt.Println("Max_range_decreasing_sequence(): ", gen.Max_range_decreasing_sequence(Sens1Prop1))
-			fmt.Println("Max_range_strictly_decreasing_sequence(): ", gen.Max_range_strictly_decreasing_sequence(Sens1Prop1))
-			datalength = len(Sens1Prop1)
+			fmt.Println("Max_range_decreasing(): ", gen.Max_range_decreasing(sens1Prop1))
+			fmt.Println("Max_range_decreasing_sequence(): ", gen.Max_range_decreasing_sequence(sens1Prop1))
+			fmt.Println("Max_range_strictly_decreasing_sequence(): ", gen.Max_range_strictly_decreasing_sequence(sens1Prop1))
+			fmt.Println("Max_range_increasing(): ", gen.Max_range_increasing(sens1Prop2))
+			fmt.Println("Max_range_increasing_sequence(): ", gen.Max_range_increasing_sequence(sens1Prop2))
+			fmt.Println("Max_range_strictly_increasing_sequence(): ", gen.Max_range_strictly_increasing_sequence(sens1Prop2))
+			datalength = len(sens1Prop1)
 		}
 		//conn.Write([]byte("Message received."))
 	}
@@ -100,7 +90,7 @@ func HandleData(buf []byte) { // this works if there are multiple properties or 
 			if err != nil {
 				fmt.Println("Error Reading:", err.Error())
 				fmt.Println("=====SIMULATION ERROR=====")
-				//os.Exit(1)
+				os.Exit(1)
 			} else {
 				AppendValue(sensor, val, prop)
 			}
@@ -127,23 +117,23 @@ func DetectSensor(buf []byte) string {
 func AppendValue(sensor string, val float64, prop int) {
 	if sensor == "gr3sensor1" {
 		if prop == 0 {
-			Sens1Prop1 = append(Sens1Prop1, val)
-			fmt.Println("Sensor 1 Property 1: ", Sens1Prop1)
+			sens1Prop1 = append(sens1Prop1, val)
+			fmt.Println("Sensor 1 Property 1: ", sens1Prop1)
 		} else if prop == 1 {
-			Sens1Prop2 = append(Sens1Prop2, val)
-			fmt.Println("Sensor 1 Property 2: ", Sens1Prop2)
+			sens1Prop2 = append(sens1Prop2, val)
+			fmt.Println("Sensor 1 Property 2: ", sens1Prop2)
 		} else if prop == 2 {
-			Sens1Prop3 = append(Sens1Prop3, val)
-			fmt.Println("Sensor 1 Property 3: ", Sens1Prop3)
+			sens1Prop3 = append(sens1Prop3, val)
+			fmt.Println("Sensor 1 Property 3: ", sens1Prop3)
 		} else if prop == 3 {
-			Sens1Prop3 = append(Sens1Prop4, val)
-			fmt.Println("Sensor 1 Property 4: ", Sens1Prop4)
+			sens1Prop3 = append(sens1Prop4, val)
+			fmt.Println("Sensor 1 Property 4: ", sens1Prop4)
 		} else if prop == 4 {
-			Sens1Prop3 = append(Sens1Prop5, val)
-			fmt.Println("Sensor 1 Property 5: ", Sens1Prop5)
+			sens1Prop3 = append(sens1Prop5, val)
+			fmt.Println("Sensor 1 Property 5: ", sens1Prop5)
 		} else {
-			Sens1Prop6 = append(Sens1Prop6, val)
-			fmt.Println("Sensor 1 Property 6: ", Sens1Prop6)
+			sens1Prop6 = append(sens1Prop6, val)
+			fmt.Println("Sensor 1 Property 6: ", sens1Prop6)
 		}
 	} else if sensor == "gr3sensor2" {
 		datasens2 = append(datasens2, val)
@@ -166,7 +156,7 @@ func AppendValue(sensor string, val float64, prop int) {
 // RunServer : Calls 'HandleRequest' and keeps server up and running
 func RunServer() {
 	// Listen for incoming connections.
-	listener, err := net.Listen(ConnType, ConnHost+":"+ConnPort)
+	listener, err := net.Listen(connType, connHost+":"+connPort)
 	if err != nil {
 		fmt.Println("Error listening:", err.Error())
 		fmt.Println("=====SIMULATION HAS CONCLUDED=====")
@@ -174,7 +164,7 @@ func RunServer() {
 	}
 	// Close the listener when the application closes.
 	defer listener.Close()
-	fmt.Println("Listening on " + ConnHost + ":" + ConnPort)
+	fmt.Println("Listening on " + connHost + ":" + connPort)
 	for {
 		// Listen for an incoming connection.
 		conn, err := listener.Accept()

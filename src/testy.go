@@ -3,7 +3,7 @@ package main //testy
 import (
 	"fmt"
 
-	generated "../generatedInGo"
+	generated "./generatedInGo"
 )
 
 // TestCase Struct : 'method' runs the function, 'result' is the expected return value and name is the function.

@@ -81,10 +81,16 @@ class CodeGeneratorBackend:
         isDec=True if patternName == 'decreasing_sequence' or patternName == 'strictly_decreasing_sequence' else False
         isInc=True if patternName == 'increasing_sequence' or patternName == 'strictly_increasing_sequence' else False
         isStrict=True if patternName == 'strictly_increasing_sequence' or patternName == 'strictly_decreasing_sequence' else False
-        letters=['C', 'D', 'R', 'H'] if isRange and (isDec or isInc or isStrict) else ['C', 'D', 'R']
-        for accumulator in letters:
-            self.writeInitValue(accumulator, patternName, featureName, aggregatorName) 
+        letters=['C', 'D', 'R', 'H'] if isRange and (isDec or isInc or isStrict) else ['C', 'D', 'R'] #Initializes values
+        #letters = ['C', 'D', 'R']
+        for accumulator in ['C', 'D', 'R']:
+            self.writeInitValue(accumulator, patternName, featureName, aggregatorName)
 
+        if isRange and (isInc):
+            self.writeLine("H := math.Inf(1)")
+        elif isRange and (isDec):
+            self.writeLine("H := math.Inf(-1)")
+        
         self.writeEntryState(patternName)
         self.writeLine('DataLen := len(data)')
         self.writeLine('for i := 1; i < DataLen; i++ {')
@@ -193,7 +199,8 @@ c.writeLine('\t"math"')
 c.writeLine(')')
 c.writeLine('')
 c.writeLine('func add(x float64, y float64) float64 { return ( x + y ) }')
-c.writeLine('func diff(x float64, y float64) float64 { return math.Abs( x - y ) } // The absolute difference')
+c.writeLine('func diff(x float64, y float64) float64 { return (math.Abs(math.Abs(x) - math.Abs(y))) }')
+# c.writeLine('func diff(x float64, y float64) float64 { return math.Abs( x - y ) } // The absolute difference')
 c.writeLine('')
 
 nb_func = 0 #Number of functions

@@ -35,9 +35,9 @@ features = {
         "delta_i_f" : "xi"
     },
     "range" : {
-        "neutral_f" : "0.0",#This only alters D's values.
-        "min_f" : "0.0",#This alters C's & R's values.
-        "max_f" : "math.Inf(1)",#Was originally "+inf"
+        "neutral_f" : "0.0 //neutral_f",#This only alters D's values.
+        "min_f" : "0.0 //min_f",#This alters C's R's & H's values.
+        "max_f" : "math.Inf(1) //max_f",#Was originally "+inf"
         "phi_f" : "diff",
         "delta_i_f" : "xi"
     }

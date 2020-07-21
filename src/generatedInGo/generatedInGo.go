@@ -1,5 +1,5 @@
 // ----------------------------------------------------------------------------
-// This file was auto-generated on 2020-07-13
+// This file was auto-generated on 2020-07-20
 // By Charles W. Jeffries.
 // Source Code : https://github.com/CharlieWJ/Time-Series-Patten-Mapping
 // ----------------------------------------------------------------------------
@@ -11,7 +11,7 @@ import (
 )
 
 func add(x float64, y float64) float64  { return (x + y) }
-func diff(x float64, y float64) float64 { return math.Abs(x - y) } // The absolute difference
+func diff(x float64, y float64) float64 { return (math.Abs(math.Abs(x) - math.Abs(y))) }
 
 // Max_one_bump_on_decreasing_sequence : Exported Function
 func Max_one_bump_on_decreasing_sequence(data []float64) float64 {
@@ -5850,9 +5850,9 @@ func Max_min_zigzag(data []float64) float64 {
 
 // Max_range_bump_on_decreasing_sequence : Exported Function
 func Max_range_bump_on_decreasing_sequence(data []float64) float64 {
-	C := 0.0
-	D := 0.0
-	R := 0.0
+	C := 0.0 //min_f
+	D := 0.0 //neutral_f
+	R := 0.0 //min_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -5869,10 +5869,10 @@ func Max_range_bump_on_decreasing_sequence(data []float64) float64 {
 					D = diff(Dtemp, data[i-1])
 					currentState = 'u'
 				} else if currentState == 'u' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				} else if currentState == 'v' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				}
 			} else if data[i] < data[i-1] {
@@ -5886,7 +5886,7 @@ func Max_range_bump_on_decreasing_sequence(data []float64) float64 {
 					D = diff(Dtemp, data[i-1])
 					currentState = 'v'
 				} else if currentState == 'v' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = math.Max(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 't'
 				}
@@ -5898,10 +5898,10 @@ func Max_range_bump_on_decreasing_sequence(data []float64) float64 {
 				} else if currentState == 't' {
 					currentState = 's'
 				} else if currentState == 'u' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				} else if currentState == 'v' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				}
 			}
@@ -5915,9 +5915,9 @@ func Max_range_bump_on_decreasing_sequence(data []float64) float64 {
 
 // Max_range_decreasing : Exported Function
 func Max_range_decreasing(data []float64) float64 {
-	C := 0.0
-	D := 0.0
-	R := 0.0
+	C := 0.0 //min_f
+	D := 0.0 //neutral_f
+	R := 0.0 //min_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -5931,7 +5931,7 @@ func Max_range_decreasing(data []float64) float64 {
 				}
 			} else if data[i] < data[i-1] {
 				if currentState == 's' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = math.Max(Rtemp, diff(diff(Dtemp, data[i-1]), data[i]))
 					currentState = 's'
 				}
@@ -5950,10 +5950,10 @@ func Max_range_decreasing(data []float64) float64 {
 
 // Max_range_decreasing_sequence : Exported Function
 func Max_range_decreasing_sequence(data []float64) float64 {
-	C := 0.0
-	D := 0.0
-	R := 0.0
-	H := 0.0
+	C := 0.0 //min_f
+	D := 0.0 //neutral_f
+	R := 0.0 //min_f
+	H := math.Inf(-1)
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -5967,8 +5967,8 @@ func Max_range_decreasing_sequence(data []float64) float64 {
 				if currentState == 's' {
 					currentState = 's'
 				} else if currentState == 't' {
-					C = 0.0
-					D = 0.0
+					C = 0.0 //min_f
+					D = 0.0 //neutral_f
 					R = math.Max(Rtemp, Ctemp)
 					currentState = 's'
 				}
@@ -5977,11 +5977,11 @@ func Max_range_decreasing_sequence(data []float64) float64 {
 				H = math.Max(H, Htemp) // Holding onto the largest value for sequence
 				if currentState == 's' {
 					C = diff(diff(Dtemp, data[i-1]), data[i]) // C, found a0
-					D = 0.0
+					D = 0.0                                   //neutral_f
 					currentState = 't'
 				} else if currentState == 't' {
 					C = diff(H, data[i]) // C, in a0
-					D = 0.0
+					D = 0.0              //neutral_f
 					currentState = 't'
 				}
 			} else if data[i] == data[i-1] {
@@ -6002,9 +6002,9 @@ func Max_range_decreasing_sequence(data []float64) float64 {
 
 // Max_range_decreasing_terrace : Exported Function
 func Max_range_decreasing_terrace(data []float64) float64 {
-	C := 0.0
-	D := 0.0
-	R := 0.0
+	C := 0.0 //min_f
+	D := 0.0 //neutral_f
+	R := 0.0 //min_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -6018,7 +6018,7 @@ func Max_range_decreasing_terrace(data []float64) float64 {
 				} else if currentState == 'r' {
 					currentState = 's'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				}
 			} else if data[i] < data[i-1] {
@@ -6027,7 +6027,7 @@ func Max_range_decreasing_terrace(data []float64) float64 {
 				} else if currentState == 'r' {
 					currentState = 'r'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = math.Max(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 'r'
 				}
@@ -6052,9 +6052,9 @@ func Max_range_decreasing_terrace(data []float64) float64 {
 
 // Max_range_dip_on_increasing_sequence : Exported Function
 func Max_range_dip_on_increasing_sequence(data []float64) float64 {
-	C := 0.0
-	D := 0.0
-	R := 0.0
+	C := 0.0 //min_f
+	D := 0.0 //neutral_f
+	R := 0.0 //min_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -6073,7 +6073,7 @@ func Max_range_dip_on_increasing_sequence(data []float64) float64 {
 					D = diff(Dtemp, data[i-1])
 					currentState = 'v'
 				} else if currentState == 'v' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = math.Max(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 't'
 				}
@@ -6086,10 +6086,10 @@ func Max_range_dip_on_increasing_sequence(data []float64) float64 {
 					D = diff(Dtemp, data[i-1])
 					currentState = 'u'
 				} else if currentState == 'u' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				} else if currentState == 'v' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				}
 			} else if data[i] == data[i-1] {
@@ -6100,10 +6100,10 @@ func Max_range_dip_on_increasing_sequence(data []float64) float64 {
 				} else if currentState == 't' {
 					currentState = 's'
 				} else if currentState == 'u' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				} else if currentState == 'v' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				}
 			}
@@ -6117,9 +6117,9 @@ func Max_range_dip_on_increasing_sequence(data []float64) float64 {
 
 // Max_range_gorge : Exported Function
 func Max_range_gorge(data []float64) float64 {
-	C := 0.0
-	D := 0.0
-	R := 0.0
+	C := 0.0 //min_f
+	D := 0.0 //neutral_f
+	R := 0.0 //min_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -6132,14 +6132,14 @@ func Max_range_gorge(data []float64) float64 {
 					currentState = 's'
 				} else if currentState == 'r' {
 					C = diff(Dtemp, data[i-1]) // C, found a1
-					D = 0.0
+					D = 0.0                    //neutral_f
 					currentState = 't'
 				} else if currentState == 't' {
 					C = diff(Ctemp, diff(Dtemp, data[i-1])) // C, in a1
-					D = 0.0
+					D = 0.0                                 //neutral_f
 					currentState = 't'
 				} else if currentState == 'u' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				}
 			} else if data[i] < data[i-1] {
@@ -6149,8 +6149,8 @@ func Max_range_gorge(data []float64) float64 {
 					D = diff(Dtemp, data[i-1])
 					currentState = 'r'
 				} else if currentState == 't' {
-					C = 0.0
-					D = 0.0
+					C = 0.0 //min_f
+					D = 0.0 //neutral_f
 					R = math.Max(Rtemp, Ctemp)
 					currentState = 'r'
 				} else if currentState == 'u' {
@@ -6181,9 +6181,9 @@ func Max_range_gorge(data []float64) float64 {
 
 // Max_range_increasing : Exported Function
 func Max_range_increasing(data []float64) float64 {
-	C := 0.0
-	D := 0.0
-	R := 0.0
+	C := 0.0 //min_f
+	D := 0.0 //neutral_f
+	R := 0.0 //min_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -6193,7 +6193,7 @@ func Max_range_increasing(data []float64) float64 {
 			Rtemp := float64(R)
 			if data[i] > data[i-1] {
 				if currentState == 's' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = math.Max(Rtemp, diff(diff(Dtemp, data[i-1]), data[i]))
 					currentState = 's'
 				}
@@ -6216,10 +6216,10 @@ func Max_range_increasing(data []float64) float64 {
 
 // Max_range_increasing_sequence : Exported Function
 func Max_range_increasing_sequence(data []float64) float64 {
-	C := 0.0
-	D := 0.0
-	R := 0.0
-	H := 0.0
+	C := 0.0 //min_f
+	D := 0.0 //neutral_f
+	R := 0.0 //min_f
+	H := math.Inf(1)
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -6233,11 +6233,11 @@ func Max_range_increasing_sequence(data []float64) float64 {
 				H = math.Min(H, Htemp)
 				if currentState == 's' {
 					C = diff(diff(Dtemp, data[i-1]), data[i]) // C, found a0
-					D = 0.0
+					D = 0.0                                   //neutral_f
 					currentState = 't'
 				} else if currentState == 't' {
 					C = diff(H, data[i]) // C, in a0
-					D = 0.0
+					D = 0.0              //neutral_f
 					currentState = 't'
 				}
 			} else if data[i] < data[i-1] {
@@ -6245,8 +6245,8 @@ func Max_range_increasing_sequence(data []float64) float64 {
 				if currentState == 's' {
 					currentState = 's'
 				} else if currentState == 't' {
-					C = 0.0
-					D = 0.0
+					C = 0.0 //min_f
+					D = 0.0 //neutral_f
 					R = math.Max(Rtemp, Ctemp)
 					currentState = 's'
 				}
@@ -6268,9 +6268,9 @@ func Max_range_increasing_sequence(data []float64) float64 {
 
 // Max_range_increasing_terrace : Exported Function
 func Max_range_increasing_terrace(data []float64) float64 {
-	C := 0.0
-	D := 0.0
-	R := 0.0
+	C := 0.0 //min_f
+	D := 0.0 //neutral_f
+	R := 0.0 //min_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -6284,7 +6284,7 @@ func Max_range_increasing_terrace(data []float64) float64 {
 				} else if currentState == 'r' {
 					currentState = 'r'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = math.Max(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 'r'
 				}
@@ -6294,7 +6294,7 @@ func Max_range_increasing_terrace(data []float64) float64 {
 				} else if currentState == 'r' {
 					currentState = 's'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				}
 			} else if data[i] == data[i-1] {
@@ -6318,9 +6318,9 @@ func Max_range_increasing_terrace(data []float64) float64 {
 
 // Max_range_inflexion : Exported Function
 func Max_range_inflexion(data []float64) float64 {
-	C := 0.0
-	D := 0.0
-	R := 0.0
+	C := 0.0 //min_f
+	D := 0.0 //neutral_f
+	R := 0.0 //min_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -6335,7 +6335,7 @@ func Max_range_inflexion(data []float64) float64 {
 					D = diff(Dtemp, data[i-1])
 					currentState = 'r'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = math.Max(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 'r'
 				}
@@ -6343,7 +6343,7 @@ func Max_range_inflexion(data []float64) float64 {
 				if currentState == 's' {
 					currentState = 't'
 				} else if currentState == 'r' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = math.Max(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 't'
 				} else if currentState == 't' {
@@ -6371,9 +6371,9 @@ func Max_range_inflexion(data []float64) float64 {
 
 // Max_range_peak : Exported Function
 func Max_range_peak(data []float64) float64 {
-	C := 0.0
-	D := 0.0
-	R := 0.0
+	C := 0.0 //min_f
+	D := 0.0 //neutral_f
+	R := 0.0 //min_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -6388,8 +6388,8 @@ func Max_range_peak(data []float64) float64 {
 					D = diff(Dtemp, data[i-1])
 					currentState = 'r'
 				} else if currentState == 't' {
-					C = 0.0
-					D = 0.0
+					C = 0.0 //min_f
+					D = 0.0 //neutral_f
 					R = math.Max(Rtemp, Ctemp)
 					currentState = 'r'
 				}
@@ -6398,11 +6398,11 @@ func Max_range_peak(data []float64) float64 {
 					currentState = 's'
 				} else if currentState == 'r' {
 					C = diff(Dtemp, data[i-1]) // C, found a1
-					D = 0.0
+					D = 0.0                    //neutral_f
 					currentState = 't'
 				} else if currentState == 't' {
 					C = diff(Ctemp, diff(Dtemp, data[i-1])) // C, in a1
-					D = 0.0
+					D = 0.0                                 //neutral_f
 					currentState = 't'
 				}
 			} else if data[i] == data[i-1] {
@@ -6426,9 +6426,9 @@ func Max_range_peak(data []float64) float64 {
 
 // Max_range_plain : Exported Function
 func Max_range_plain(data []float64) float64 {
-	C := 0.0
-	D := 0.0
-	R := 0.0
+	C := 0.0 //min_f
+	D := 0.0 //neutral_f
+	R := 0.0 //min_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -6440,11 +6440,11 @@ func Max_range_plain(data []float64) float64 {
 				if currentState == 's' {
 					currentState = 's'
 				} else if currentState == 'r' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = math.Max(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 's'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = math.Max(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 's'
 				}
@@ -6454,7 +6454,7 @@ func Max_range_plain(data []float64) float64 {
 				} else if currentState == 'r' {
 					currentState = 'r'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 'r'
 				}
 			} else if data[i] == data[i-1] {
@@ -6478,9 +6478,9 @@ func Max_range_plain(data []float64) float64 {
 
 // Max_range_plateau : Exported Function
 func Max_range_plateau(data []float64) float64 {
-	C := 0.0
-	D := 0.0
-	R := 0.0
+	C := 0.0 //min_f
+	D := 0.0 //neutral_f
+	R := 0.0 //min_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -6494,18 +6494,18 @@ func Max_range_plateau(data []float64) float64 {
 				} else if currentState == 'r' {
 					currentState = 'r'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 'r'
 				}
 			} else if data[i] < data[i-1] {
 				if currentState == 's' {
 					currentState = 's'
 				} else if currentState == 'r' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = math.Max(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 's'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = math.Max(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 's'
 				}
@@ -6530,9 +6530,9 @@ func Max_range_plateau(data []float64) float64 {
 
 // Max_range_proper_plain : Exported Function
 func Max_range_proper_plain(data []float64) float64 {
-	C := 0.0
-	D := 0.0
-	R := 0.0
+	C := 0.0 //min_f
+	D := 0.0 //neutral_f
+	R := 0.0 //min_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -6546,7 +6546,7 @@ func Max_range_proper_plain(data []float64) float64 {
 				} else if currentState == 'r' {
 					currentState = 's'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = math.Max(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 's'
 				}
@@ -6556,7 +6556,7 @@ func Max_range_proper_plain(data []float64) float64 {
 				} else if currentState == 'r' {
 					currentState = 'r'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 'r'
 				}
 			} else if data[i] == data[i-1] {
@@ -6580,9 +6580,9 @@ func Max_range_proper_plain(data []float64) float64 {
 
 // Max_range_proper_plateau : Exported Function
 func Max_range_proper_plateau(data []float64) float64 {
-	C := 0.0
-	D := 0.0
-	R := 0.0
+	C := 0.0 //min_f
+	D := 0.0 //neutral_f
+	R := 0.0 //min_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -6596,7 +6596,7 @@ func Max_range_proper_plateau(data []float64) float64 {
 				} else if currentState == 'r' {
 					currentState = 'r'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 'r'
 				}
 			} else if data[i] < data[i-1] {
@@ -6605,7 +6605,7 @@ func Max_range_proper_plateau(data []float64) float64 {
 				} else if currentState == 'r' {
 					currentState = 's'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = math.Max(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 's'
 				}
@@ -6630,9 +6630,9 @@ func Max_range_proper_plateau(data []float64) float64 {
 
 // Max_range_steady : Exported Function
 func Max_range_steady(data []float64) float64 {
-	C := 0.0
-	D := 0.0
-	R := 0.0
+	C := 0.0 //min_f
+	D := 0.0 //neutral_f
+	R := 0.0 //min_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -6650,7 +6650,7 @@ func Max_range_steady(data []float64) float64 {
 				}
 			} else if data[i] == data[i-1] {
 				if currentState == 's' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = math.Max(Rtemp, diff(diff(Dtemp, data[i-1]), data[i]))
 					currentState = 's'
 				}
@@ -6665,9 +6665,9 @@ func Max_range_steady(data []float64) float64 {
 
 // Max_range_steady_sequence : Exported Function
 func Max_range_steady_sequence(data []float64) float64 {
-	C := 0.0
-	D := 0.0
-	R := 0.0
+	C := 0.0 //min_f
+	D := 0.0 //neutral_f
+	R := 0.0 //min_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -6679,8 +6679,8 @@ func Max_range_steady_sequence(data []float64) float64 {
 				if currentState == 's' {
 					currentState = 's'
 				} else if currentState == 'r' {
-					C = 0.0
-					D = 0.0
+					C = 0.0 //min_f
+					D = 0.0 //neutral_f
 					R = math.Max(Rtemp, Ctemp)
 					currentState = 's'
 				}
@@ -6688,19 +6688,19 @@ func Max_range_steady_sequence(data []float64) float64 {
 				if currentState == 's' {
 					currentState = 's'
 				} else if currentState == 'r' {
-					C = 0.0
-					D = 0.0
+					C = 0.0 //min_f
+					D = 0.0 //neutral_f
 					R = math.Max(Rtemp, Ctemp)
 					currentState = 's'
 				}
 			} else if data[i] == data[i-1] {
 				if currentState == 's' {
 					C = diff(diff(Dtemp, data[i-1]), data[i]) // C, found a0
-					D = 0.0
+					D = 0.0                                   //neutral_f
 					currentState = 'r'
 				} else if currentState == 'r' {
 					C = diff(Ctemp, diff(Dtemp, data[i])) // C, in a0
-					D = 0.0
+					D = 0.0                               //neutral_f
 					currentState = 'r'
 				}
 			}
@@ -6714,10 +6714,10 @@ func Max_range_steady_sequence(data []float64) float64 {
 
 // Max_range_strictly_decreasing_sequence : Exported Function
 func Max_range_strictly_decreasing_sequence(data []float64) float64 {
-	C := 0.0
-	D := 0.0
-	R := 0.0
-	H := 0.0
+	C := 0.0 //min_f
+	D := 0.0 //neutral_f
+	R := 0.0 //min_f
+	H := math.Inf(-1)
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -6731,8 +6731,8 @@ func Max_range_strictly_decreasing_sequence(data []float64) float64 {
 				if currentState == 's' {
 					currentState = 's'
 				} else if currentState == 'r' {
-					C = 0.0
-					D = 0.0
+					C = 0.0 //min_f
+					D = 0.0 //neutral_f
 					R = math.Max(Rtemp, Ctemp)
 					currentState = 's'
 				}
@@ -6741,11 +6741,11 @@ func Max_range_strictly_decreasing_sequence(data []float64) float64 {
 				H = math.Max(H, Htemp) // Holding onto the largest value for sequence
 				if currentState == 's' {
 					C = diff(diff(Dtemp, data[i-1]), data[i]) // C, found a0
-					D = 0.0
+					D = 0.0                                   //neutral_f
 					currentState = 'r'
 				} else if currentState == 'r' {
 					C = diff(H, data[i]) // C, in a0
-					D = 0.0
+					D = 0.0              //neutral_f
 					currentState = 'r'
 				}
 			} else if data[i] == data[i-1] {
@@ -6753,8 +6753,8 @@ func Max_range_strictly_decreasing_sequence(data []float64) float64 {
 				if currentState == 's' {
 					currentState = 's'
 				} else if currentState == 'r' {
-					C = 0.0
-					D = 0.0
+					C = 0.0 //min_f
+					D = 0.0 //neutral_f
 					R = math.Max(Rtemp, Ctemp)
 					currentState = 's'
 				}
@@ -6769,10 +6769,10 @@ func Max_range_strictly_decreasing_sequence(data []float64) float64 {
 
 // Max_range_strictly_increasing_sequence : Exported Function
 func Max_range_strictly_increasing_sequence(data []float64) float64 {
-	C := 0.0
-	D := 0.0
-	R := 0.0
-	H := 0.0
+	C := 0.0 //min_f
+	D := 0.0 //neutral_f
+	R := 0.0 //min_f
+	H := math.Inf(1)
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -6786,11 +6786,11 @@ func Max_range_strictly_increasing_sequence(data []float64) float64 {
 				H = math.Min(H, Htemp)
 				if currentState == 's' {
 					C = diff(diff(Dtemp, data[i-1]), data[i]) // C, found a0
-					D = 0.0
+					D = 0.0                                   //neutral_f
 					currentState = 'r'
 				} else if currentState == 'r' {
 					C = diff(H, data[i]) // C, in a0
-					D = 0.0
+					D = 0.0              //neutral_f
 					currentState = 'r'
 				}
 			} else if data[i] < data[i-1] {
@@ -6798,8 +6798,8 @@ func Max_range_strictly_increasing_sequence(data []float64) float64 {
 				if currentState == 's' {
 					currentState = 's'
 				} else if currentState == 'r' {
-					C = 0.0
-					D = 0.0
+					C = 0.0 //min_f
+					D = 0.0 //neutral_f
 					R = math.Max(Rtemp, Ctemp)
 					currentState = 's'
 				}
@@ -6808,8 +6808,8 @@ func Max_range_strictly_increasing_sequence(data []float64) float64 {
 				if currentState == 's' {
 					currentState = 's'
 				} else if currentState == 'r' {
-					C = 0.0
-					D = 0.0
+					C = 0.0 //min_f
+					D = 0.0 //neutral_f
 					R = math.Max(Rtemp, Ctemp)
 					currentState = 's'
 				}
@@ -6824,9 +6824,9 @@ func Max_range_strictly_increasing_sequence(data []float64) float64 {
 
 // Max_range_summit : Exported Function
 func Max_range_summit(data []float64) float64 {
-	C := 0.0
-	D := 0.0
-	R := 0.0
+	C := 0.0 //min_f
+	D := 0.0 //neutral_f
+	R := 0.0 //min_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -6837,14 +6837,14 @@ func Max_range_summit(data []float64) float64 {
 			if data[i] > data[i-1] {
 				if currentState == 's' {
 					C = diff(Dtemp, data[i-1]) // C, found a1
-					D = 0.0
+					D = 0.0                    //neutral_f
 					currentState = 'r'
 				} else if currentState == 'r' {
 					D = diff(Dtemp, data[i-1])
 					currentState = 'r'
 				} else if currentState == 't' {
-					C = 0.0
-					D = 0.0
+					C = 0.0 //min_f
+					D = 0.0 //neutral_f
 					R = math.Max(Rtemp, Ctemp)
 					currentState = 'r'
 				} else if currentState == 'u' {
@@ -6856,14 +6856,14 @@ func Max_range_summit(data []float64) float64 {
 					currentState = 's'
 				} else if currentState == 'r' {
 					C = diff(Dtemp, data[i-1]) // C, found a1
-					D = 0.0
+					D = 0.0                    //neutral_f
 					currentState = 't'
 				} else if currentState == 't' {
 					C = diff(Ctemp, diff(Dtemp, data[i-1])) // C, in a1
-					D = 0.0
+					D = 0.0                                 //neutral_f
 					currentState = 't'
 				} else if currentState == 'u' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				}
 			} else if data[i] == data[i-1] {
@@ -6890,9 +6890,9 @@ func Max_range_summit(data []float64) float64 {
 
 // Max_range_valley : Exported Function
 func Max_range_valley(data []float64) float64 {
-	C := 0.0
-	D := 0.0
-	R := 0.0
+	C := 0.0 //min_f
+	D := 0.0 //neutral_f
+	R := 0.0 //min_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -6905,11 +6905,11 @@ func Max_range_valley(data []float64) float64 {
 					currentState = 's'
 				} else if currentState == 'r' {
 					C = diff(Dtemp, data[i-1]) // C, found a1
-					D = 0.0
+					D = 0.0                    //neutral_f
 					currentState = 't'
 				} else if currentState == 't' {
 					C = diff(Ctemp, diff(Dtemp, data[i-1])) // C, in a1
-					D = 0.0
+					D = 0.0                                 //neutral_f
 					currentState = 't'
 				}
 			} else if data[i] < data[i-1] {
@@ -6919,8 +6919,8 @@ func Max_range_valley(data []float64) float64 {
 					D = diff(Dtemp, data[i-1])
 					currentState = 'r'
 				} else if currentState == 't' {
-					C = 0.0
-					D = 0.0
+					C = 0.0 //min_f
+					D = 0.0 //neutral_f
 					R = math.Max(Rtemp, Ctemp)
 					currentState = 'r'
 				}
@@ -6945,9 +6945,9 @@ func Max_range_valley(data []float64) float64 {
 
 // Max_range_zigzag : Exported Function
 func Max_range_zigzag(data []float64) float64 {
-	C := 0.0
-	D := 0.0
-	R := 0.0
+	C := 0.0 //min_f
+	D := 0.0 //neutral_f
+	R := 0.0 //min_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -6962,22 +6962,22 @@ func Max_range_zigzag(data []float64) float64 {
 					currentState = 'a'
 				} else if currentState == 'b' {
 					C = diff(Dtemp, data[i-1]) // C, found a1
-					D = 0.0
+					D = 0.0                    //neutral_f
 					currentState = 'c'
 				} else if currentState == 'c' {
-					C = 0.0
-					D = 0.0
+					C = 0.0 //min_f
+					D = 0.0 //neutral_f
 					R = math.Max(Rtemp, Ctemp)
 					currentState = 'a'
 				} else if currentState == 'd' {
 					D = diff(Dtemp, data[i-1])
 					currentState = 'e'
 				} else if currentState == 'e' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 'a'
 				} else if currentState == 'f' {
 					C = diff(Ctemp, diff(Dtemp, data[i-1])) // C, in a1
-					D = 0.0
+					D = 0.0                                 //neutral_f
 					currentState = 'c'
 				}
 			} else if data[i] < data[i-1] {
@@ -6990,17 +6990,17 @@ func Max_range_zigzag(data []float64) float64 {
 					currentState = 'd'
 				} else if currentState == 'c' {
 					C = diff(Ctemp, diff(Dtemp, data[i-1])) // C, in a1
-					D = 0.0
+					D = 0.0                                 //neutral_f
 					currentState = 'f'
 				} else if currentState == 'd' {
 					currentState = 'd'
 				} else if currentState == 'e' {
 					C = diff(Dtemp, data[i-1]) // C, found a1
-					D = 0.0
+					D = 0.0                    //neutral_f
 					currentState = 'f'
 				} else if currentState == 'f' {
-					C = 0.0
-					D = 0.0
+					C = 0.0 //min_f
+					D = 0.0 //neutral_f
 					R = math.Max(Rtemp, Ctemp)
 					currentState = 'd'
 				}
@@ -7010,21 +7010,21 @@ func Max_range_zigzag(data []float64) float64 {
 				} else if currentState == 'a' {
 					currentState = 's'
 				} else if currentState == 'b' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				} else if currentState == 'c' {
-					C = 0.0
-					D = 0.0
+					C = 0.0 //min_f
+					D = 0.0 //neutral_f
 					R = math.Max(Rtemp, Ctemp)
 					currentState = 's'
 				} else if currentState == 'd' {
 					currentState = 's'
 				} else if currentState == 'e' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				} else if currentState == 'f' {
-					C = 0.0
-					D = 0.0
+					C = 0.0 //min_f
+					D = 0.0 //neutral_f
 					R = math.Max(Rtemp, Ctemp)
 					currentState = 's'
 				}
@@ -12874,9 +12874,9 @@ func Min_min_zigzag(data []float64) float64 {
 
 // Min_range_bump_on_decreasing_sequence : Exported Function
 func Min_range_bump_on_decreasing_sequence(data []float64) float64 {
-	C := math.Inf(1)
-	D := 0.0
-	R := math.Inf(1)
+	C := math.Inf(1) //max_f
+	D := 0.0         //neutral_f
+	R := math.Inf(1) //max_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -12893,10 +12893,10 @@ func Min_range_bump_on_decreasing_sequence(data []float64) float64 {
 					D = diff(Dtemp, data[i-1])
 					currentState = 'u'
 				} else if currentState == 'u' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				} else if currentState == 'v' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				}
 			} else if data[i] < data[i-1] {
@@ -12910,7 +12910,7 @@ func Min_range_bump_on_decreasing_sequence(data []float64) float64 {
 					D = diff(Dtemp, data[i-1])
 					currentState = 'v'
 				} else if currentState == 'v' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = math.Min(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 't'
 				}
@@ -12922,10 +12922,10 @@ func Min_range_bump_on_decreasing_sequence(data []float64) float64 {
 				} else if currentState == 't' {
 					currentState = 's'
 				} else if currentState == 'u' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				} else if currentState == 'v' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				}
 			}
@@ -12939,9 +12939,9 @@ func Min_range_bump_on_decreasing_sequence(data []float64) float64 {
 
 // Min_range_decreasing : Exported Function
 func Min_range_decreasing(data []float64) float64 {
-	C := math.Inf(1)
-	D := 0.0
-	R := math.Inf(1)
+	C := math.Inf(1) //max_f
+	D := 0.0         //neutral_f
+	R := math.Inf(1) //max_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -12955,7 +12955,7 @@ func Min_range_decreasing(data []float64) float64 {
 				}
 			} else if data[i] < data[i-1] {
 				if currentState == 's' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = math.Min(Rtemp, diff(diff(Dtemp, data[i-1]), data[i]))
 					currentState = 's'
 				}
@@ -12974,10 +12974,10 @@ func Min_range_decreasing(data []float64) float64 {
 
 // Min_range_decreasing_sequence : Exported Function
 func Min_range_decreasing_sequence(data []float64) float64 {
-	C := math.Inf(1)
-	D := 0.0
-	R := math.Inf(1)
-	H := math.Inf(1)
+	C := math.Inf(1) //max_f
+	D := 0.0         //neutral_f
+	R := math.Inf(1) //max_f
+	H := math.Inf(-1)
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -12991,8 +12991,8 @@ func Min_range_decreasing_sequence(data []float64) float64 {
 				if currentState == 's' {
 					currentState = 's'
 				} else if currentState == 't' {
-					C = math.Inf(1)
-					D = 0.0
+					C = math.Inf(1) //max_f
+					D = 0.0         //neutral_f
 					R = math.Min(Rtemp, Ctemp)
 					currentState = 's'
 				}
@@ -13001,11 +13001,11 @@ func Min_range_decreasing_sequence(data []float64) float64 {
 				H = math.Max(H, Htemp) // Holding onto the largest value for sequence
 				if currentState == 's' {
 					C = diff(diff(Dtemp, data[i-1]), data[i]) // C, found a0
-					D = 0.0
+					D = 0.0                                   //neutral_f
 					currentState = 't'
 				} else if currentState == 't' {
 					C = diff(H, data[i]) // C, in a0
-					D = 0.0
+					D = 0.0              //neutral_f
 					currentState = 't'
 				}
 			} else if data[i] == data[i-1] {
@@ -13026,9 +13026,9 @@ func Min_range_decreasing_sequence(data []float64) float64 {
 
 // Min_range_decreasing_terrace : Exported Function
 func Min_range_decreasing_terrace(data []float64) float64 {
-	C := math.Inf(1)
-	D := 0.0
-	R := math.Inf(1)
+	C := math.Inf(1) //max_f
+	D := 0.0         //neutral_f
+	R := math.Inf(1) //max_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -13042,7 +13042,7 @@ func Min_range_decreasing_terrace(data []float64) float64 {
 				} else if currentState == 'r' {
 					currentState = 's'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				}
 			} else if data[i] < data[i-1] {
@@ -13051,7 +13051,7 @@ func Min_range_decreasing_terrace(data []float64) float64 {
 				} else if currentState == 'r' {
 					currentState = 'r'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = math.Min(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 'r'
 				}
@@ -13076,9 +13076,9 @@ func Min_range_decreasing_terrace(data []float64) float64 {
 
 // Min_range_dip_on_increasing_sequence : Exported Function
 func Min_range_dip_on_increasing_sequence(data []float64) float64 {
-	C := math.Inf(1)
-	D := 0.0
-	R := math.Inf(1)
+	C := math.Inf(1) //max_f
+	D := 0.0         //neutral_f
+	R := math.Inf(1) //max_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -13097,7 +13097,7 @@ func Min_range_dip_on_increasing_sequence(data []float64) float64 {
 					D = diff(Dtemp, data[i-1])
 					currentState = 'v'
 				} else if currentState == 'v' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = math.Min(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 't'
 				}
@@ -13110,10 +13110,10 @@ func Min_range_dip_on_increasing_sequence(data []float64) float64 {
 					D = diff(Dtemp, data[i-1])
 					currentState = 'u'
 				} else if currentState == 'u' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				} else if currentState == 'v' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				}
 			} else if data[i] == data[i-1] {
@@ -13124,10 +13124,10 @@ func Min_range_dip_on_increasing_sequence(data []float64) float64 {
 				} else if currentState == 't' {
 					currentState = 's'
 				} else if currentState == 'u' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				} else if currentState == 'v' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				}
 			}
@@ -13141,9 +13141,9 @@ func Min_range_dip_on_increasing_sequence(data []float64) float64 {
 
 // Min_range_gorge : Exported Function
 func Min_range_gorge(data []float64) float64 {
-	C := math.Inf(1)
-	D := 0.0
-	R := math.Inf(1)
+	C := math.Inf(1) //max_f
+	D := 0.0         //neutral_f
+	R := math.Inf(1) //max_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -13156,14 +13156,14 @@ func Min_range_gorge(data []float64) float64 {
 					currentState = 's'
 				} else if currentState == 'r' {
 					C = diff(Dtemp, data[i-1]) // C, found a1
-					D = 0.0
+					D = 0.0                    //neutral_f
 					currentState = 't'
 				} else if currentState == 't' {
 					C = diff(Ctemp, diff(Dtemp, data[i-1])) // C, in a1
-					D = 0.0
+					D = 0.0                                 //neutral_f
 					currentState = 't'
 				} else if currentState == 'u' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				}
 			} else if data[i] < data[i-1] {
@@ -13173,8 +13173,8 @@ func Min_range_gorge(data []float64) float64 {
 					D = diff(Dtemp, data[i-1])
 					currentState = 'r'
 				} else if currentState == 't' {
-					C = math.Inf(1)
-					D = 0.0
+					C = math.Inf(1) //max_f
+					D = 0.0         //neutral_f
 					R = math.Min(Rtemp, Ctemp)
 					currentState = 'r'
 				} else if currentState == 'u' {
@@ -13205,9 +13205,9 @@ func Min_range_gorge(data []float64) float64 {
 
 // Min_range_increasing : Exported Function
 func Min_range_increasing(data []float64) float64 {
-	C := math.Inf(1)
-	D := 0.0
-	R := math.Inf(1)
+	C := math.Inf(1) //max_f
+	D := 0.0         //neutral_f
+	R := math.Inf(1) //max_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -13217,7 +13217,7 @@ func Min_range_increasing(data []float64) float64 {
 			Rtemp := float64(R)
 			if data[i] > data[i-1] {
 				if currentState == 's' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = math.Min(Rtemp, diff(diff(Dtemp, data[i-1]), data[i]))
 					currentState = 's'
 				}
@@ -13240,9 +13240,9 @@ func Min_range_increasing(data []float64) float64 {
 
 // Min_range_increasing_sequence : Exported Function
 func Min_range_increasing_sequence(data []float64) float64 {
-	C := math.Inf(1)
-	D := 0.0
-	R := math.Inf(1)
+	C := math.Inf(1) //max_f
+	D := 0.0         //neutral_f
+	R := math.Inf(1) //max_f
 	H := math.Inf(1)
 	currentState := 's'
 	DataLen := len(data)
@@ -13257,11 +13257,11 @@ func Min_range_increasing_sequence(data []float64) float64 {
 				H = math.Min(H, Htemp)
 				if currentState == 's' {
 					C = diff(diff(Dtemp, data[i-1]), data[i]) // C, found a0
-					D = 0.0
+					D = 0.0                                   //neutral_f
 					currentState = 't'
 				} else if currentState == 't' {
 					C = diff(H, data[i]) // C, in a0
-					D = 0.0
+					D = 0.0              //neutral_f
 					currentState = 't'
 				}
 			} else if data[i] < data[i-1] {
@@ -13269,8 +13269,8 @@ func Min_range_increasing_sequence(data []float64) float64 {
 				if currentState == 's' {
 					currentState = 's'
 				} else if currentState == 't' {
-					C = math.Inf(1)
-					D = 0.0
+					C = math.Inf(1) //max_f
+					D = 0.0         //neutral_f
 					R = math.Min(Rtemp, Ctemp)
 					currentState = 's'
 				}
@@ -13292,9 +13292,9 @@ func Min_range_increasing_sequence(data []float64) float64 {
 
 // Min_range_increasing_terrace : Exported Function
 func Min_range_increasing_terrace(data []float64) float64 {
-	C := math.Inf(1)
-	D := 0.0
-	R := math.Inf(1)
+	C := math.Inf(1) //max_f
+	D := 0.0         //neutral_f
+	R := math.Inf(1) //max_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -13308,7 +13308,7 @@ func Min_range_increasing_terrace(data []float64) float64 {
 				} else if currentState == 'r' {
 					currentState = 'r'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = math.Min(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 'r'
 				}
@@ -13318,7 +13318,7 @@ func Min_range_increasing_terrace(data []float64) float64 {
 				} else if currentState == 'r' {
 					currentState = 's'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				}
 			} else if data[i] == data[i-1] {
@@ -13342,9 +13342,9 @@ func Min_range_increasing_terrace(data []float64) float64 {
 
 // Min_range_inflexion : Exported Function
 func Min_range_inflexion(data []float64) float64 {
-	C := math.Inf(1)
-	D := 0.0
-	R := math.Inf(1)
+	C := math.Inf(1) //max_f
+	D := 0.0         //neutral_f
+	R := math.Inf(1) //max_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -13359,7 +13359,7 @@ func Min_range_inflexion(data []float64) float64 {
 					D = diff(Dtemp, data[i-1])
 					currentState = 'r'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = math.Min(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 'r'
 				}
@@ -13367,7 +13367,7 @@ func Min_range_inflexion(data []float64) float64 {
 				if currentState == 's' {
 					currentState = 't'
 				} else if currentState == 'r' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = math.Min(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 't'
 				} else if currentState == 't' {
@@ -13395,9 +13395,9 @@ func Min_range_inflexion(data []float64) float64 {
 
 // Min_range_peak : Exported Function
 func Min_range_peak(data []float64) float64 {
-	C := math.Inf(1)
-	D := 0.0
-	R := math.Inf(1)
+	C := math.Inf(1) //max_f
+	D := 0.0         //neutral_f
+	R := math.Inf(1) //max_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -13412,8 +13412,8 @@ func Min_range_peak(data []float64) float64 {
 					D = diff(Dtemp, data[i-1])
 					currentState = 'r'
 				} else if currentState == 't' {
-					C = math.Inf(1)
-					D = 0.0
+					C = math.Inf(1) //max_f
+					D = 0.0         //neutral_f
 					R = math.Min(Rtemp, Ctemp)
 					currentState = 'r'
 				}
@@ -13422,11 +13422,11 @@ func Min_range_peak(data []float64) float64 {
 					currentState = 's'
 				} else if currentState == 'r' {
 					C = diff(Dtemp, data[i-1]) // C, found a1
-					D = 0.0
+					D = 0.0                    //neutral_f
 					currentState = 't'
 				} else if currentState == 't' {
 					C = diff(Ctemp, diff(Dtemp, data[i-1])) // C, in a1
-					D = 0.0
+					D = 0.0                                 //neutral_f
 					currentState = 't'
 				}
 			} else if data[i] == data[i-1] {
@@ -13450,9 +13450,9 @@ func Min_range_peak(data []float64) float64 {
 
 // Min_range_plain : Exported Function
 func Min_range_plain(data []float64) float64 {
-	C := math.Inf(1)
-	D := 0.0
-	R := math.Inf(1)
+	C := math.Inf(1) //max_f
+	D := 0.0         //neutral_f
+	R := math.Inf(1) //max_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -13464,11 +13464,11 @@ func Min_range_plain(data []float64) float64 {
 				if currentState == 's' {
 					currentState = 's'
 				} else if currentState == 'r' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = math.Min(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 's'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = math.Min(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 's'
 				}
@@ -13478,7 +13478,7 @@ func Min_range_plain(data []float64) float64 {
 				} else if currentState == 'r' {
 					currentState = 'r'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 'r'
 				}
 			} else if data[i] == data[i-1] {
@@ -13502,9 +13502,9 @@ func Min_range_plain(data []float64) float64 {
 
 // Min_range_plateau : Exported Function
 func Min_range_plateau(data []float64) float64 {
-	C := math.Inf(1)
-	D := 0.0
-	R := math.Inf(1)
+	C := math.Inf(1) //max_f
+	D := 0.0         //neutral_f
+	R := math.Inf(1) //max_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -13518,18 +13518,18 @@ func Min_range_plateau(data []float64) float64 {
 				} else if currentState == 'r' {
 					currentState = 'r'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 'r'
 				}
 			} else if data[i] < data[i-1] {
 				if currentState == 's' {
 					currentState = 's'
 				} else if currentState == 'r' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = math.Min(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 's'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = math.Min(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 's'
 				}
@@ -13554,9 +13554,9 @@ func Min_range_plateau(data []float64) float64 {
 
 // Min_range_proper_plain : Exported Function
 func Min_range_proper_plain(data []float64) float64 {
-	C := math.Inf(1)
-	D := 0.0
-	R := math.Inf(1)
+	C := math.Inf(1) //max_f
+	D := 0.0         //neutral_f
+	R := math.Inf(1) //max_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -13570,7 +13570,7 @@ func Min_range_proper_plain(data []float64) float64 {
 				} else if currentState == 'r' {
 					currentState = 's'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = math.Min(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 's'
 				}
@@ -13580,7 +13580,7 @@ func Min_range_proper_plain(data []float64) float64 {
 				} else if currentState == 'r' {
 					currentState = 'r'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 'r'
 				}
 			} else if data[i] == data[i-1] {
@@ -13604,9 +13604,9 @@ func Min_range_proper_plain(data []float64) float64 {
 
 // Min_range_proper_plateau : Exported Function
 func Min_range_proper_plateau(data []float64) float64 {
-	C := math.Inf(1)
-	D := 0.0
-	R := math.Inf(1)
+	C := math.Inf(1) //max_f
+	D := 0.0         //neutral_f
+	R := math.Inf(1) //max_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -13620,7 +13620,7 @@ func Min_range_proper_plateau(data []float64) float64 {
 				} else if currentState == 'r' {
 					currentState = 'r'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 'r'
 				}
 			} else if data[i] < data[i-1] {
@@ -13629,7 +13629,7 @@ func Min_range_proper_plateau(data []float64) float64 {
 				} else if currentState == 'r' {
 					currentState = 's'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = math.Min(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 's'
 				}
@@ -13654,9 +13654,9 @@ func Min_range_proper_plateau(data []float64) float64 {
 
 // Min_range_steady : Exported Function
 func Min_range_steady(data []float64) float64 {
-	C := math.Inf(1)
-	D := 0.0
-	R := math.Inf(1)
+	C := math.Inf(1) //max_f
+	D := 0.0         //neutral_f
+	R := math.Inf(1) //max_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -13674,7 +13674,7 @@ func Min_range_steady(data []float64) float64 {
 				}
 			} else if data[i] == data[i-1] {
 				if currentState == 's' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = math.Min(Rtemp, diff(diff(Dtemp, data[i-1]), data[i]))
 					currentState = 's'
 				}
@@ -13689,9 +13689,9 @@ func Min_range_steady(data []float64) float64 {
 
 // Min_range_steady_sequence : Exported Function
 func Min_range_steady_sequence(data []float64) float64 {
-	C := math.Inf(1)
-	D := 0.0
-	R := math.Inf(1)
+	C := math.Inf(1) //max_f
+	D := 0.0         //neutral_f
+	R := math.Inf(1) //max_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -13703,8 +13703,8 @@ func Min_range_steady_sequence(data []float64) float64 {
 				if currentState == 's' {
 					currentState = 's'
 				} else if currentState == 'r' {
-					C = math.Inf(1)
-					D = 0.0
+					C = math.Inf(1) //max_f
+					D = 0.0         //neutral_f
 					R = math.Min(Rtemp, Ctemp)
 					currentState = 's'
 				}
@@ -13712,19 +13712,19 @@ func Min_range_steady_sequence(data []float64) float64 {
 				if currentState == 's' {
 					currentState = 's'
 				} else if currentState == 'r' {
-					C = math.Inf(1)
-					D = 0.0
+					C = math.Inf(1) //max_f
+					D = 0.0         //neutral_f
 					R = math.Min(Rtemp, Ctemp)
 					currentState = 's'
 				}
 			} else if data[i] == data[i-1] {
 				if currentState == 's' {
 					C = diff(diff(Dtemp, data[i-1]), data[i]) // C, found a0
-					D = 0.0
+					D = 0.0                                   //neutral_f
 					currentState = 'r'
 				} else if currentState == 'r' {
 					C = diff(Ctemp, diff(Dtemp, data[i])) // C, in a0
-					D = 0.0
+					D = 0.0                               //neutral_f
 					currentState = 'r'
 				}
 			}
@@ -13738,10 +13738,10 @@ func Min_range_steady_sequence(data []float64) float64 {
 
 // Min_range_strictly_decreasing_sequence : Exported Function
 func Min_range_strictly_decreasing_sequence(data []float64) float64 {
-	C := math.Inf(1)
-	D := 0.0
-	R := math.Inf(1)
-	H := math.Inf(1)
+	C := math.Inf(1) //max_f
+	D := 0.0         //neutral_f
+	R := math.Inf(1) //max_f
+	H := math.Inf(-1)
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -13755,8 +13755,8 @@ func Min_range_strictly_decreasing_sequence(data []float64) float64 {
 				if currentState == 's' {
 					currentState = 's'
 				} else if currentState == 'r' {
-					C = math.Inf(1)
-					D = 0.0
+					C = math.Inf(1) //max_f
+					D = 0.0         //neutral_f
 					R = math.Min(Rtemp, Ctemp)
 					currentState = 's'
 				}
@@ -13765,11 +13765,11 @@ func Min_range_strictly_decreasing_sequence(data []float64) float64 {
 				H = math.Max(H, Htemp) // Holding onto the largest value for sequence
 				if currentState == 's' {
 					C = diff(diff(Dtemp, data[i-1]), data[i]) // C, found a0
-					D = 0.0
+					D = 0.0                                   //neutral_f
 					currentState = 'r'
 				} else if currentState == 'r' {
 					C = diff(H, data[i]) // C, in a0
-					D = 0.0
+					D = 0.0              //neutral_f
 					currentState = 'r'
 				}
 			} else if data[i] == data[i-1] {
@@ -13777,8 +13777,8 @@ func Min_range_strictly_decreasing_sequence(data []float64) float64 {
 				if currentState == 's' {
 					currentState = 's'
 				} else if currentState == 'r' {
-					C = math.Inf(1)
-					D = 0.0
+					C = math.Inf(1) //max_f
+					D = 0.0         //neutral_f
 					R = math.Min(Rtemp, Ctemp)
 					currentState = 's'
 				}
@@ -13793,9 +13793,9 @@ func Min_range_strictly_decreasing_sequence(data []float64) float64 {
 
 // Min_range_strictly_increasing_sequence : Exported Function
 func Min_range_strictly_increasing_sequence(data []float64) float64 {
-	C := math.Inf(1)
-	D := 0.0
-	R := math.Inf(1)
+	C := math.Inf(1) //max_f
+	D := 0.0         //neutral_f
+	R := math.Inf(1) //max_f
 	H := math.Inf(1)
 	currentState := 's'
 	DataLen := len(data)
@@ -13810,11 +13810,11 @@ func Min_range_strictly_increasing_sequence(data []float64) float64 {
 				H = math.Min(H, Htemp)
 				if currentState == 's' {
 					C = diff(diff(Dtemp, data[i-1]), data[i]) // C, found a0
-					D = 0.0
+					D = 0.0                                   //neutral_f
 					currentState = 'r'
 				} else if currentState == 'r' {
 					C = diff(H, data[i]) // C, in a0
-					D = 0.0
+					D = 0.0              //neutral_f
 					currentState = 'r'
 				}
 			} else if data[i] < data[i-1] {
@@ -13822,8 +13822,8 @@ func Min_range_strictly_increasing_sequence(data []float64) float64 {
 				if currentState == 's' {
 					currentState = 's'
 				} else if currentState == 'r' {
-					C = math.Inf(1)
-					D = 0.0
+					C = math.Inf(1) //max_f
+					D = 0.0         //neutral_f
 					R = math.Min(Rtemp, Ctemp)
 					currentState = 's'
 				}
@@ -13832,8 +13832,8 @@ func Min_range_strictly_increasing_sequence(data []float64) float64 {
 				if currentState == 's' {
 					currentState = 's'
 				} else if currentState == 'r' {
-					C = math.Inf(1)
-					D = 0.0
+					C = math.Inf(1) //max_f
+					D = 0.0         //neutral_f
 					R = math.Min(Rtemp, Ctemp)
 					currentState = 's'
 				}
@@ -13848,9 +13848,9 @@ func Min_range_strictly_increasing_sequence(data []float64) float64 {
 
 // Min_range_summit : Exported Function
 func Min_range_summit(data []float64) float64 {
-	C := math.Inf(1)
-	D := 0.0
-	R := math.Inf(1)
+	C := math.Inf(1) //max_f
+	D := 0.0         //neutral_f
+	R := math.Inf(1) //max_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -13861,14 +13861,14 @@ func Min_range_summit(data []float64) float64 {
 			if data[i] > data[i-1] {
 				if currentState == 's' {
 					C = diff(Dtemp, data[i-1]) // C, found a1
-					D = 0.0
+					D = 0.0                    //neutral_f
 					currentState = 'r'
 				} else if currentState == 'r' {
 					D = diff(Dtemp, data[i-1])
 					currentState = 'r'
 				} else if currentState == 't' {
-					C = math.Inf(1)
-					D = 0.0
+					C = math.Inf(1) //max_f
+					D = 0.0         //neutral_f
 					R = math.Min(Rtemp, Ctemp)
 					currentState = 'r'
 				} else if currentState == 'u' {
@@ -13880,14 +13880,14 @@ func Min_range_summit(data []float64) float64 {
 					currentState = 's'
 				} else if currentState == 'r' {
 					C = diff(Dtemp, data[i-1]) // C, found a1
-					D = 0.0
+					D = 0.0                    //neutral_f
 					currentState = 't'
 				} else if currentState == 't' {
 					C = diff(Ctemp, diff(Dtemp, data[i-1])) // C, in a1
-					D = 0.0
+					D = 0.0                                 //neutral_f
 					currentState = 't'
 				} else if currentState == 'u' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				}
 			} else if data[i] == data[i-1] {
@@ -13914,9 +13914,9 @@ func Min_range_summit(data []float64) float64 {
 
 // Min_range_valley : Exported Function
 func Min_range_valley(data []float64) float64 {
-	C := math.Inf(1)
-	D := 0.0
-	R := math.Inf(1)
+	C := math.Inf(1) //max_f
+	D := 0.0         //neutral_f
+	R := math.Inf(1) //max_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -13929,11 +13929,11 @@ func Min_range_valley(data []float64) float64 {
 					currentState = 's'
 				} else if currentState == 'r' {
 					C = diff(Dtemp, data[i-1]) // C, found a1
-					D = 0.0
+					D = 0.0                    //neutral_f
 					currentState = 't'
 				} else if currentState == 't' {
 					C = diff(Ctemp, diff(Dtemp, data[i-1])) // C, in a1
-					D = 0.0
+					D = 0.0                                 //neutral_f
 					currentState = 't'
 				}
 			} else if data[i] < data[i-1] {
@@ -13943,8 +13943,8 @@ func Min_range_valley(data []float64) float64 {
 					D = diff(Dtemp, data[i-1])
 					currentState = 'r'
 				} else if currentState == 't' {
-					C = math.Inf(1)
-					D = 0.0
+					C = math.Inf(1) //max_f
+					D = 0.0         //neutral_f
 					R = math.Min(Rtemp, Ctemp)
 					currentState = 'r'
 				}
@@ -13969,9 +13969,9 @@ func Min_range_valley(data []float64) float64 {
 
 // Min_range_zigzag : Exported Function
 func Min_range_zigzag(data []float64) float64 {
-	C := math.Inf(1)
-	D := 0.0
-	R := math.Inf(1)
+	C := math.Inf(1) //max_f
+	D := 0.0         //neutral_f
+	R := math.Inf(1) //max_f
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -13986,22 +13986,22 @@ func Min_range_zigzag(data []float64) float64 {
 					currentState = 'a'
 				} else if currentState == 'b' {
 					C = diff(Dtemp, data[i-1]) // C, found a1
-					D = 0.0
+					D = 0.0                    //neutral_f
 					currentState = 'c'
 				} else if currentState == 'c' {
-					C = math.Inf(1)
-					D = 0.0
+					C = math.Inf(1) //max_f
+					D = 0.0         //neutral_f
 					R = math.Min(Rtemp, Ctemp)
 					currentState = 'a'
 				} else if currentState == 'd' {
 					D = diff(Dtemp, data[i-1])
 					currentState = 'e'
 				} else if currentState == 'e' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 'a'
 				} else if currentState == 'f' {
 					C = diff(Ctemp, diff(Dtemp, data[i-1])) // C, in a1
-					D = 0.0
+					D = 0.0                                 //neutral_f
 					currentState = 'c'
 				}
 			} else if data[i] < data[i-1] {
@@ -14014,17 +14014,17 @@ func Min_range_zigzag(data []float64) float64 {
 					currentState = 'd'
 				} else if currentState == 'c' {
 					C = diff(Ctemp, diff(Dtemp, data[i-1])) // C, in a1
-					D = 0.0
+					D = 0.0                                 //neutral_f
 					currentState = 'f'
 				} else if currentState == 'd' {
 					currentState = 'd'
 				} else if currentState == 'e' {
 					C = diff(Dtemp, data[i-1]) // C, found a1
-					D = 0.0
+					D = 0.0                    //neutral_f
 					currentState = 'f'
 				} else if currentState == 'f' {
-					C = math.Inf(1)
-					D = 0.0
+					C = math.Inf(1) //max_f
+					D = 0.0         //neutral_f
 					R = math.Min(Rtemp, Ctemp)
 					currentState = 'd'
 				}
@@ -14034,21 +14034,21 @@ func Min_range_zigzag(data []float64) float64 {
 				} else if currentState == 'a' {
 					currentState = 's'
 				} else if currentState == 'b' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				} else if currentState == 'c' {
-					C = math.Inf(1)
-					D = 0.0
+					C = math.Inf(1) //max_f
+					D = 0.0         //neutral_f
 					R = math.Min(Rtemp, Ctemp)
 					currentState = 's'
 				} else if currentState == 'd' {
 					currentState = 's'
 				} else if currentState == 'e' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				} else if currentState == 'f' {
-					C = math.Inf(1)
-					D = 0.0
+					C = math.Inf(1) //max_f
+					D = 0.0         //neutral_f
 					R = math.Min(Rtemp, Ctemp)
 					currentState = 's'
 				}
@@ -19899,7 +19899,7 @@ func Sum_min_zigzag(data []float64) float64 {
 // Sum_range_bump_on_decreasing_sequence : Exported Function
 func Sum_range_bump_on_decreasing_sequence(data []float64) float64 {
 	C := 0.0
-	D := 0.0
+	D := 0.0 //neutral_f
 	R := 0.0
 	currentState := 's'
 	DataLen := len(data)
@@ -19917,10 +19917,10 @@ func Sum_range_bump_on_decreasing_sequence(data []float64) float64 {
 					D = diff(Dtemp, data[i-1])
 					currentState = 'u'
 				} else if currentState == 'u' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				} else if currentState == 'v' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				}
 			} else if data[i] < data[i-1] {
@@ -19934,7 +19934,7 @@ func Sum_range_bump_on_decreasing_sequence(data []float64) float64 {
 					D = diff(Dtemp, data[i-1])
 					currentState = 'v'
 				} else if currentState == 'v' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = add(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 't'
 				}
@@ -19946,10 +19946,10 @@ func Sum_range_bump_on_decreasing_sequence(data []float64) float64 {
 				} else if currentState == 't' {
 					currentState = 's'
 				} else if currentState == 'u' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				} else if currentState == 'v' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				}
 			}
@@ -19964,7 +19964,7 @@ func Sum_range_bump_on_decreasing_sequence(data []float64) float64 {
 // Sum_range_decreasing : Exported Function
 func Sum_range_decreasing(data []float64) float64 {
 	C := 0.0
-	D := 0.0
+	D := 0.0 //neutral_f
 	R := 0.0
 	currentState := 's'
 	DataLen := len(data)
@@ -19979,7 +19979,7 @@ func Sum_range_decreasing(data []float64) float64 {
 				}
 			} else if data[i] < data[i-1] {
 				if currentState == 's' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = add(Rtemp, diff(diff(Dtemp, data[i-1]), data[i]))
 					currentState = 's'
 				}
@@ -19999,9 +19999,9 @@ func Sum_range_decreasing(data []float64) float64 {
 // Sum_range_decreasing_sequence : Exported Function
 func Sum_range_decreasing_sequence(data []float64) float64 {
 	C := 0.0
-	D := 0.0
+	D := 0.0 //neutral_f
 	R := 0.0
-	H := 0.0
+	H := math.Inf(-1)
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -20016,7 +20016,7 @@ func Sum_range_decreasing_sequence(data []float64) float64 {
 					currentState = 's'
 				} else if currentState == 't' {
 					C = 0.0
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = add(Rtemp, Ctemp)
 					currentState = 's'
 				}
@@ -20025,11 +20025,11 @@ func Sum_range_decreasing_sequence(data []float64) float64 {
 				H = math.Max(H, Htemp) // Holding onto the largest value for sequence
 				if currentState == 's' {
 					C = diff(diff(Dtemp, data[i-1]), data[i]) // C, found a0
-					D = 0.0
+					D = 0.0                                   //neutral_f
 					currentState = 't'
 				} else if currentState == 't' {
 					C = diff(H, data[i]) // C, in a0
-					D = 0.0
+					D = 0.0              //neutral_f
 					currentState = 't'
 				}
 			} else if data[i] == data[i-1] {
@@ -20051,7 +20051,7 @@ func Sum_range_decreasing_sequence(data []float64) float64 {
 // Sum_range_decreasing_terrace : Exported Function
 func Sum_range_decreasing_terrace(data []float64) float64 {
 	C := 0.0
-	D := 0.0
+	D := 0.0 //neutral_f
 	R := 0.0
 	currentState := 's'
 	DataLen := len(data)
@@ -20066,7 +20066,7 @@ func Sum_range_decreasing_terrace(data []float64) float64 {
 				} else if currentState == 'r' {
 					currentState = 's'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				}
 			} else if data[i] < data[i-1] {
@@ -20075,7 +20075,7 @@ func Sum_range_decreasing_terrace(data []float64) float64 {
 				} else if currentState == 'r' {
 					currentState = 'r'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = add(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 'r'
 				}
@@ -20101,7 +20101,7 @@ func Sum_range_decreasing_terrace(data []float64) float64 {
 // Sum_range_dip_on_increasing_sequence : Exported Function
 func Sum_range_dip_on_increasing_sequence(data []float64) float64 {
 	C := 0.0
-	D := 0.0
+	D := 0.0 //neutral_f
 	R := 0.0
 	currentState := 's'
 	DataLen := len(data)
@@ -20121,7 +20121,7 @@ func Sum_range_dip_on_increasing_sequence(data []float64) float64 {
 					D = diff(Dtemp, data[i-1])
 					currentState = 'v'
 				} else if currentState == 'v' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = add(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 't'
 				}
@@ -20134,10 +20134,10 @@ func Sum_range_dip_on_increasing_sequence(data []float64) float64 {
 					D = diff(Dtemp, data[i-1])
 					currentState = 'u'
 				} else if currentState == 'u' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				} else if currentState == 'v' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				}
 			} else if data[i] == data[i-1] {
@@ -20148,10 +20148,10 @@ func Sum_range_dip_on_increasing_sequence(data []float64) float64 {
 				} else if currentState == 't' {
 					currentState = 's'
 				} else if currentState == 'u' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				} else if currentState == 'v' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				}
 			}
@@ -20166,7 +20166,7 @@ func Sum_range_dip_on_increasing_sequence(data []float64) float64 {
 // Sum_range_gorge : Exported Function
 func Sum_range_gorge(data []float64) float64 {
 	C := 0.0
-	D := 0.0
+	D := 0.0 //neutral_f
 	R := 0.0
 	currentState := 's'
 	DataLen := len(data)
@@ -20180,14 +20180,14 @@ func Sum_range_gorge(data []float64) float64 {
 					currentState = 's'
 				} else if currentState == 'r' {
 					C = diff(Dtemp, data[i-1]) // C, found a1
-					D = 0.0
+					D = 0.0                    //neutral_f
 					currentState = 't'
 				} else if currentState == 't' {
 					C = diff(Ctemp, diff(Dtemp, data[i-1])) // C, in a1
-					D = 0.0
+					D = 0.0                                 //neutral_f
 					currentState = 't'
 				} else if currentState == 'u' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				}
 			} else if data[i] < data[i-1] {
@@ -20198,7 +20198,7 @@ func Sum_range_gorge(data []float64) float64 {
 					currentState = 'r'
 				} else if currentState == 't' {
 					C = 0.0
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = add(Rtemp, Ctemp)
 					currentState = 'r'
 				} else if currentState == 'u' {
@@ -20230,7 +20230,7 @@ func Sum_range_gorge(data []float64) float64 {
 // Sum_range_increasing : Exported Function
 func Sum_range_increasing(data []float64) float64 {
 	C := 0.0
-	D := 0.0
+	D := 0.0 //neutral_f
 	R := 0.0
 	currentState := 's'
 	DataLen := len(data)
@@ -20241,7 +20241,7 @@ func Sum_range_increasing(data []float64) float64 {
 			Rtemp := float64(R)
 			if data[i] > data[i-1] {
 				if currentState == 's' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = add(Rtemp, diff(diff(Dtemp, data[i-1]), data[i]))
 					currentState = 's'
 				}
@@ -20265,9 +20265,9 @@ func Sum_range_increasing(data []float64) float64 {
 // Sum_range_increasing_sequence : Exported Function
 func Sum_range_increasing_sequence(data []float64) float64 {
 	C := 0.0
-	D := 0.0
+	D := 0.0 //neutral_f
 	R := 0.0
-	H := 0.0
+	H := math.Inf(1)
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -20281,11 +20281,11 @@ func Sum_range_increasing_sequence(data []float64) float64 {
 				H = math.Min(H, Htemp)
 				if currentState == 's' {
 					C = diff(diff(Dtemp, data[i-1]), data[i]) // C, found a0
-					D = 0.0
+					D = 0.0                                   //neutral_f
 					currentState = 't'
 				} else if currentState == 't' {
 					C = diff(H, data[i]) // C, in a0
-					D = 0.0
+					D = 0.0              //neutral_f
 					currentState = 't'
 				}
 			} else if data[i] < data[i-1] {
@@ -20294,7 +20294,7 @@ func Sum_range_increasing_sequence(data []float64) float64 {
 					currentState = 's'
 				} else if currentState == 't' {
 					C = 0.0
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = add(Rtemp, Ctemp)
 					currentState = 's'
 				}
@@ -20317,7 +20317,7 @@ func Sum_range_increasing_sequence(data []float64) float64 {
 // Sum_range_increasing_terrace : Exported Function
 func Sum_range_increasing_terrace(data []float64) float64 {
 	C := 0.0
-	D := 0.0
+	D := 0.0 //neutral_f
 	R := 0.0
 	currentState := 's'
 	DataLen := len(data)
@@ -20332,7 +20332,7 @@ func Sum_range_increasing_terrace(data []float64) float64 {
 				} else if currentState == 'r' {
 					currentState = 'r'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = add(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 'r'
 				}
@@ -20342,7 +20342,7 @@ func Sum_range_increasing_terrace(data []float64) float64 {
 				} else if currentState == 'r' {
 					currentState = 's'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				}
 			} else if data[i] == data[i-1] {
@@ -20367,7 +20367,7 @@ func Sum_range_increasing_terrace(data []float64) float64 {
 // Sum_range_inflexion : Exported Function
 func Sum_range_inflexion(data []float64) float64 {
 	C := 0.0
-	D := 0.0
+	D := 0.0 //neutral_f
 	R := 0.0
 	currentState := 's'
 	DataLen := len(data)
@@ -20383,7 +20383,7 @@ func Sum_range_inflexion(data []float64) float64 {
 					D = diff(Dtemp, data[i-1])
 					currentState = 'r'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = add(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 'r'
 				}
@@ -20391,7 +20391,7 @@ func Sum_range_inflexion(data []float64) float64 {
 				if currentState == 's' {
 					currentState = 't'
 				} else if currentState == 'r' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = add(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 't'
 				} else if currentState == 't' {
@@ -20420,7 +20420,7 @@ func Sum_range_inflexion(data []float64) float64 {
 // Sum_range_peak : Exported Function
 func Sum_range_peak(data []float64) float64 {
 	C := 0.0
-	D := 0.0
+	D := 0.0 //neutral_f
 	R := 0.0
 	currentState := 's'
 	DataLen := len(data)
@@ -20437,7 +20437,7 @@ func Sum_range_peak(data []float64) float64 {
 					currentState = 'r'
 				} else if currentState == 't' {
 					C = 0.0
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = add(Rtemp, Ctemp)
 					currentState = 'r'
 				}
@@ -20446,11 +20446,11 @@ func Sum_range_peak(data []float64) float64 {
 					currentState = 's'
 				} else if currentState == 'r' {
 					C = diff(Dtemp, data[i-1]) // C, found a1
-					D = 0.0
+					D = 0.0                    //neutral_f
 					currentState = 't'
 				} else if currentState == 't' {
 					C = diff(Ctemp, diff(Dtemp, data[i-1])) // C, in a1
-					D = 0.0
+					D = 0.0                                 //neutral_f
 					currentState = 't'
 				}
 			} else if data[i] == data[i-1] {
@@ -20475,7 +20475,7 @@ func Sum_range_peak(data []float64) float64 {
 // Sum_range_plain : Exported Function
 func Sum_range_plain(data []float64) float64 {
 	C := 0.0
-	D := 0.0
+	D := 0.0 //neutral_f
 	R := 0.0
 	currentState := 's'
 	DataLen := len(data)
@@ -20488,11 +20488,11 @@ func Sum_range_plain(data []float64) float64 {
 				if currentState == 's' {
 					currentState = 's'
 				} else if currentState == 'r' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = add(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 's'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = add(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 's'
 				}
@@ -20502,7 +20502,7 @@ func Sum_range_plain(data []float64) float64 {
 				} else if currentState == 'r' {
 					currentState = 'r'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 'r'
 				}
 			} else if data[i] == data[i-1] {
@@ -20527,7 +20527,7 @@ func Sum_range_plain(data []float64) float64 {
 // Sum_range_plateau : Exported Function
 func Sum_range_plateau(data []float64) float64 {
 	C := 0.0
-	D := 0.0
+	D := 0.0 //neutral_f
 	R := 0.0
 	currentState := 's'
 	DataLen := len(data)
@@ -20542,18 +20542,18 @@ func Sum_range_plateau(data []float64) float64 {
 				} else if currentState == 'r' {
 					currentState = 'r'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 'r'
 				}
 			} else if data[i] < data[i-1] {
 				if currentState == 's' {
 					currentState = 's'
 				} else if currentState == 'r' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = add(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 's'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = add(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 's'
 				}
@@ -20579,7 +20579,7 @@ func Sum_range_plateau(data []float64) float64 {
 // Sum_range_proper_plain : Exported Function
 func Sum_range_proper_plain(data []float64) float64 {
 	C := 0.0
-	D := 0.0
+	D := 0.0 //neutral_f
 	R := 0.0
 	currentState := 's'
 	DataLen := len(data)
@@ -20594,7 +20594,7 @@ func Sum_range_proper_plain(data []float64) float64 {
 				} else if currentState == 'r' {
 					currentState = 's'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = add(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 's'
 				}
@@ -20604,7 +20604,7 @@ func Sum_range_proper_plain(data []float64) float64 {
 				} else if currentState == 'r' {
 					currentState = 'r'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 'r'
 				}
 			} else if data[i] == data[i-1] {
@@ -20629,7 +20629,7 @@ func Sum_range_proper_plain(data []float64) float64 {
 // Sum_range_proper_plateau : Exported Function
 func Sum_range_proper_plateau(data []float64) float64 {
 	C := 0.0
-	D := 0.0
+	D := 0.0 //neutral_f
 	R := 0.0
 	currentState := 's'
 	DataLen := len(data)
@@ -20644,7 +20644,7 @@ func Sum_range_proper_plateau(data []float64) float64 {
 				} else if currentState == 'r' {
 					currentState = 'r'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 'r'
 				}
 			} else if data[i] < data[i-1] {
@@ -20653,7 +20653,7 @@ func Sum_range_proper_plateau(data []float64) float64 {
 				} else if currentState == 'r' {
 					currentState = 's'
 				} else if currentState == 't' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = add(Rtemp, diff(Dtemp, data[i-1]))
 					currentState = 's'
 				}
@@ -20679,7 +20679,7 @@ func Sum_range_proper_plateau(data []float64) float64 {
 // Sum_range_steady : Exported Function
 func Sum_range_steady(data []float64) float64 {
 	C := 0.0
-	D := 0.0
+	D := 0.0 //neutral_f
 	R := 0.0
 	currentState := 's'
 	DataLen := len(data)
@@ -20698,7 +20698,7 @@ func Sum_range_steady(data []float64) float64 {
 				}
 			} else if data[i] == data[i-1] {
 				if currentState == 's' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = add(Rtemp, diff(diff(Dtemp, data[i-1]), data[i]))
 					currentState = 's'
 				}
@@ -20714,7 +20714,7 @@ func Sum_range_steady(data []float64) float64 {
 // Sum_range_steady_sequence : Exported Function
 func Sum_range_steady_sequence(data []float64) float64 {
 	C := 0.0
-	D := 0.0
+	D := 0.0 //neutral_f
 	R := 0.0
 	currentState := 's'
 	DataLen := len(data)
@@ -20728,7 +20728,7 @@ func Sum_range_steady_sequence(data []float64) float64 {
 					currentState = 's'
 				} else if currentState == 'r' {
 					C = 0.0
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = add(Rtemp, Ctemp)
 					currentState = 's'
 				}
@@ -20737,18 +20737,18 @@ func Sum_range_steady_sequence(data []float64) float64 {
 					currentState = 's'
 				} else if currentState == 'r' {
 					C = 0.0
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = add(Rtemp, Ctemp)
 					currentState = 's'
 				}
 			} else if data[i] == data[i-1] {
 				if currentState == 's' {
 					C = diff(diff(Dtemp, data[i-1]), data[i]) // C, found a0
-					D = 0.0
+					D = 0.0                                   //neutral_f
 					currentState = 'r'
 				} else if currentState == 'r' {
 					C = diff(Ctemp, diff(Dtemp, data[i])) // C, in a0
-					D = 0.0
+					D = 0.0                               //neutral_f
 					currentState = 'r'
 				}
 			}
@@ -20763,9 +20763,9 @@ func Sum_range_steady_sequence(data []float64) float64 {
 // Sum_range_strictly_decreasing_sequence : Exported Function
 func Sum_range_strictly_decreasing_sequence(data []float64) float64 {
 	C := 0.0
-	D := 0.0
+	D := 0.0 //neutral_f
 	R := 0.0
-	H := 0.0
+	H := math.Inf(-1)
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -20780,7 +20780,7 @@ func Sum_range_strictly_decreasing_sequence(data []float64) float64 {
 					currentState = 's'
 				} else if currentState == 'r' {
 					C = 0.0
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = add(Rtemp, Ctemp)
 					currentState = 's'
 				}
@@ -20789,11 +20789,11 @@ func Sum_range_strictly_decreasing_sequence(data []float64) float64 {
 				H = math.Max(H, Htemp) // Holding onto the largest value for sequence
 				if currentState == 's' {
 					C = diff(diff(Dtemp, data[i-1]), data[i]) // C, found a0
-					D = 0.0
+					D = 0.0                                   //neutral_f
 					currentState = 'r'
 				} else if currentState == 'r' {
 					C = diff(H, data[i]) // C, in a0
-					D = 0.0
+					D = 0.0              //neutral_f
 					currentState = 'r'
 				}
 			} else if data[i] == data[i-1] {
@@ -20802,7 +20802,7 @@ func Sum_range_strictly_decreasing_sequence(data []float64) float64 {
 					currentState = 's'
 				} else if currentState == 'r' {
 					C = 0.0
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = add(Rtemp, Ctemp)
 					currentState = 's'
 				}
@@ -20818,9 +20818,9 @@ func Sum_range_strictly_decreasing_sequence(data []float64) float64 {
 // Sum_range_strictly_increasing_sequence : Exported Function
 func Sum_range_strictly_increasing_sequence(data []float64) float64 {
 	C := 0.0
-	D := 0.0
+	D := 0.0 //neutral_f
 	R := 0.0
-	H := 0.0
+	H := math.Inf(1)
 	currentState := 's'
 	DataLen := len(data)
 	for i := 1; i < DataLen; i++ {
@@ -20834,11 +20834,11 @@ func Sum_range_strictly_increasing_sequence(data []float64) float64 {
 				H = math.Min(H, Htemp)
 				if currentState == 's' {
 					C = diff(diff(Dtemp, data[i-1]), data[i]) // C, found a0
-					D = 0.0
+					D = 0.0                                   //neutral_f
 					currentState = 'r'
 				} else if currentState == 'r' {
 					C = diff(H, data[i]) // C, in a0
-					D = 0.0
+					D = 0.0              //neutral_f
 					currentState = 'r'
 				}
 			} else if data[i] < data[i-1] {
@@ -20847,7 +20847,7 @@ func Sum_range_strictly_increasing_sequence(data []float64) float64 {
 					currentState = 's'
 				} else if currentState == 'r' {
 					C = 0.0
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = add(Rtemp, Ctemp)
 					currentState = 's'
 				}
@@ -20857,7 +20857,7 @@ func Sum_range_strictly_increasing_sequence(data []float64) float64 {
 					currentState = 's'
 				} else if currentState == 'r' {
 					C = 0.0
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = add(Rtemp, Ctemp)
 					currentState = 's'
 				}
@@ -20873,7 +20873,7 @@ func Sum_range_strictly_increasing_sequence(data []float64) float64 {
 // Sum_range_summit : Exported Function
 func Sum_range_summit(data []float64) float64 {
 	C := 0.0
-	D := 0.0
+	D := 0.0 //neutral_f
 	R := 0.0
 	currentState := 's'
 	DataLen := len(data)
@@ -20885,14 +20885,14 @@ func Sum_range_summit(data []float64) float64 {
 			if data[i] > data[i-1] {
 				if currentState == 's' {
 					C = diff(Dtemp, data[i-1]) // C, found a1
-					D = 0.0
+					D = 0.0                    //neutral_f
 					currentState = 'r'
 				} else if currentState == 'r' {
 					D = diff(Dtemp, data[i-1])
 					currentState = 'r'
 				} else if currentState == 't' {
 					C = 0.0
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = add(Rtemp, Ctemp)
 					currentState = 'r'
 				} else if currentState == 'u' {
@@ -20904,14 +20904,14 @@ func Sum_range_summit(data []float64) float64 {
 					currentState = 's'
 				} else if currentState == 'r' {
 					C = diff(Dtemp, data[i-1]) // C, found a1
-					D = 0.0
+					D = 0.0                    //neutral_f
 					currentState = 't'
 				} else if currentState == 't' {
 					C = diff(Ctemp, diff(Dtemp, data[i-1])) // C, in a1
-					D = 0.0
+					D = 0.0                                 //neutral_f
 					currentState = 't'
 				} else if currentState == 'u' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				}
 			} else if data[i] == data[i-1] {
@@ -20939,7 +20939,7 @@ func Sum_range_summit(data []float64) float64 {
 // Sum_range_valley : Exported Function
 func Sum_range_valley(data []float64) float64 {
 	C := 0.0
-	D := 0.0
+	D := 0.0 //neutral_f
 	R := 0.0
 	currentState := 's'
 	DataLen := len(data)
@@ -20953,11 +20953,11 @@ func Sum_range_valley(data []float64) float64 {
 					currentState = 's'
 				} else if currentState == 'r' {
 					C = diff(Dtemp, data[i-1]) // C, found a1
-					D = 0.0
+					D = 0.0                    //neutral_f
 					currentState = 't'
 				} else if currentState == 't' {
 					C = diff(Ctemp, diff(Dtemp, data[i-1])) // C, in a1
-					D = 0.0
+					D = 0.0                                 //neutral_f
 					currentState = 't'
 				}
 			} else if data[i] < data[i-1] {
@@ -20968,7 +20968,7 @@ func Sum_range_valley(data []float64) float64 {
 					currentState = 'r'
 				} else if currentState == 't' {
 					C = 0.0
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = add(Rtemp, Ctemp)
 					currentState = 'r'
 				}
@@ -20994,7 +20994,7 @@ func Sum_range_valley(data []float64) float64 {
 // Sum_range_zigzag : Exported Function
 func Sum_range_zigzag(data []float64) float64 {
 	C := 0.0
-	D := 0.0
+	D := 0.0 //neutral_f
 	R := 0.0
 	currentState := 's'
 	DataLen := len(data)
@@ -21010,22 +21010,22 @@ func Sum_range_zigzag(data []float64) float64 {
 					currentState = 'a'
 				} else if currentState == 'b' {
 					C = diff(Dtemp, data[i-1]) // C, found a1
-					D = 0.0
+					D = 0.0                    //neutral_f
 					currentState = 'c'
 				} else if currentState == 'c' {
 					C = 0.0
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = add(Rtemp, Ctemp)
 					currentState = 'a'
 				} else if currentState == 'd' {
 					D = diff(Dtemp, data[i-1])
 					currentState = 'e'
 				} else if currentState == 'e' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 'a'
 				} else if currentState == 'f' {
 					C = diff(Ctemp, diff(Dtemp, data[i-1])) // C, in a1
-					D = 0.0
+					D = 0.0                                 //neutral_f
 					currentState = 'c'
 				}
 			} else if data[i] < data[i-1] {
@@ -21038,17 +21038,17 @@ func Sum_range_zigzag(data []float64) float64 {
 					currentState = 'd'
 				} else if currentState == 'c' {
 					C = diff(Ctemp, diff(Dtemp, data[i-1])) // C, in a1
-					D = 0.0
+					D = 0.0                                 //neutral_f
 					currentState = 'f'
 				} else if currentState == 'd' {
 					currentState = 'd'
 				} else if currentState == 'e' {
 					C = diff(Dtemp, data[i-1]) // C, found a1
-					D = 0.0
+					D = 0.0                    //neutral_f
 					currentState = 'f'
 				} else if currentState == 'f' {
 					C = 0.0
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = add(Rtemp, Ctemp)
 					currentState = 'd'
 				}
@@ -21058,21 +21058,21 @@ func Sum_range_zigzag(data []float64) float64 {
 				} else if currentState == 'a' {
 					currentState = 's'
 				} else if currentState == 'b' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				} else if currentState == 'c' {
 					C = 0.0
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = add(Rtemp, Ctemp)
 					currentState = 's'
 				} else if currentState == 'd' {
 					currentState = 's'
 				} else if currentState == 'e' {
-					D = 0.0
+					D = 0.0 //neutral_f
 					currentState = 's'
 				} else if currentState == 'f' {
 					C = 0.0
-					D = 0.0
+					D = 0.0 //neutral_f
 					R = add(Rtemp, Ctemp)
 					currentState = 's'
 				}
