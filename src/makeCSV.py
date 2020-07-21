@@ -13,7 +13,8 @@ def makeCSV(fileName):
                 if line[i]=='{':
                     data=line[i+1:length:1]
                     if data in dataHolder:
-                        #print(line)
+                        #if data == '7, 6, 5, 6, 5, 4, 1, 4, 7, 5, 4, 2, 5, 4, 3, 3': # This conditional was used to find which data slices corresponded to the correct test cases
+                        #    print(line)
                         continue            #skips duplicate data
                     else:
                         dataHolder.append(data) #adds data slice
@@ -24,7 +25,7 @@ def makeCSV(fileName):
     for line in dataHolder:
         fl=open("../res/tests/"+case+str(casenum)+".csv",'w')
         length=(len(line))
-        #print(case+str(casenum)+': '+line)
+        print(case+str(casenum)+': '+line)
         for i in range(length):
             if line[i]==',':
                 continue

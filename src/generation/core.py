@@ -40,10 +40,9 @@ def getUpdate(accumulator, semantic, patternName, featureName, aggregatorName):
                 val = val + element
     return val
 
-# So far only supports certain Range Functions.
 # This is essentially the same as the function above, 'getUpdate()',
 # however I was not getting it to work properly with changes to 'getUpdate()' 
-# so I just made a new function.
+# so I made this function to accommodate for the generation of all range functions.
 def getRangeUpdate(accumulator, semantic, patternName, featureName, aggregatorName):
     val = ''
     if semantic in accumulator_range_updates[accumulator]:
