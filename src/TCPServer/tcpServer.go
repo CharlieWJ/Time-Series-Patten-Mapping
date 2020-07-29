@@ -7,8 +7,7 @@ import (
 	"net"
 	"os"
 	"strconv"
-
-	gen "../generatedInGo" //golint sometimes tells me there is an error but i don't recieve one when running, not sure why
+	//golint sometimes tells me there is an error but i don't recieve one when running, not sure why
 )
 
 //ASK ABOUT PACKAGING ISSUES
@@ -20,12 +19,18 @@ const (
 
 var datalength = 0
 
-var sens1Prop1 = []float64{}
-var sens1Prop2 = []float64{}
-var sens1Prop3 = []float64{}
-var sens1Prop4 = []float64{}
-var sens1Prop5 = []float64{}
-var sens1Prop6 = []float64{}
+// Sens1Prop1 : Sensor 1 Property 1
+var Sens1Prop1 = []float64{} //CASE0
+// Sens1Prop2 : Sensor 1 Property 2
+var Sens1Prop2 = []float64{} //CASE1
+// Sens1Prop3 : Sensor 1 Property 3
+var Sens1Prop3 = []float64{} //CASE2
+// Sens1Prop4 : Sensor 1 Property 4
+var Sens1Prop4 = []float64{} //CASE3
+// Sens1Prop5 : Sensor 1 Property 5
+var Sens1Prop5 = []float64{} //CASE4
+// Sens1Prop6 : Sensor 1 Property 6
+var Sens1Prop6 = []float64{} //CASE5
 
 var datasens2 = []float64{}
 var datasens3 = []float64{}
@@ -64,15 +69,14 @@ func HandleRequest(conn net.Conn) {
 		fmt.Println(string(buf))
 		HandleData(buf)
 		fmt.Println("")
-		if datalength+10 == len(sens1Prop1) {
-			fmt.Println("=====FUNCTION TESTING=====")
-			fmt.Println("Max_range_decreasing(): ", gen.Max_range_decreasing(sens1Prop1))
-			fmt.Println("Max_range_decreasing_sequence(): ", gen.Max_range_decreasing_sequence(sens1Prop1))
-			fmt.Println("Max_range_strictly_decreasing_sequence(): ", gen.Max_range_strictly_decreasing_sequence(sens1Prop1))
-			fmt.Println("Max_range_increasing(): ", gen.Max_range_increasing(sens1Prop2))
-			fmt.Println("Max_range_increasing_sequence(): ", gen.Max_range_increasing_sequence(sens1Prop2))
-			fmt.Println("Max_range_strictly_increasing_sequence(): ", gen.Max_range_strictly_increasing_sequence(sens1Prop2))
-			datalength = len(sens1Prop1)
+		if datalength+16 == len(Sens1Prop1) {
+			WriteToFile("CASE0")
+			WriteToFile("CASE1")
+			WriteToFile("CASE2")
+			WriteToFile("CASE3")
+			WriteToFile("CASE4")
+			WriteToFile("CASE5")
+			datalength += 16
 		}
 		//conn.Write([]byte("Message received."))
 	}
@@ -117,23 +121,23 @@ func DetectSensor(buf []byte) string {
 func AppendValue(sensor string, val float64, prop int) {
 	if sensor == "gr3sensor1" {
 		if prop == 0 {
-			sens1Prop1 = append(sens1Prop1, val)
-			fmt.Println("Sensor 1 Property 1: ", sens1Prop1)
+			Sens1Prop1 = append(Sens1Prop1, val)
+			fmt.Println("Sensor 1 Property 1: ", Sens1Prop1)
 		} else if prop == 1 {
-			sens1Prop2 = append(sens1Prop2, val)
-			fmt.Println("Sensor 1 Property 2: ", sens1Prop2)
+			Sens1Prop2 = append(Sens1Prop2, val)
+			fmt.Println("Sensor 1 Property 2: ", Sens1Prop2)
 		} else if prop == 2 {
-			sens1Prop3 = append(sens1Prop3, val)
-			fmt.Println("Sensor 1 Property 3: ", sens1Prop3)
+			Sens1Prop3 = append(Sens1Prop3, val)
+			fmt.Println("Sensor 1 Property 3: ", Sens1Prop3)
 		} else if prop == 3 {
-			sens1Prop3 = append(sens1Prop4, val)
-			fmt.Println("Sensor 1 Property 4: ", sens1Prop4)
+			Sens1Prop4 = append(Sens1Prop4, val)
+			fmt.Println("Sensor 1 Property 4: ", Sens1Prop4)
 		} else if prop == 4 {
-			sens1Prop3 = append(sens1Prop5, val)
-			fmt.Println("Sensor 1 Property 5: ", sens1Prop5)
+			Sens1Prop5 = append(Sens1Prop5, val)
+			fmt.Println("Sensor 1 Property 5: ", Sens1Prop5)
 		} else {
-			sens1Prop6 = append(sens1Prop6, val)
-			fmt.Println("Sensor 1 Property 6: ", sens1Prop6)
+			Sens1Prop6 = append(Sens1Prop6, val)
+			fmt.Println("Sensor 1 Property 6: ", Sens1Prop6)
 		}
 	} else if sensor == "gr3sensor2" {
 		datasens2 = append(datasens2, val)

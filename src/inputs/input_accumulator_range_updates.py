@@ -56,8 +56,9 @@ accumulator_range_updates = {
             'a1' : ['g', '(', 'R', ',', 'C', ')']
         },
         'found_e' : {
-            'a0' : ['g', '(', 'R', ',', 'phi_f', '(', 'phi_f', '(', 'D', ',', 'delta_i_f', ')', ',', 'delta_i_f_prime', ')', ')'],
-            'a1' : ['g', '(', 'R', ',', 'phi_f', '(', 'D', ',', 'delta_i_f', ')', ')']
+            #'a0' : ['g', '(', 'R', ',', 'phi_f', '(', 'phi_f', '(', 'D', ',', 'delta_i_f', ')', ',', 'delta_i_f_prime', ')', ') //found_e a0'], #this was the original
+            'a0' : ['g', '(', 'R', ',', 'phi_f', '(', 'delta_i_f', ',', 'delta_i_f_prime', ')', ') // R, found_e a0, Range Update'],
+            'a1' : ['g', '(', 'R', ',', 'phi_f', '(', 'D', ',', 'delta_i_f', ')', ') // R, found_e a1, Range Update']
         }
     }
 }

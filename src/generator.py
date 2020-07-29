@@ -78,17 +78,19 @@ class CodeGeneratorBackend:
         #isRangeStrict=False             #Detect if func is range_strictly_decreasing_sequence
 
         isRange=True if featureName == 'range' else False
-        isDec=True if patternName == 'decreasing_sequence' or patternName == 'strictly_decreasing_sequence' else False
-        isInc=True if patternName == 'increasing_sequence' or patternName == 'strictly_increasing_sequence' else False
+        isDec=True if patternName == 'decreasing' else False
+        isDecSeq=True if patternName == 'decreasing_sequence' or patternName == 'strictly_decreasing_sequence' else False
+        isInc=True if patternName == 'increasing' else False
+        isIncSeq=True if patternName == 'increasing_sequence' or patternName == 'strictly_increasing_sequence' else False
         isStrict=True if patternName == 'strictly_increasing_sequence' or patternName == 'strictly_decreasing_sequence' else False
-        letters=['C', 'D', 'R', 'H'] if isRange and (isDec or isInc or isStrict) else ['C', 'D', 'R'] #Initializes values
+        letters=['C', 'D', 'R', 'H'] if isRange and (isDecSeq or isIncSeq or isStrict) else ['C', 'D', 'R'] #Initializes values
         #letters = ['C', 'D', 'R']
         for accumulator in ['C', 'D', 'R']:
             self.writeInitValue(accumulator, patternName, featureName, aggregatorName)
 
-        if isRange and (isInc):
+        if isRange and (isIncSeq):
             self.writeLine("H := math.Inf(1)")
-        elif isRange and (isDec):
+        elif isRange and (isDecSeq):
             self.writeLine("H := math.Inf(-1)")
         
         self.writeEntryState(patternName)
@@ -103,41 +105,41 @@ class CodeGeneratorBackend:
         #    self.writeLine('Htemp := float64(H)')
         
         self.writeLine('if data[i] > data[i-1] {')
-        if (isRange and isDec):
+        if (isRange and isDecSeq):
             self.indent()
             self.writeLine('H = 0.0')
             self.dedent()
-        elif (isRange and isInc):
+        elif (isRange and isIncSeq):
             self.indent()
             self.writeLine('H = data[i-1]')
             self.writeLine('H = math.Min(H, Htemp)')
             self.dedent()
-        self.writeCore(patternName, featureName, aggregatorName, '<', isRange, isInc, isDec, isStrict)## Only for decreasing funcs rn
+        self.writeCore(patternName, featureName, aggregatorName, '<', isRange, isInc, isDec, isIncSeq, isDecSeq, isStrict)## Only for decreasing funcs rn
         self.dedent()
 
         self.writeLine('} else if data[i] < data[i-1] {')##
-        if (isRange and isDec):
+        if (isRange and isDecSeq):
             self.indent()
             self.writeLine('H = data[i-1]')
             self.writeLine('H = math.Max(H, Htemp) // Holding onto the largest value for sequence')
             self.dedent()
-        elif (isRange and isInc):
+        elif (isRange and isIncSeq):
             self.indent()
             self.writeLine("H = math.Inf(1)")
             self.dedent()
-        self.writeCore(patternName, featureName, aggregatorName, '>', isRange, isInc, isDec, isStrict)## Only for decreasing funcs rn
+        self.writeCore(patternName, featureName, aggregatorName, '>', isRange, isInc, isDec, isIncSeq, isDecSeq, isStrict)## Only for decreasing funcs rn
         self.dedent()
 
         self.writeLine('} else if data[i] == data[i-1] {')##
-        if (isRange and isDec and isStrict):
+        if (isRange and isDecSeq and isStrict):
             self.indent()
             self.writeLine('H = 0.0')
             self.dedent()
-        elif (isRange and isInc and isStrict):
+        elif (isRange and isIncSeq and isStrict):
             self.indent()
             self.writeLine("H = math.Inf(1)")
             self.dedent()
-        self.writeCore(patternName, featureName, aggregatorName, '=', isRange, isInc, isDec, isStrict)## Only for decreasing funcs rn
+        self.writeCore(patternName, featureName, aggregatorName, '=', isRange, isInc, isDec, isIncSeq, isDecSeq, isStrict)## Only for decreasing funcs rn
         self.dedent()
 
         self.writeLine('}')##
@@ -152,7 +154,7 @@ class CodeGeneratorBackend:
         self.dedent()
         self.writeLine('}')
 
-    def writeCore(self, patternName, featureName, aggregatorName, sign, isRange, isInc, isDec, isStrict):
+    def writeCore(self, patternName, featureName, aggregatorName, sign, isRange, isInc, isDec, isIncSeq, isDecSeq, isStrict):
         self.indent()
         c = True
         for state in core.getPatternStates(patternName):
@@ -164,7 +166,7 @@ class CodeGeneratorBackend:
             self.indent()
             semantic = core.getNextSemantic(patternName, state, sign)
 
-            if(isRange and (isInc or isDec or isStrict)):#Added
+            if(isRange and (isIncSeq or isDecSeq or isStrict or isDec or isInc)):#Added
                 for accumulator in ['C', 'D', 'H', 'R']:
                     update = core.getRangeUpdate(accumulator, semantic, patternName, featureName, aggregatorName)
                     if len(update) > 0:
@@ -192,14 +194,14 @@ c.writeComment('By Charles W. Jeffries.')
 c.writeComment('Source Code : https://github.com/CharlieWJ/Time-Series-Patten-Mapping')
 c.writeComment('----------------------------------------------------------------------------')
 c.writeLine('')
-c.writeLine('package generatedingo')
+c.writeLine('package generatedInGo')
 c.writeLine('')
 c.writeLine('import(')
 c.writeLine('\t"math"')
 c.writeLine(')')
 c.writeLine('')
-c.writeLine('func add(x float64, y float64) float64 { return ( x + y ) }')
-c.writeLine('func diff(x float64, y float64) float64 { return (math.Abs(math.Abs(x) - math.Abs(y))) }')
+c.writeLine('func add(x float64, y float64) float64 { return (x + y) }')
+c.writeLine('func diff(x float64, y float64) float64 { return math.Abs(x - y) } // The absolute difference')
 # c.writeLine('func diff(x float64, y float64) float64 { return math.Abs( x - y ) } // The absolute difference')
 c.writeLine('')
 
@@ -213,7 +215,8 @@ for agg, agg_name in zip(aggregators,aggregator_names):
             c.writeFunction(pattern, feature, agg, agg_name)
             nb_func = nb_func + 1
 
-my_file = open("D:\\TimeSeriesPatternMapping\\src\\generatedInGo\\generatedInGo.go", "w")
+#my_file = open("D:\\TimeSeriesPatternMapping\\src\\generatedInGo\\generatedInGo.go", "w")
+my_file = open("./generatedInGo/generatedInGo.go", "w")
 my_file.write(c.end())
 my_file.close()
 
