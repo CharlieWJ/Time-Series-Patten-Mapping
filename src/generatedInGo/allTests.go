@@ -964,3 +964,59 @@ var Case18 = []Tests{
 		Result: 31, Name: "Sum_surface_steady_sequence",
 	},
 }
+
+// Case19 : Twentieth Case
+var Case19 = []Tests{
+	{
+		Method: Max_min_plateau, Args: Args{Data: []float64{7, 5, 2, 3, 1, 2, 2, 4, 3, 3, 4, 5, 5, 2, 2, 5}},
+		Result: 5, Name: "Max_min_plateau",
+	},
+	{
+		Method: Max_surface_plateau, Args: Args{Data: []float64{7, 5, 2, 3, 1, 2, 2, 4, 3, 3, 4, 5, 5, 2, 2, 5}},
+		Result: 10, Name: "Max_surface_plateau",
+	},
+	{
+		Method: Min_min_plateau, Args: Args{Data: []float64{7, 5, 2, 3, 1, 2, 2, 4, 3, 3, 4, 5, 5, 2, 2, 5}},
+		Result: 3, Name: "Min_min_plateau",
+	},
+	{
+		Method: Min_surface_plateau, Args: Args{Data: []float64{7, 5, 2, 3, 1, 2, 2, 4, 3, 3, 4, 5, 5, 2, 2, 5}},
+		Result: 3, Name: "Min_surface_plateau",
+	},
+	{
+		Method: Sum_min_plateau, Args: Args{Data: []float64{7, 5, 2, 3, 1, 2, 2, 4, 3, 3, 4, 5, 5, 2, 2, 5}},
+		Result: 12, Name: "Sum_min_plateau",
+	},
+	{
+		Method: Sum_surface_plateau, Args: Args{Data: []float64{7, 5, 2, 3, 1, 2, 2, 4, 3, 3, 4, 5, 5, 2, 2, 5}},
+		Result: 17, Name: "Sum_surface_plateau",
+	},
+}
+
+// Case20 : Twentyfirst Case
+var Case20 = []Tests{
+	{
+		Method: Max_min_steady, Args: Args{Data: []float64{1, 1, 7, 3, 3, 5, 5, 5, 6, 5, 5, 5, 7, 2, 6, 6}},
+		Result: 6, Name: "Max_min_steady",
+	},
+	{
+		Method: Max_surface_steady, Args: Args{Data: []float64{1, 1, 7, 3, 3, 5, 5, 5, 6, 5, 5, 5, 7, 2, 6, 6}},
+		Result: 12, Name: "Max_surface_steady",
+	},
+	{
+		Method: Min_min_steady, Args: Args{Data: []float64{1, 1, 7, 3, 3, 5, 5, 5, 6, 5, 5, 5, 7, 2, 6, 6}},
+		Result: 1, Name: "Min_min_steady",
+	},
+	{
+		Method: Min_surface_steady, Args: Args{Data: []float64{1, 1, 7, 3, 3, 5, 5, 5, 6, 5, 5, 5, 7, 2, 6, 6}},
+		Result: 2, Name: "Min_surface_steady",
+	},
+	{
+		Method: Sum_min_steady, Args: Args{Data: []float64{1, 1, 7, 3, 3, 5, 5, 5, 6, 5, 5, 5, 7, 2, 6, 6}},
+		Result: 30, Name: "Sum_min_steady",
+	},
+	{
+		Method: Sum_surface_steady, Args: Args{Data: []float64{1, 1, 7, 3, 3, 5, 5, 5, 6, 5, 5, 5, 7, 2, 6, 6}},
+		Result: 60, Name: "Sum_surface_steady",
+	},
+}

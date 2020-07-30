@@ -1,15 +1,17 @@
 # ||CASE3||
 Function | Result | Expected
 ---|---|---
-|Max_max_increasing()| Result: 6.000000| Expected: ~6.000000
-|Max_max_increasing_sequence()| Result: 6.000000| Expected: ~6.000000
-|Max_min_increasing()| Result: 3.000000| Expected: ~4.000000
-|Max_min_increasing_sequence()| Result: 3.000000| Expected: ~3.000000
-|Max_width_increasing_sequence()| Result: 3.000000| Expected: ~5.000000
-|Max_surface_increasing()| Result: 8.000000| Expected: ~10.000000
-|Max_surface_increasing_sequence()| Result: 9.000000| Expected: ~17.000000
-|Min_max_increasing()| Result: 2.000000| Expected: ~3.000000
-|Min_max_increasing_sequence()| Result: 4.000000| Expected: ~3.000000
-|Min_min_increasing([]float64)| Result: 1.000000| Expected: ~1.000000
-|Min_min_increasing_sequence([]float64)| Result: 1.000000| Expected: ~1.000000
-|Min_width_increasing_sequence()| Result: 2.000000| Expected: ~2.000000
+|Max_max_inflexion()| Result: 6.000000| Expected: ~6.000000
+|Max_min_inflexion()| Result: 5.000000| Expected: ~5.000000
+|Max_width_inflexion()| Result: 3.000000| Expected: ~3.000000
+|Max_surface_inflexion| Result: 14.000000| Expected: ~14.000000
+|Min_max_inflexion()| Result: 1.000000| Expected: ~1.000000
+|Min_min_inflexion([]float64)| Result: 1.000000| Expected: ~1.000000
+|Min_width_inflexion([]float64)| Result: 1.000000| Expected: ~1.000000
+|Min_surface_inflexion| Result: 1.000000| Expected: ~1.000000
+|Sum_max_inflexion()| Result: 35.000000| Expected: ~31.000000
+|Sum_min_inflexion([]float64)| Result: 31.000000| Expected: ~26.000000
+|Sum_width_inflexion([]float64)| Result: 14.000000| Expected: ~13.000000
+|Sum_surface_inflexion| Result: 50.000000| Expected: ~49.000000
+
+ORIGINAL: [1 2 6 6 4 4 3 5 2 5 1 5 3 3 4 4] | USED: [4 3 5 2 5 1 5 3 3 4 4 1 2 6 6 4]

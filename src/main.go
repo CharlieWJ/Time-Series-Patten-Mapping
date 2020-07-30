@@ -5,7 +5,7 @@ import (
 	"math"
 
 	tcp "./TCPServer"
-	generated "./generatedInGo"
+	//generated "./generatedInGo"
 )
 
 const (
@@ -20,7 +20,7 @@ func diff(x float64, y float64) float64 { return (math.Abs(x - y)) }
 func main() {
 	tcp.RunServer()
 	//fmt.Println(max_range_decreasing([]float64{14, 13, 11, 9, 5, 4, 2, 1, 0, -1, -3, -5, -8, 25, 24, 20, 18, 16, 14, 13, 11}))
-	fmt.Println(generated.Sum_width_decreasing_sequence([]float64{4, 2, 2, 5, 6, 6, 4, 4, 3, 1, 1, 4, 6, 4, 4, 3}))
+	//fmt.Println(generated.Sum_width_decreasing_sequence([]float64{4, 2, 2, 5, 6, 6, 4, 4, 3, 1, 1, 4, 6, 4, 4, 3}))
 	fmt.Println("=====Simulation has Concluded=====")
 }
 

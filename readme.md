@@ -213,4 +213,4 @@ It is important to note that functions that should be labled as '<something\>\_h
 
 In total, there are 231 functions that I am certain about which work. Those 231 functions have all been tested with the examples that are provided in the catalog and can be found in the _testy.go_ script. 
 
-There are also a total of 18 different test cases used, they can be found in the 'res' folder. There is also a test case legend markdown file in the 'res' folder to see which cases correspond to which functions.
+There are also a total of 21 different test cases used, they can be found in the 'res' folder. There is also a test case legend markdown file in the 'res' folder to see which cases correspond to which functions.
