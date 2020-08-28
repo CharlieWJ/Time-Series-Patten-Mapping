@@ -54,7 +54,7 @@ class CodeGeneratorBackend:
         self.level = self.level - 1
 
     def writeHeader(self, patternName, featureName, aggregatorName):
-        self.writeLine('func ' + aggregatorName + '_' + featureName + '_' + patternName + '(data []float64) float64{')
+        self.writeLine('func ' + aggregatorName + '_' + featureName + '_' + patternName + '(data []float64) float64 {')
         self.indent()
 
     def writeEntryState(self, patternName):
@@ -70,21 +70,50 @@ class CodeGeneratorBackend:
         self.write(res)
 
     def writeFunction(self, patternName, featureName, aggregatorName, x):
-        self.writeComment(x+'_'+featureName+'_'+patternName+' : Exported Function')
-        self.writeHeader(patternName, featureName, x)#, aggregatorName)
-        #for accumulator in ['C', 'D', 'R']:
-        #    self.writeInitValue(accumulator, patternName, featureName, aggregatorName)        
-        #isRangeDecSeq=False                #Currently only Decreasing
-        #isRangeStrict=False             #Detect if func is range_strictly_decreasing_sequence
-
+        ## Stop production of extra 'Max/Min_one_' functions
+        isMaxorMin = True if x == 'Max' or x == 'Min' else False
+        isOne = True if featureName == 'one' else False
+        if (isMaxorMin and isOne):
+            return
+        ## Stop production of 15 extra width functions
+        isWidth = True if featureName == 'width' else False
+        isDec = True if patternName == 'decreasing' else False
+        isInc = True if patternName == 'increasing' else False
+        isDip = True if patternName == 'dip_on_increasing_sequence' else False
+        isBump = True if patternName == 'bump_on_decreasing_sequence' else False
+        isOnlySteady = True if patternName == 'steady' else False
+        if (isWidth and (isInc or isDec or isDip or isBump or isOnlySteady)):
+            return
+        ## Stop generation of 30 extra '_max_' functions
+        isMaxFeature = True if featureName == 'max' else False
+        isTerrace = True if patternName == 'increasing_terrace' or patternName == 'decreasing_terrace' else False
+        isGorge = True if patternName == 'gorge' else False
+        isPlainorPlateau = True if patternName == 'plain' or patternName == 'proper_plain' or patternName == 'plateau' or patternName == 'proper_plateau' else False
+        isOnlySteady = True if patternName == 'steady' or patternName == 'steady_sequence' else False
+        isValley = True if patternName == 'valley' else False
+        if (isMaxFeature and (isTerrace or isGorge or isPlainorPlateau or isOnlySteady or isValley)):
+            return
+        ## Stop generation of 6 extra '_min_' functions
+        isMinFeature = True if featureName == 'min' else False
+        isSummitorPeak = True if patternName == 'peak' or patternName == 'summit' else False
+        if (isMinFeature and isSummitorPeak):
+            return
+        ## Stop the generation of superfluous 'Range' functions, monotonic patterns needed only.
         isRange=True if featureName == 'range' else False
-        isDec=True if patternName == 'decreasing' else False
         isDecSeq=True if patternName == 'decreasing_sequence' or patternName == 'strictly_decreasing_sequence' else False
-        isInc=True if patternName == 'increasing' else False
         isIncSeq=True if patternName == 'increasing_sequence' or patternName == 'strictly_increasing_sequence' else False
         isStrict=True if patternName == 'strictly_increasing_sequence' or patternName == 'strictly_decreasing_sequence' else False
+        # Determine if pattern is monotonic or not. 
+        # If you want to generate range functions with all patterns and not just monotonic ones comment out the 3 lines below.
+        isMonotonic = True if isDec or isDecSeq or isInc or isIncSeq or isStrict else False
+        if (isMonotonic != True and isRange) :
+            return
+        
+        ## Proceed to generate the 253 functions
+        self.writeComment(x+'_'+featureName+'_'+patternName+' : Exported Function')
+        self.writeHeader(patternName, featureName, x)#, aggregatorName)
+        
         letters=['C', 'D', 'R', 'H'] if isRange and (isDecSeq or isIncSeq or isStrict) else ['C', 'D', 'R'] #Initializes values
-        #letters = ['C', 'D', 'R']
         for accumulator in ['C', 'D', 'R']:
             self.writeInitValue(accumulator, patternName, featureName, aggregatorName)
 
@@ -97,12 +126,9 @@ class CodeGeneratorBackend:
         self.writeLine('DataLen := len(data)')
         self.writeLine('for i := 1; i < DataLen; i++ {')
         self.indent()
-        self.writeLine('if i < DataLen {')
         self.indent()
         for accumulator in letters:
             self.writeLine(accumulator + 'temp := float64(' + accumulator+')')
-        #if (isRangeDecSeq or isRangeStrict):
-        #    self.writeLine('Htemp := float64(H)')
         
         self.writeLine('if data[i] > data[i-1] {')
         if (isRange and isDecSeq):
@@ -114,7 +140,7 @@ class CodeGeneratorBackend:
             self.writeLine('H = data[i-1]')
             self.writeLine('H = math.Min(H, Htemp)')
             self.dedent()
-        self.writeCore(patternName, featureName, aggregatorName, '<', isRange, isInc, isDec, isIncSeq, isDecSeq, isStrict)## Only for decreasing funcs rn
+        self.writeCore(patternName, featureName, aggregatorName, '<', isRange, isInc, isDec, isIncSeq, isDecSeq, isStrict)
         self.dedent()
 
         self.writeLine('} else if data[i] < data[i-1] {')##
@@ -127,7 +153,7 @@ class CodeGeneratorBackend:
             self.indent()
             self.writeLine("H = math.Inf(1)")
             self.dedent()
-        self.writeCore(patternName, featureName, aggregatorName, '>', isRange, isInc, isDec, isIncSeq, isDecSeq, isStrict)## Only for decreasing funcs rn
+        self.writeCore(patternName, featureName, aggregatorName, '>', isRange, isInc, isDec, isIncSeq, isDecSeq, isStrict)
         self.dedent()
 
         self.writeLine('} else if data[i] == data[i-1] {')##
@@ -146,10 +172,8 @@ class CodeGeneratorBackend:
         self.dedent()
         self.writeLine('_ = Ctemp // Temporary fix')## Temporary fix for un-used variables
         self.writeLine('_ = Dtemp // Temporary fix')##
-        self.writeLine('_ = Rtemp // Temporary fix')##
         self.writeLine('}')##
         self.dedent()
-        self.writeLine('}')##
         self.writeLine('return ' + core.getValue(aggregatorName) + '(R, C)')
         self.dedent()
         self.writeLine('}')
@@ -196,13 +220,12 @@ c.writeComment('----------------------------------------------------------------
 c.writeLine('')
 c.writeLine('package generatedInGo')
 c.writeLine('')
-c.writeLine('import(')
+c.writeLine('import (')
 c.writeLine('\t"math"')
 c.writeLine(')')
 c.writeLine('')
-c.writeLine('func add(x float64, y float64) float64 { return (x + y) }')
+c.writeLine('func add(x float64, y float64) float64  { return (x + y) }')
 c.writeLine('func diff(x float64, y float64) float64 { return math.Abs(x - y) } // The absolute difference')
-# c.writeLine('func diff(x float64, y float64) float64 { return math.Abs( x - y ) } // The absolute difference')
 c.writeLine('')
 
 nb_func = 0 #Number of functions
@@ -221,7 +244,9 @@ my_file.write(c.end())
 my_file.close()
 
 exec_time = time.time() - start_time
-nb_functions = len(aggregators) * len(features) * len(patterns)
+nb_functions = len(aggregators) * len(features) * len(patterns) - (48+44+15+30+6) 
+#48 corresponds to non monotonic range patterns, 44 corresponds to Max/Min_one funcs.
+nb_func -= (48+44+15+30+6)
 
 print('-----')
 print('status : success')

@@ -202,15 +202,20 @@ func main(){
 ```
 
 ## Side Notes
-The generator generates approximately 165 extra functions, being:
-- 66 '\_one\_' functions that are not tested or found in the catalog
-- 48 '\_range\_' functions, as only montonic patterns are tested
-- 30 '\_max\_' functions
-- 15 '\_width\_' functions
-- ~6 '\_min/height\_' functions
+UPDATED EXTRA FUNCTION LIST:
+All Max/Min_one_ funcs (44)
 
-It is important to note that functions that should be labled as '<something\>\_height\_<something\>' were just named with '\_min\_'. This is because in the Global Constraint Catalog the ‘min’ feature is renamed ‘height’ when used together with constant patterns, however that was not something accounted for when generating functions. I may fix this in the future.
+
+The generator generates approximately 165 extra functions, being:
+- 44 '\_one\_' functions that are not tested or found in the catalog (sum_one is denoted as NB in the catalog, this requires attention. There are 22 sum_one funcs that need tests)
+- 48 '\_range\_' functions, as only montonic patterns are tested (Fixed)
+- 30 '\_max\_' functions (_max_gorge/(dec/inc_terrace)/)
+- 15 '\_width\_' functions (Max/Min/Sum_width_(dip/bump/steady/inc/dec) (5 each -> 15))
+- 6 '\_min/height\_' functions (Max/Min/Sum_min_(summit/peak))
+- 5 'Sum_' funcs (Sum_width_dip/bump/steady/increasing/decreasing) (probably applies to min and max too)
+
+It is important to note that functions that should be labled as '<something\>\_height\_<something\>' were just named with '\_min\_'. This is because in the Global Constraint Catalog the ‘min’ feature is renamed ‘height’ when used together with constant patterns, however that was not something accounted for when generating functions. I may fix this once everything is accounted for.
 
 In total, there are 231 functions that I am certain about which work. Those 231 functions have all been tested with the examples that are provided in the catalog and can be found in the _testy.go_ script. 
 
-There are also a total of 21 different test cases used, they can be found in the 'res' folder. There is also a test case legend markdown file in the 'res' folder to see which cases correspond to which functions.
+There are also a total of 21 different test cases used, they can be found in the 'res' folder. There is also a test case legend markdown file in the 'res' folder to see which cases correspond to which functions. The functions that are not generated are NB_<something\>, which there are 21 of.

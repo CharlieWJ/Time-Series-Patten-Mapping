@@ -50,7 +50,7 @@ func HandleRequest(conn net.Conn) {
 		HandleData(buf)
 		fmt.Println("")
 		if datalength+16 == len(Sens1Prop1) {
-			WriteToFile("CASE0")
+			/*WriteToFile("CASE0")
 			WriteToFile("CASE1")
 			WriteToFile("CASE2")
 			WriteToFile("CASE3")
@@ -70,7 +70,7 @@ func HandleRequest(conn net.Conn) {
 			WriteToFile("CASE17")
 			WriteToFile("CASE18")
 			WriteToFile("CASE19")
-			WriteToFile("CASE20")
+			WriteToFile("CASE20")*/
 			datalength += 16
 		}
 		//conn.Write([]byte("Message received."))
